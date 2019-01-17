@@ -7,21 +7,61 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		648E262721E9845C00DE0A0F /* ExampleEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E262621E9845C00DE0A0F /* ExampleEndpoint.swift */; };
+		648E262921E984AC00DE0A0F /* ExampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E262821E984AC00DE0A0F /* ExampleModel.swift */; };
+		648E262B21E98C7800DE0A0F /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E262A21E98C7800DE0A0F /* Observable.swift */; };
+		648E263121EB4CBE00DE0A0F /* ExampleViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E263021EB4CBE00DE0A0F /* ExampleViewReactor.swift */; };
+		64CE464E21ECB76C007EE055 /* Example.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64CE464D21ECB76C007EE055 /* Example.storyboard */; };
+		64CE465221ECBA7E007EE055 /* SNUEVButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE465121ECBA7E007EE055 /* SNUEVButton.swift */; };
+		64CE465521ECBAC1007EE055 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE465421ECBAC1007EE055 /* Constants.swift */; };
+		64CE465921ECBFD5007EE055 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE465821ECBFD5007EE055 /* UIColorExtension.swift */; };
+		64CE465B21ECC386007EE055 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE465A21ECC386007EE055 /* UIViewExtension.swift */; };
+		64CE465E21ECD064007EE055 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64CE465D21ECD064007EE055 /* Login.storyboard */; };
+		64CE466221ECD462007EE055 /* img-logo-220-px@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64CE465F21ECD462007EE055 /* img-logo-220-px@2x.png */; };
+		64CE466321ECD462007EE055 /* img-logo-220-px@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64CE466021ECD462007EE055 /* img-logo-220-px@3x.png */; };
+		64CE466421ECD462007EE055 /* img-logo-220-px.png in Resources */ = {isa = PBXBuildFile; fileRef = 64CE466121ECD462007EE055 /* img-logo-220-px.png */; };
+		64CE466621ECDFB1007EE055 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE466521ECDFB1007EE055 /* UIImageExtension.swift */; };
+		64CE466821ECE4ED007EE055 /* LoginEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE466721ECE4ED007EE055 /* LoginEndpoint.swift */; };
+		64CE466A21ECE5D3007EE055 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE466921ECE5D3007EE055 /* StringExtension.swift */; };
+		64CE466C21F0A5D4007EE055 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE466B21F0A5D3007EE055 /* LoginViewController.swift */; };
+		64CE466E21F0A8FC007EE055 /* LoginViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE466D21F0A8FC007EE055 /* LoginViewReactor.swift */; };
 		64F681F921E4D1870017E63A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F681F821E4D1870017E63A /* AppDelegate.swift */; };
-		64F681FB21E4D1870017E63A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F681FA21E4D1870017E63A /* ViewController.swift */; };
+		64F681FB21E4D1870017E63A /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F681FA21E4D1870017E63A /* ExampleViewController.swift */; };
 		64F681FE21E4D1870017E63A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64F681FC21E4D1870017E63A /* Main.storyboard */; };
 		64F6820021E4D1880017E63A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64F681FF21E4D1880017E63A /* Assets.xcassets */; };
 		64F6820321E4D1880017E63A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64F6820121E4D1880017E63A /* LaunchScreen.storyboard */; };
+		B7B8942FACF2F0B8BF94B2D7 /* Pods_snuev_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99332AA8B204CFF7F37E68D1 /* Pods_snuev_ios.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29F386CDDCBC44430A2F839C /* Pods-snuev-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snuev-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-snuev-ios/Pods-snuev-ios.release.xcconfig"; sourceTree = "<group>"; };
+		3B2C0C6DA3622C8A68E09688 /* Pods-snuev-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snuev-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-snuev-ios/Pods-snuev-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		648E262621E9845C00DE0A0F /* ExampleEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleEndpoint.swift; sourceTree = "<group>"; };
+		648E262821E984AC00DE0A0F /* ExampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleModel.swift; sourceTree = "<group>"; };
+		648E262A21E98C7800DE0A0F /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		648E263021EB4CBE00DE0A0F /* ExampleViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewReactor.swift; sourceTree = "<group>"; };
+		64CE464D21ECB76C007EE055 /* Example.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Example.storyboard; sourceTree = "<group>"; };
+		64CE465121ECBA7E007EE055 /* SNUEVButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNUEVButton.swift; sourceTree = "<group>"; };
+		64CE465421ECBAC1007EE055 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		64CE465821ECBFD5007EE055 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		64CE465A21ECC386007EE055 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		64CE465D21ECD064007EE055 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		64CE465F21ECD462007EE055 /* img-logo-220-px@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-logo-220-px@2x.png"; sourceTree = "<group>"; };
+		64CE466021ECD462007EE055 /* img-logo-220-px@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-logo-220-px@3x.png"; sourceTree = "<group>"; };
+		64CE466121ECD462007EE055 /* img-logo-220-px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-logo-220-px.png"; sourceTree = "<group>"; };
+		64CE466521ECDFB1007EE055 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		64CE466721ECE4ED007EE055 /* LoginEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEndpoint.swift; sourceTree = "<group>"; };
+		64CE466921ECE5D3007EE055 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		64CE466B21F0A5D3007EE055 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		64CE466D21F0A8FC007EE055 /* LoginViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewReactor.swift; sourceTree = "<group>"; };
 		64F681F521E4D1870017E63A /* snuev-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "snuev-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F681F821E4D1870017E63A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		64F681FA21E4D1870017E63A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		64F681FA21E4D1870017E63A /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		64F681FD21E4D1870017E63A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		64F681FF21E4D1880017E63A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64F6820221E4D1880017E63A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64F6820421E4D1880017E63A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99332AA8B204CFF7F37E68D1 /* Pods_snuev_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snuev_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +69,81 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7B8942FACF2F0B8BF94B2D7 /* Pods_snuev_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		648E263221EB857600DE0A0F /* example */ = {
+			isa = PBXGroup;
+			children = (
+				64F681FA21E4D1870017E63A /* ExampleViewController.swift */,
+				648E262821E984AC00DE0A0F /* ExampleModel.swift */,
+				648E263021EB4CBE00DE0A0F /* ExampleViewReactor.swift */,
+				648E262621E9845C00DE0A0F /* ExampleEndpoint.swift */,
+				64CE464D21ECB76C007EE055 /* Example.storyboard */,
+			);
+			path = example;
+			sourceTree = "<group>";
+		};
+		64CE464F21ECB9BB007EE055 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				64CE466121ECD462007EE055 /* img-logo-220-px.png */,
+				64CE465F21ECD462007EE055 /* img-logo-220-px@2x.png */,
+				64CE466021ECD462007EE055 /* img-logo-220-px@3x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		64CE465021ECBA62007EE055 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				64CE465121ECBA7E007EE055 /* SNUEVButton.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		64CE465321ECBAB4007EE055 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				64CE465421ECBAC1007EE055 /* Constants.swift */,
+				64CE465821ECBFD5007EE055 /* UIColorExtension.swift */,
+				64CE465A21ECC386007EE055 /* UIViewExtension.swift */,
+				64CE466521ECDFB1007EE055 /* UIImageExtension.swift */,
+				64CE466921ECE5D3007EE055 /* StringExtension.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		64CE465C21ECD001007EE055 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				64CE466F21F0AF43007EE055 /* Login */,
+				64CE465D21ECD064007EE055 /* Login.storyboard */,
+				64CE466721ECE4ED007EE055 /* LoginEndpoint.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		64CE466F21F0AF43007EE055 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				64CE466B21F0A5D3007EE055 /* LoginViewController.swift */,
+				64CE466D21F0A8FC007EE055 /* LoginViewReactor.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		64F681EC21E4D1860017E63A = {
 			isa = PBXGroup;
 			children = (
 				64F681F721E4D1870017E63A /* snuev-ios */,
 				64F681F621E4D1870017E63A /* Products */,
+				9A0B9A98985347458148B6CD /* Pods */,
+				8FED9A3704CCDD9AE5BEDE5B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +158,36 @@
 		64F681F721E4D1870017E63A /* snuev-ios */ = {
 			isa = PBXGroup;
 			children = (
+				64CE465C21ECD001007EE055 /* Login */,
+				64CE465321ECBAB4007EE055 /* Utils */,
+				64CE465021ECBA62007EE055 /* UIComponents */,
+				64CE464F21ECB9BB007EE055 /* images */,
+				648E263221EB857600DE0A0F /* example */,
 				64F681F821E4D1870017E63A /* AppDelegate.swift */,
-				64F681FA21E4D1870017E63A /* ViewController.swift */,
 				64F681FC21E4D1870017E63A /* Main.storyboard */,
 				64F681FF21E4D1880017E63A /* Assets.xcassets */,
 				64F6820121E4D1880017E63A /* LaunchScreen.storyboard */,
 				64F6820421E4D1880017E63A /* Info.plist */,
+				648E262A21E98C7800DE0A0F /* Observable.swift */,
 			);
 			path = "snuev-ios";
+			sourceTree = "<group>";
+		};
+		8FED9A3704CCDD9AE5BEDE5B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99332AA8B204CFF7F37E68D1 /* Pods_snuev_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9A0B9A98985347458148B6CD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3B2C0C6DA3622C8A68E09688 /* Pods-snuev-ios.debug.xcconfig */,
+				29F386CDDCBC44430A2F839C /* Pods-snuev-ios.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +197,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 64F6820721E4D1880017E63A /* Build configuration list for PBXNativeTarget "snuev-ios" */;
 			buildPhases = (
+				0401A495318F687131850F20 /* [CP] Check Pods Manifest.lock */,
 				64F681F121E4D1870017E63A /* Sources */,
 				64F681F221E4D1870017E63A /* Frameworks */,
 				64F681F321E4D1870017E63A /* Resources */,
+				61CE17C7D5B9B5640222F7B6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,20 +251,101 @@
 			buildActionMask = 2147483647;
 			files = (
 				64F6820321E4D1880017E63A /* LaunchScreen.storyboard in Resources */,
+				64CE464E21ECB76C007EE055 /* Example.storyboard in Resources */,
 				64F6820021E4D1880017E63A /* Assets.xcassets in Resources */,
+				64CE465E21ECD064007EE055 /* Login.storyboard in Resources */,
+				64CE466221ECD462007EE055 /* img-logo-220-px@2x.png in Resources */,
 				64F681FE21E4D1870017E63A /* Main.storyboard in Resources */,
+				64CE466321ECD462007EE055 /* img-logo-220-px@3x.png in Resources */,
+				64CE466421ECD462007EE055 /* img-logo-220-px.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0401A495318F687131850F20 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-snuev-ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61CE17C7D5B9B5640222F7B6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-snuev-ios/Pods-snuev-ios-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactorKit/ReactorKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactorKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-snuev-ios/Pods-snuev-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		64F681F121E4D1870017E63A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64F681FB21E4D1870017E63A /* ViewController.swift in Sources */,
+				64CE466C21F0A5D4007EE055 /* LoginViewController.swift in Sources */,
+				64CE466821ECE4ED007EE055 /* LoginEndpoint.swift in Sources */,
+				64CE465B21ECC386007EE055 /* UIViewExtension.swift in Sources */,
+				64F681FB21E4D1870017E63A /* ExampleViewController.swift in Sources */,
 				64F681F921E4D1870017E63A /* AppDelegate.swift in Sources */,
+				64CE466E21F0A8FC007EE055 /* LoginViewReactor.swift in Sources */,
+				648E262721E9845C00DE0A0F /* ExampleEndpoint.swift in Sources */,
+				64CE466621ECDFB1007EE055 /* UIImageExtension.swift in Sources */,
+				648E262B21E98C7800DE0A0F /* Observable.swift in Sources */,
+				64CE465221ECBA7E007EE055 /* SNUEVButton.swift in Sources */,
+				64CE465921ECBFD5007EE055 /* UIColorExtension.swift in Sources */,
+				648E263121EB4CBE00DE0A0F /* ExampleViewReactor.swift in Sources */,
+				648E262921E984AC00DE0A0F /* ExampleModel.swift in Sources */,
+				64CE466A21ECE5D3007EE055 /* StringExtension.swift in Sources */,
+				64CE465521ECBAC1007EE055 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +489,7 @@
 		};
 		64F6820821E4D1880017E63A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B2C0C6DA3622C8A68E09688 /* Pods-snuev-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -297,6 +507,7 @@
 		};
 		64F6820921E4D1880017E63A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29F386CDDCBC44430A2F839C /* Pods-snuev-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
