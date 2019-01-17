@@ -25,6 +25,7 @@
 		64CE466A21ECE5D3007EE055 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE466921ECE5D3007EE055 /* StringExtension.swift */; };
 		64CE466C21F0A5D4007EE055 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE466B21F0A5D3007EE055 /* LoginViewController.swift */; };
 		64CE466E21F0A8FC007EE055 /* LoginViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE466D21F0A8FC007EE055 /* LoginViewReactor.swift */; };
+		64CE467721F0D393007EE055 /* snuev_ios_tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE467621F0D393007EE055 /* snuev_ios_tests.swift */; };
 		64F681F921E4D1870017E63A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F681F821E4D1870017E63A /* AppDelegate.swift */; };
 		64F681FB21E4D1870017E63A /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F681FA21E4D1870017E63A /* ExampleViewController.swift */; };
 		64F681FE21E4D1870017E63A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64F681FC21E4D1870017E63A /* Main.storyboard */; };
@@ -32,6 +33,16 @@
 		64F6820321E4D1880017E63A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64F6820121E4D1880017E63A /* LaunchScreen.storyboard */; };
 		B7B8942FACF2F0B8BF94B2D7 /* Pods_snuev_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99332AA8B204CFF7F37E68D1 /* Pods_snuev_ios.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		64CE467921F0D393007EE055 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 64F681ED21E4D1870017E63A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 64F681F421E4D1870017E63A;
+			remoteInfo = "snuev-ios";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		29F386CDDCBC44430A2F839C /* Pods-snuev-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snuev-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-snuev-ios/Pods-snuev-ios.release.xcconfig"; sourceTree = "<group>"; };
@@ -54,6 +65,9 @@
 		64CE466921ECE5D3007EE055 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		64CE466B21F0A5D3007EE055 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		64CE466D21F0A8FC007EE055 /* LoginViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewReactor.swift; sourceTree = "<group>"; };
+		64CE467421F0D393007EE055 /* snuev-ios-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "snuev-ios-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		64CE467621F0D393007EE055 /* snuev_ios_tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = snuev_ios_tests.swift; sourceTree = "<group>"; };
+		64CE467821F0D393007EE055 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64F681F521E4D1870017E63A /* snuev-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "snuev-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F681F821E4D1870017E63A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64F681FA21E4D1870017E63A /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +79,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		64CE467121F0D393007EE055 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		64F681F221E4D1870017E63A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -137,10 +158,20 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		64CE467521F0D393007EE055 /* snuev-ios-tests */ = {
+			isa = PBXGroup;
+			children = (
+				64CE467621F0D393007EE055 /* snuev_ios_tests.swift */,
+				64CE467821F0D393007EE055 /* Info.plist */,
+			);
+			path = "snuev-ios-tests";
+			sourceTree = "<group>";
+		};
 		64F681EC21E4D1860017E63A = {
 			isa = PBXGroup;
 			children = (
 				64F681F721E4D1870017E63A /* snuev-ios */,
+				64CE467521F0D393007EE055 /* snuev-ios-tests */,
 				64F681F621E4D1870017E63A /* Products */,
 				9A0B9A98985347458148B6CD /* Pods */,
 				8FED9A3704CCDD9AE5BEDE5B /* Frameworks */,
@@ -151,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				64F681F521E4D1870017E63A /* snuev-ios.app */,
+				64CE467421F0D393007EE055 /* snuev-ios-tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -193,6 +225,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		64CE467321F0D393007EE055 /* snuev-ios-tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64CE467B21F0D393007EE055 /* Build configuration list for PBXNativeTarget "snuev-ios-tests" */;
+			buildPhases = (
+				64CE467021F0D393007EE055 /* Sources */,
+				64CE467121F0D393007EE055 /* Frameworks */,
+				64CE467221F0D393007EE055 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				64CE467A21F0D393007EE055 /* PBXTargetDependency */,
+			);
+			name = "snuev-ios-tests";
+			productName = "snuev-ios-tests";
+			productReference = 64CE467421F0D393007EE055 /* snuev-ios-tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		64F681F421E4D1870017E63A /* snuev-ios */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 64F6820721E4D1880017E63A /* Build configuration list for PBXNativeTarget "snuev-ios" */;
@@ -222,6 +272,10 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "이동현";
 				TargetAttributes = {
+					64CE467321F0D393007EE055 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 64F681F421E4D1870017E63A;
+					};
 					64F681F421E4D1870017E63A = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -241,11 +295,19 @@
 			projectRoot = "";
 			targets = (
 				64F681F421E4D1870017E63A /* snuev-ios */,
+				64CE467321F0D393007EE055 /* snuev-ios-tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		64CE467221F0D393007EE055 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		64F681F321E4D1870017E63A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -327,6 +389,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		64CE467021F0D393007EE055 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64CE467721F0D393007EE055 /* snuev_ios_tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		64F681F121E4D1870017E63A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -351,6 +421,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		64CE467A21F0D393007EE055 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 64F681F421E4D1870017E63A /* snuev-ios */;
+			targetProxy = 64CE467921F0D393007EE055 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		64F681FC21E4D1870017E63A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -371,6 +449,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		64CE467C21F0D393007EE055 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "snuev-ios-tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "waffle.snuev-ios-tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/snuev-ios.app/snuev-ios";
+			};
+			name = Debug;
+		};
+		64CE467D21F0D393007EE055 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "snuev-ios-tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "waffle.snuev-ios-tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/snuev-ios.app/snuev-ios";
+			};
+			name = Release;
+		};
 		64F6820521E4D1880017E63A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -526,6 +642,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		64CE467B21F0D393007EE055 /* Build configuration list for PBXNativeTarget "snuev-ios-tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64CE467C21F0D393007EE055 /* Debug */,
+				64CE467D21F0D393007EE055 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		64F681F021E4D1870017E63A /* Build configuration list for PBXProject "snuev-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
