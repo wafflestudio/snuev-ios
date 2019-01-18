@@ -88,13 +88,6 @@ class SNUEVButton: UIButton {
         }
     }
     
-    @IBInspectable
-    public var btnType: NSInteger = 0 {
-        didSet {
-            self.setButtonType(SNUEVButtonType(rawValue: btnType) ?? .Round)
-        }
-    }
-    
     override open var isHighlighted: Bool {
         didSet {
             backgroundColor = getBackgroundColors(for: state)

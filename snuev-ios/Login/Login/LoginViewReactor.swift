@@ -16,27 +16,16 @@ final class LoginViewReactor: Reactor {
     var provider = MoyaProvider<Login>()
     
     enum Action {
-        case updateUsername(String)
-        case updatePassword(String)
-        case loginRequest()
+        case loginRequest(username: String?, password: String?)
     }
     
     enum Mutation {
-        case setUsername(String)
-        case setPassword(String)
         case setLoginSuccess(Bool)
         case setErrorMessage(String)
         case setIsLoading(Bool)
     }
     
     struct State {
-        var query: String = ""
-        var repos: [Repository] = []
-        var nextPage: Int?
-        var isLoadingNextPage: Bool = false
-        
-        var username = ""
-        var password = ""
         var errorMessage = ""
         var isLoading = false
         var loginSuccess = false
@@ -46,24 +35,27 @@ final class LoginViewReactor: Reactor {
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
-        case let .updateUsername(username):
-            return Observable.just(Mutation.setUsername(username))
-        case let .updatePassword(password):
-            return Observable.just(Mutation.setPassword(password))
-        case .loginRequest():
+        case let .loginRequest(username, password):
+            guard let username = username, !username.isEmpty else {
+                return Observable.just(Mutation.setErrorMessage("Enter username"))
+            }
+            
+            guard let password = password, !password.isEmpty else {
+                return Observable.just(Mutation.setErrorMessage("Enter password"))
+            }
+            
             return Observable.concat([
-                    Observable.just(Mutation.setIsLoading(true)),
-                    login(username: currentState.username, password: currentState.password)
-                        .map { (response: Response) in
-                        if response.statusCode == 200 {
+                Observable.just(Mutation.setIsLoading(true)),
+                login(username: username, password: password)
+                    .map { (response: Response) in
+                        do {
+                            let filteredResponse = try response.filterSuccessfulStatusCodes()
                             return Mutation.setLoginSuccess(true)
-                        } else {
-                            if let json = try response.mapJSON() as? [String: Any], let message = json["erros"] as? String {
-                                return Mutation.setErrorMessage(message)
-                            }
-                            return Mutation.setErrorMessage("Login Failure")
                         }
-                    }
+                        catch let error {
+                            return Mutation.setErrorMessage(error.localizedDescription)
+                        }
+                }
                 ])
         }
     }
@@ -71,19 +63,13 @@ final class LoginViewReactor: Reactor {
     func reduce(state: State, mutation: Mutation) -> State {
         var newState = state
         switch mutation {
-        case let .setUsername(username):
-            newState.username = username
-            print(username)
-            
-        case let .setPassword(password):
-            newState.password = password
-            print(password)
-            
         case let .setIsLoading(isLoading):
             newState.isLoading = isLoading
+            newState.errorMessage = ""
             
         case let .setLoginSuccess(success):
             newState.loginSuccess = success
+            newState.errorMessage = ""
             
         case let .setErrorMessage(message):
             newState.errorMessage = message

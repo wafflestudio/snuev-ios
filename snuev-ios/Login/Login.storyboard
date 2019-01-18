@@ -35,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9k0-C2-Od2">
-                                <rect key="frame" x="50" y="137.5" width="275" height="392.5"/>
+                                <rect key="frame" x="50" y="135.5" width="275" height="396.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-logo-220-px.png" translatesAutoresizingMaskIntoConstraints="NO" id="Cuz-qo-i6n">
                                         <rect key="frame" x="27.5" y="0.0" width="220" height="60"/>
@@ -118,38 +118,25 @@
                                             <constraint firstItem="g0j-8r-GdA" firstAttribute="top" secondItem="Jym-WP-4kS" secondAttribute="top" id="npL-4p-2Rh"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VhL-Ct-gSY" customClass="SNUEVButton">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VhL-Ct-gSY" customClass="SNUEVButton" customModule="snuev_ios">
                                         <rect key="frame" x="0.0" y="280.5" width="275" height="52"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="52" id="TO1-kV-Dcd"/>
                                         </constraints>
-                                        <state key="normal" title="로그인">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="로그인"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KjM-yR-wPO" customClass="SNUEVButton" customModule="snuev_ios">
+                                        <rect key="frame" x="20" y="362.5" width="112.5" height="34"/>
+                                        <state key="normal" title="가입하기">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="btnType">
-                                                <integer key="value" value="3"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KjM-yR-wPO" customClass="SNUEVButton" customModule="snuev_ios" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="362.5" width="112.5" height="30"/>
-                                        <state key="normal" title="가입하기"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="btnType">
-                                                <integer key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ar8-U9-VIb" customClass="SNUEVButton" customModule="snuev_ios" customModuleProvider="target">
-                                        <rect key="frame" x="142.5" y="362.5" width="112.5" height="30"/>
-                                        <state key="normal" title="비밀번호 찾기"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="btnType">
-                                                <integer key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ar8-U9-VIb" customClass="SNUEVButton" customModule="snuev_ios">
+                                        <rect key="frame" x="142.5" y="362.5" width="112.5" height="34"/>
+                                        <state key="normal" title="비밀번호 찾기">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -193,6 +180,8 @@
                     <navigationItem key="navigationItem" id="of0-fB-qsi"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="btnFindPassword" destination="Ar8-U9-VIb" id="btx-0R-Vet"/>
+                        <outlet property="btnSignin" destination="KjM-yR-wPO" id="GHh-LW-RvD"/>
                         <outlet property="buttonLogin" destination="VhL-Ct-gSY" id="5DD-1V-iOO"/>
                         <outlet property="inputPassword" destination="g0j-8r-GdA" id="6yJ-WL-ulD"/>
                         <outlet property="inputUsername" destination="Yp9-uV-Dv2" id="Vuc-VF-evq"/>

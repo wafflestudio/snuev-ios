@@ -21,29 +21,21 @@ class LoginViewController: UIViewController, StoryboardView {
     @IBOutlet weak var inputUsername: UITextField!
     @IBOutlet weak var inputPassword: UITextField!
     @IBOutlet weak var buttonLogin: SNUEVButton!
+    @IBOutlet weak var btnSignin: SNUEVButton!
+    @IBOutlet weak var btnFindPassword: SNUEVButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let loginViewReactor = LoginViewReactor()
-        reactor = loginViewReactor
+        reactor = LoginViewReactor()
+        buttonLogin.setButtonType(.Square)
+        btnSignin.setButtonType(.withRoundImage)
+        btnFindPassword.setButtonType(.withRoundImage)
     }
     
     func bind(reactor: LoginViewReactor) {
         // Action
-        inputUsername.rx.text
-            .orEmpty
-            .debounce(0.5, scheduler: MainScheduler.instance)
-            .map { Reactor.Action.updateUsername($0) }
-            .bind(to: reactor.action)
-            .disposed(by: disposeBag)
-        inputPassword.rx.text
-            .orEmpty
-            .debounce(0.5, scheduler: MainScheduler.instance)
-            .map { Reactor.Action.updatePassword($0) }
-            .bind(to: reactor.action)
-            .disposed(by: disposeBag)
         buttonLogin.rx.tap
-            .map { Reactor.Action.loginRequest() }
+            .map { Reactor.Action.loginRequest(username: self.inputUsername.text, password: self.inputPassword.text) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
 
@@ -53,6 +45,14 @@ class LoginViewController: UIViewController, StoryboardView {
             .subscribe(onNext: { success in
                 if success {
                     print("login success!!!")
+                }
+            }).disposed(by: disposeBag)
+        
+        reactor.state.map { $0.errorMessage }
+            .distinctUntilChanged()
+            .subscribe(onNext: { error in
+                if !error.isEmpty {
+                    print(error)
                 }
             }).disposed(by: disposeBag)
     }
