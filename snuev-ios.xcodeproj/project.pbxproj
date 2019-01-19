@@ -32,6 +32,14 @@
 		64F6820021E4D1880017E63A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64F681FF21E4D1880017E63A /* Assets.xcassets */; };
 		64F6820321E4D1880017E63A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64F6820121E4D1880017E63A /* LaunchScreen.storyboard */; };
 		B7B8942FACF2F0B8BF94B2D7 /* Pods_snuev_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99332AA8B204CFF7F37E68D1 /* Pods_snuev_ios.framework */; };
+		F96AD32321F1778500EC8799 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96AD32221F1778500EC8799 /* SignupViewController.swift */; };
+		F96AD32521F177A200EC8799 /* SignupReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96AD32421F177A200EC8799 /* SignupReactor.swift */; };
+		F96AD32921F1AD4100EC8799 /* img-signup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96AD32621F1AD4100EC8799 /* img-signup@2x.png */; };
+		F96AD32A21F1AD4100EC8799 /* img-signup.png in Resources */ = {isa = PBXBuildFile; fileRef = F96AD32721F1AD4100EC8799 /* img-signup.png */; };
+		F96AD32B21F1AD4100EC8799 /* img-signup@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96AD32821F1AD4100EC8799 /* img-signup@3x.png */; };
+		F96AD32F21F1AD6A00EC8799 /* ic-search-30-px.png in Resources */ = {isa = PBXBuildFile; fileRef = F96AD32C21F1AD6A00EC8799 /* ic-search-30-px.png */; };
+		F96AD33021F1AD6A00EC8799 /* ic-search-30-px@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96AD32D21F1AD6A00EC8799 /* ic-search-30-px@2x.png */; };
+		F96AD33121F1AD6A00EC8799 /* ic-search-30-px@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96AD32E21F1AD6A00EC8799 /* ic-search-30-px@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +84,14 @@
 		64F6820221E4D1880017E63A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64F6820421E4D1880017E63A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99332AA8B204CFF7F37E68D1 /* Pods_snuev_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snuev_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F96AD32221F1778500EC8799 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		F96AD32421F177A200EC8799 /* SignupReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupReactor.swift; sourceTree = "<group>"; };
+		F96AD32621F1AD4100EC8799 /* img-signup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-signup@2x.png"; sourceTree = "<group>"; };
+		F96AD32721F1AD4100EC8799 /* img-signup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-signup.png"; sourceTree = "<group>"; };
+		F96AD32821F1AD4100EC8799 /* img-signup@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-signup@3x.png"; sourceTree = "<group>"; };
+		F96AD32C21F1AD6A00EC8799 /* ic-search-30-px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-search-30-px.png"; sourceTree = "<group>"; };
+		F96AD32D21F1AD6A00EC8799 /* ic-search-30-px@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-search-30-px@2x.png"; sourceTree = "<group>"; };
+		F96AD32E21F1AD6A00EC8799 /* ic-search-30-px@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-search-30-px@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +128,12 @@
 		64CE464F21ECB9BB007EE055 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				F96AD32C21F1AD6A00EC8799 /* ic-search-30-px.png */,
+				F96AD32D21F1AD6A00EC8799 /* ic-search-30-px@2x.png */,
+				F96AD32E21F1AD6A00EC8799 /* ic-search-30-px@3x.png */,
+				F96AD32721F1AD4100EC8799 /* img-signup.png */,
+				F96AD32621F1AD4100EC8799 /* img-signup@2x.png */,
+				F96AD32821F1AD4100EC8799 /* img-signup@3x.png */,
 				64CE466121ECD462007EE055 /* img-logo-220-px.png */,
 				64CE465F21ECD462007EE055 /* img-logo-220-px@2x.png */,
 				64CE466021ECD462007EE055 /* img-logo-220-px@3x.png */,
@@ -154,6 +176,8 @@
 			children = (
 				64CE466B21F0A5D3007EE055 /* LoginViewController.swift */,
 				64CE466D21F0A8FC007EE055 /* LoginViewReactor.swift */,
+				F96AD32221F1778500EC8799 /* SignupViewController.swift */,
+				F96AD32421F177A200EC8799 /* SignupReactor.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -313,11 +337,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				64F6820321E4D1880017E63A /* LaunchScreen.storyboard in Resources */,
+				F96AD32B21F1AD4100EC8799 /* img-signup@3x.png in Resources */,
 				64CE464E21ECB76C007EE055 /* Example.storyboard in Resources */,
 				64F6820021E4D1880017E63A /* Assets.xcassets in Resources */,
 				64CE465E21ECD064007EE055 /* Login.storyboard in Resources */,
 				64CE466221ECD462007EE055 /* img-logo-220-px@2x.png in Resources */,
+				F96AD33121F1AD6A00EC8799 /* ic-search-30-px@3x.png in Resources */,
+				F96AD32F21F1AD6A00EC8799 /* ic-search-30-px.png in Resources */,
 				64F681FE21E4D1870017E63A /* Main.storyboard in Resources */,
+				F96AD32921F1AD4100EC8799 /* img-signup@2x.png in Resources */,
+				F96AD32A21F1AD4100EC8799 /* img-signup.png in Resources */,
+				F96AD33021F1AD6A00EC8799 /* ic-search-30-px@2x.png in Resources */,
 				64CE466321ECD462007EE055 /* img-logo-220-px@3x.png in Resources */,
 				64CE466421ECD462007EE055 /* img-logo-220-px.png in Resources */,
 			);
@@ -413,7 +443,9 @@
 				64CE466621ECDFB1007EE055 /* UIImageExtension.swift in Sources */,
 				648E262B21E98C7800DE0A0F /* Observable.swift in Sources */,
 				64CE465221ECBA7E007EE055 /* SNUEVButton.swift in Sources */,
+				F96AD32321F1778500EC8799 /* SignupViewController.swift in Sources */,
 				64CE465921ECBFD5007EE055 /* UIColorExtension.swift in Sources */,
+				F96AD32521F177A200EC8799 /* SignupReactor.swift in Sources */,
 				648E263121EB4CBE00DE0A0F /* ExampleViewReactor.swift in Sources */,
 				648E262921E984AC00DE0A0F /* ExampleModel.swift in Sources */,
 				64CE466A21ECE5D3007EE055 /* StringExtension.swift in Sources */,
