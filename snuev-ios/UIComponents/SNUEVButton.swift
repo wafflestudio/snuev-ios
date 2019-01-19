@@ -29,7 +29,7 @@ class SNUEVButton: UIButton {
             setImage(UIImage.circle(diameter: 10, color: Constants.COLOR_BLUE_WITH_A_HINT_OF_PURPLE), for: .normal)
             titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         } else {
-            dropShadow()
+            addShadow(offset: .zero, color: .black, opacity: 0.3)
         }
     }
     

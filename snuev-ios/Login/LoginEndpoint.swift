@@ -15,7 +15,10 @@ enum Login {
 
 extension Login: TargetType {
     var headers: [String : String]? {
-        return nil
+        switch self {
+        case .login:
+            return nil
+        }
     }
     
     var baseURL: URL { return URL(string: Constants.BASE_URL)! }
