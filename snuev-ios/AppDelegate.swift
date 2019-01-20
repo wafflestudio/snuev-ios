@@ -42,8 +42,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        let loginViewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
-        self.window?.rootViewController = loginViewController
+        let signupViewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "SignupViewController")
+        self.window?.rootViewController = signupViewController
         return true
     }
 }

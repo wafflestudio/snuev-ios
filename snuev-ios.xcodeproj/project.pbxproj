@@ -164,6 +164,7 @@
 		64CE465C21ECD001007EE055 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				F96AD33221F389E200EC8799 /* Signup */,
 				64CE466F21F0AF43007EE055 /* Login */,
 				64CE465D21ECD064007EE055 /* Login.storyboard */,
 				64CE466721ECE4ED007EE055 /* LoginEndpoint.swift */,
@@ -176,8 +177,6 @@
 			children = (
 				64CE466B21F0A5D3007EE055 /* LoginViewController.swift */,
 				64CE466D21F0A8FC007EE055 /* LoginViewReactor.swift */,
-				F96AD32221F1778500EC8799 /* SignupViewController.swift */,
-				F96AD32421F177A200EC8799 /* SignupReactor.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -244,6 +243,15 @@
 				29F386CDDCBC44430A2F839C /* Pods-snuev-ios.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F96AD33221F389E200EC8799 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				F96AD32221F1778500EC8799 /* SignupViewController.swift */,
+				F96AD32421F177A200EC8799 /* SignupReactor.swift */,
+			);
+			path = Signup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

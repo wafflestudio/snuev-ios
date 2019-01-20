@@ -2,7 +2,7 @@
 //  IssueReactor.swift
 //  snuev-ios
 //
-//  Created by 이동현 on 13/01/2019.
+//  Created by 김동욱 on 20/01/2019.
 //  Copyright © 2019 이동현. All rights reserved.
 //
 
@@ -90,6 +90,7 @@ final class SingupViewReactor: Reactor {
         case let .setErrorMessage(message):
             newState.errorMessage = message
         }
+        
         return newState
     }
     

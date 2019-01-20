@@ -35,9 +35,9 @@ extension Login: TargetType {
             return .post
         case .signup:
             return .post
-        }
         case .department:
             return .get
+        }
     }
     
     var sampleData: Data {
