@@ -15,7 +15,7 @@ import RxSwift
 import Moya
 import ReactorKit
 
-class LoginViewController: UIViewController, StoryboardView {
+class LoginViewController: SNUEVBaseViewController, StoryboardView {
     var disposeBag = DisposeBag()
     typealias Reactor = LoginViewReactor
     @IBOutlet weak var inputUsername: UITextField!
@@ -42,19 +42,21 @@ class LoginViewController: UIViewController, StoryboardView {
         // State
         
         reactor.state.map { $0.loginSuccess }
+            .filter { $0 != nil }
             .subscribe(onNext: { success in
-                if success {
-                    print("login success!!!")
+                if success == true {
+                    self.showToast(message: "Login success!!!")
+                } else {
+                    self.showToast(message: "Login Error")
                 }
             }).disposed(by: disposeBag)
         
         reactor.state.map { $0.errorMessage }
-            .distinctUntilChanged()
+            .filter { $0 != nil }
             .subscribe(onNext: { error in
-                if !error.isEmpty {
-                    print(error)
+                if let error = error, !error.isEmpty {
+                    self.showToast(message: error)
                 }
             }).disposed(by: disposeBag)
     }
 }
-

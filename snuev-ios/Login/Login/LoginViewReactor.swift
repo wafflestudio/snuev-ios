@@ -26,9 +26,9 @@ final class LoginViewReactor: Reactor {
     }
     
     struct State {
-        var errorMessage = ""
+        var errorMessage: String?
         var isLoading = false
-        var loginSuccess = false
+        var loginSuccess: Bool?
     }
     
     let initialState = State()
@@ -47,7 +47,7 @@ final class LoginViewReactor: Reactor {
             return Observable.concat([
                 Observable.just(Mutation.setIsLoading(true)),
                 login(username: username, password: password)
-                    .map { (response: Response) in
+                    .map { response in
                         do {
                             let filteredResponse = try response.filterSuccessfulStatusCodes()
                             return Mutation.setLoginSuccess(true)
@@ -65,11 +65,11 @@ final class LoginViewReactor: Reactor {
         switch mutation {
         case let .setIsLoading(isLoading):
             newState.isLoading = isLoading
-            newState.errorMessage = ""
+            newState.errorMessage = nil
             
         case let .setLoginSuccess(success):
             newState.loginSuccess = success
-            newState.errorMessage = ""
+            newState.errorMessage = nil
             
         case let .setErrorMessage(message):
             newState.errorMessage = message

@@ -26,6 +26,7 @@
 		64CE466C21F0A5D4007EE055 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE466B21F0A5D3007EE055 /* LoginViewController.swift */; };
 		64CE466E21F0A8FC007EE055 /* LoginViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE466D21F0A8FC007EE055 /* LoginViewReactor.swift */; };
 		64CE467721F0D393007EE055 /* snuev_ios_tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE467621F0D393007EE055 /* snuev_ios_tests.swift */; };
+		64CE467F21F31A19007EE055 /* SNUEVBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE467E21F31A19007EE055 /* SNUEVBaseViewController.swift */; };
 		64F681F921E4D1870017E63A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F681F821E4D1870017E63A /* AppDelegate.swift */; };
 		64F681FB21E4D1870017E63A /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F681FA21E4D1870017E63A /* ExampleViewController.swift */; };
 		64F681FE21E4D1870017E63A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64F681FC21E4D1870017E63A /* Main.storyboard */; };
@@ -76,6 +77,7 @@
 		64CE467421F0D393007EE055 /* snuev-ios-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "snuev-ios-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64CE467621F0D393007EE055 /* snuev_ios_tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = snuev_ios_tests.swift; sourceTree = "<group>"; };
 		64CE467821F0D393007EE055 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64CE467E21F31A19007EE055 /* SNUEVBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNUEVBaseViewController.swift; sourceTree = "<group>"; };
 		64F681F521E4D1870017E63A /* snuev-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "snuev-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F681F821E4D1870017E63A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64F681FA21E4D1870017E63A /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				64CE465121ECBA7E007EE055 /* SNUEVButton.swift */,
+				64CE467E21F31A19007EE055 /* SNUEVBaseViewController.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				64CE466C21F0A5D4007EE055 /* LoginViewController.swift in Sources */,
 				64CE466821ECE4ED007EE055 /* LoginEndpoint.swift in Sources */,
 				64CE465B21ECC386007EE055 /* UIViewExtension.swift in Sources */,
+				64CE467F21F31A19007EE055 /* SNUEVBaseViewController.swift in Sources */,
 				64F681FB21E4D1870017E63A /* ExampleViewController.swift in Sources */,
 				64F681F921E4D1870017E63A /* AppDelegate.swift in Sources */,
 				64CE466E21F0A8FC007EE055 /* LoginViewReactor.swift in Sources */,
