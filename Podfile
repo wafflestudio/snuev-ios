@@ -13,4 +13,5 @@ target 'snuev-ios' do
   pod 'Moya/RxSwift', '~> 12.0'
   pod 'RxOptional'
   pod 'SnapKit'
+  pod 'KeychainSwift'
 end

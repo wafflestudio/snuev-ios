@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.8.0)
+  - KeychainSwift (13.0.0)
   - Moya/Core (12.0.1):
     - Alamofire (~> 4.1)
     - Result (~> 4.0)
@@ -21,6 +22,7 @@ PODS:
   - SnapKit (4.2.0)
 
 DEPENDENCIES:
+  - KeychainSwift
   - Moya/RxSwift (~> 12.0)
   - ObjectMapper
   - ReactorKit
@@ -31,6 +33,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - KeychainSwift
     - Moya
     - ObjectMapper
     - ReactorKit
@@ -43,6 +46,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  KeychainSwift: 23d6c16cbc33f20fafa30c3d783241b4b87d998c
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
   ReactorKit: 8be57f0527ad1ac2963cd5c338274a46a01e57a3
@@ -53,6 +57,6 @@ SPEC CHECKSUMS:
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: 81f3e867e5d4806f6f603ecb78dd7ff45c0a5c92
+PODFILE CHECKSUM: 0ff0f716c53db5541af5bb982bdfccc8ea2ca294
 
 COCOAPODS: 1.5.3
