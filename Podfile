@@ -15,4 +15,5 @@ target 'snuev-ios' do
   pod 'SnapKit'
   pod 'Japx'
   pod 'DropDown'
+  pod 'KeychainSwift'
 end

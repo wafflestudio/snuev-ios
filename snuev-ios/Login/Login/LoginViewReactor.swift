@@ -13,7 +13,13 @@ import Moya
 import ObjectMapper
 
 final class LoginViewReactor: Reactor {
-    var provider = MoyaProvider<Login>()
+    var provider: MoyaProvider<Login>
+    var authManager: AuthManager
+    
+    init(provider: MoyaProvider<Login>, authManager: AuthManager) {
+        self.provider = provider
+        self.authManager = authManager
+    }
     
     enum Action {
         case loginRequest(username: String?, password: String?)
@@ -28,7 +34,7 @@ final class LoginViewReactor: Reactor {
     struct State {
         var errorMessage: String?
         var isLoading = false
-        var loginSuccess: Bool?
+        var loginSuccess = false
     }
     
     let initialState = State()
@@ -50,6 +56,9 @@ final class LoginViewReactor: Reactor {
                     .map { response in
                         do {
                             let filteredResponse = try response.filterSuccessfulStatusCodes()
+                            if let jsonRespose = try filteredResponse.mapJSON() as? [String: Any], let meta = jsonRespose["meta"] as? [String: Any], let token = meta["auth_token"] as? String {
+                                self.authManager.setToken(token: token)
+                            }
                             return Mutation.setLoginSuccess(true)
                         }
                         catch let error {
@@ -77,14 +86,8 @@ final class LoginViewReactor: Reactor {
         return newState
     }
     
-    private func url(for query: String?, page: Int) -> URL? {
-        guard let query = query, !query.isEmpty else { return nil }
-        return URL(string: "https://api.github.com/search/repositories?q=\(query)&page=\(page)")
-    }
-    
     private func login(username: String, password: String) -> Observable<Response> {
         return provider.rx.request(Login.login(username: username, password: password))
-            .debug()
             .subscribeOn(MainScheduler.instance)
             .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .asObservable()

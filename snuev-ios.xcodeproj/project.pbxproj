@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		641ADB5621F470B4002DD367 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641ADB5521F470B4002DD367 /* AuthManager.swift */; };
 		648E262721E9845C00DE0A0F /* ExampleEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E262621E9845C00DE0A0F /* ExampleEndpoint.swift */; };
 		648E262921E984AC00DE0A0F /* ExampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E262821E984AC00DE0A0F /* ExampleModel.swift */; };
 		648E262B21E98C7800DE0A0F /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E262A21E98C7800DE0A0F /* Observable.swift */; };
@@ -14,15 +15,15 @@
 		64CE464E21ECB76C007EE055 /* Example.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64CE464D21ECB76C007EE055 /* Example.storyboard */; };
 		64CE465221ECBA7E007EE055 /* SNUEVButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE465121ECBA7E007EE055 /* SNUEVButton.swift */; };
 		64CE465521ECBAC1007EE055 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE465421ECBAC1007EE055 /* Constants.swift */; };
-		64CE465921ECBFD5007EE055 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE465821ECBFD5007EE055 /* UIColorExtension.swift */; };
-		64CE465B21ECC386007EE055 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE465A21ECC386007EE055 /* UIViewExtension.swift */; };
+		64CE465921ECBFD5007EE055 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE465821ECBFD5007EE055 /* UIColor.swift */; };
+		64CE465B21ECC386007EE055 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE465A21ECC386007EE055 /* UIView.swift */; };
 		64CE465E21ECD064007EE055 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64CE465D21ECD064007EE055 /* Login.storyboard */; };
 		64CE466221ECD462007EE055 /* img-logo-220-px@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64CE465F21ECD462007EE055 /* img-logo-220-px@2x.png */; };
 		64CE466321ECD462007EE055 /* img-logo-220-px@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64CE466021ECD462007EE055 /* img-logo-220-px@3x.png */; };
 		64CE466421ECD462007EE055 /* img-logo-220-px.png in Resources */ = {isa = PBXBuildFile; fileRef = 64CE466121ECD462007EE055 /* img-logo-220-px.png */; };
-		64CE466621ECDFB1007EE055 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE466521ECDFB1007EE055 /* UIImageExtension.swift */; };
+		64CE466621ECDFB1007EE055 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE466521ECDFB1007EE055 /* UIImage.swift */; };
 		64CE466821ECE4ED007EE055 /* LoginEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE466721ECE4ED007EE055 /* LoginEndpoint.swift */; };
-		64CE466A21ECE5D3007EE055 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE466921ECE5D3007EE055 /* StringExtension.swift */; };
+		64CE466A21ECE5D3007EE055 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE466921ECE5D3007EE055 /* String.swift */; };
 		64CE466C21F0A5D4007EE055 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE466B21F0A5D3007EE055 /* LoginViewController.swift */; };
 		64CE466E21F0A8FC007EE055 /* LoginViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE466D21F0A8FC007EE055 /* LoginViewReactor.swift */; };
 		64CE467721F0D393007EE055 /* snuev_ios_tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE467621F0D393007EE055 /* snuev_ios_tests.swift */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		29F386CDDCBC44430A2F839C /* Pods-snuev-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snuev-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-snuev-ios/Pods-snuev-ios.release.xcconfig"; sourceTree = "<group>"; };
 		3B2C0C6DA3622C8A68E09688 /* Pods-snuev-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snuev-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-snuev-ios/Pods-snuev-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		641ADB5521F470B4002DD367 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		648E262621E9845C00DE0A0F /* ExampleEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleEndpoint.swift; sourceTree = "<group>"; };
 		648E262821E984AC00DE0A0F /* ExampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleModel.swift; sourceTree = "<group>"; };
 		648E262A21E98C7800DE0A0F /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
@@ -63,15 +65,15 @@
 		64CE464D21ECB76C007EE055 /* Example.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Example.storyboard; sourceTree = "<group>"; };
 		64CE465121ECBA7E007EE055 /* SNUEVButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNUEVButton.swift; sourceTree = "<group>"; };
 		64CE465421ECBAC1007EE055 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		64CE465821ECBFD5007EE055 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
-		64CE465A21ECC386007EE055 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		64CE465821ECBFD5007EE055 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		64CE465A21ECC386007EE055 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		64CE465D21ECD064007EE055 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		64CE465F21ECD462007EE055 /* img-logo-220-px@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-logo-220-px@2x.png"; sourceTree = "<group>"; };
 		64CE466021ECD462007EE055 /* img-logo-220-px@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-logo-220-px@3x.png"; sourceTree = "<group>"; };
 		64CE466121ECD462007EE055 /* img-logo-220-px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-logo-220-px.png"; sourceTree = "<group>"; };
-		64CE466521ECDFB1007EE055 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		64CE466521ECDFB1007EE055 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		64CE466721ECE4ED007EE055 /* LoginEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEndpoint.swift; sourceTree = "<group>"; };
-		64CE466921ECE5D3007EE055 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		64CE466921ECE5D3007EE055 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		64CE466B21F0A5D3007EE055 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		64CE466D21F0A8FC007EE055 /* LoginViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewReactor.swift; sourceTree = "<group>"; };
 		64CE467421F0D393007EE055 /* snuev-ios-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "snuev-ios-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +120,7 @@
 		648E263221EB857600DE0A0F /* example */ = {
 			isa = PBXGroup;
 			children = (
+				648E262A21E98C7800DE0A0F /* Observable.swift */,
 				64F681FA21E4D1870017E63A /* ExampleViewController.swift */,
 				648E262821E984AC00DE0A0F /* ExampleModel.swift */,
 				648E263021EB4CBE00DE0A0F /* ExampleViewReactor.swift */,
@@ -156,10 +159,11 @@
 			isa = PBXGroup;
 			children = (
 				64CE465421ECBAC1007EE055 /* Constants.swift */,
-				64CE465821ECBFD5007EE055 /* UIColorExtension.swift */,
-				64CE465A21ECC386007EE055 /* UIViewExtension.swift */,
-				64CE466521ECDFB1007EE055 /* UIImageExtension.swift */,
-				64CE466921ECE5D3007EE055 /* StringExtension.swift */,
+				64CE465821ECBFD5007EE055 /* UIColor.swift */,
+				64CE465A21ECC386007EE055 /* UIView.swift */,
+				64CE466521ECDFB1007EE055 /* UIImage.swift */,
+				64CE466921ECE5D3007EE055 /* String.swift */,
+				641ADB5521F470B4002DD367 /* AuthManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -226,7 +230,6 @@
 				64F681FF21E4D1880017E63A /* Assets.xcassets */,
 				64F6820121E4D1880017E63A /* LaunchScreen.storyboard */,
 				64F6820421E4D1880017E63A /* Info.plist */,
-				648E262A21E98C7800DE0A0F /* Observable.swift */,
 			);
 			path = "snuev-ios";
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/Japx/Japx.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactorKit/ReactorKit.framework",
@@ -418,6 +422,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Japx.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactorKit.framework",
@@ -450,21 +455,23 @@
 			files = (
 				64CE466C21F0A5D4007EE055 /* LoginViewController.swift in Sources */,
 				64CE466821ECE4ED007EE055 /* LoginEndpoint.swift in Sources */,
-				64CE465B21ECC386007EE055 /* UIViewExtension.swift in Sources */,
+				64CE465B21ECC386007EE055 /* UIView.swift in Sources */,
 				64CE467F21F31A19007EE055 /* SNUEVBaseViewController.swift in Sources */,
 				64F681FB21E4D1870017E63A /* ExampleViewController.swift in Sources */,
 				64F681F921E4D1870017E63A /* AppDelegate.swift in Sources */,
 				64CE466E21F0A8FC007EE055 /* LoginViewReactor.swift in Sources */,
+				641ADB5621F470B4002DD367 /* AuthManager.swift in Sources */,
 				648E262721E9845C00DE0A0F /* ExampleEndpoint.swift in Sources */,
-				64CE466621ECDFB1007EE055 /* UIImageExtension.swift in Sources */,
+				64CE466621ECDFB1007EE055 /* UIImage.swift in Sources */,
 				648E262B21E98C7800DE0A0F /* Observable.swift in Sources */,
 				64CE465221ECBA7E007EE055 /* SNUEVButton.swift in Sources */,
 				F96AD32321F1778500EC8799 /* SignupViewController.swift in Sources */,
 				64CE465921ECBFD5007EE055 /* UIColorExtension.swift in Sources */,
 				F96AD32521F177A200EC8799 /* SignupReactor.swift in Sources */,
+				64CE465921ECBFD5007EE055 /* UIColor.swift in Sources */,
 				648E263121EB4CBE00DE0A0F /* ExampleViewReactor.swift in Sources */,
 				648E262921E984AC00DE0A0F /* ExampleModel.swift in Sources */,
-				64CE466A21ECE5D3007EE055 /* StringExtension.swift in Sources */,
+				64CE466A21ECE5D3007EE055 /* String.swift in Sources */,
 				64CE465521ECBAC1007EE055 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
