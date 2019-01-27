@@ -11,25 +11,23 @@ import RxCocoa
 import RxSwift
 import Moya
 import ObjectMapper
+import Japx
 
-final class SingupViewReactor: Reactor {
+final class SignupViewReactor: Reactor {
     var provider = MoyaProvider<Login>()
     
     enum Action {
         case updateUsername(String)
         case updatePassword(String)
-        case updateNickname(String)
-        case searchDepartment
-        case signupRequest()
+        case fetchDepartments
     }
     
     enum Mutation {
         case setUsername(String)
         case setPassword(String)
-        case setNickname(String)
-        case setSignupSuccess(Bool)
         case setErrorMessage(String)
         case setIsLoading(Bool)
+        case setDepartments([String: String])
     }
     
     struct State {
@@ -39,7 +37,8 @@ final class SingupViewReactor: Reactor {
         var signup = ""
         var errorMessage = ""
         var isLoading = false
-        var singupSuccess = false
+        var signupSuccess = false
+        var departments: [String: String] = [:]
     }
     
     let initialState = State()
@@ -50,22 +49,28 @@ final class SingupViewReactor: Reactor {
             return Observable.just(Mutation.setUsername(username))
         case let .updatePassword(password):
             return Observable.just(Mutation.setPassword(password))
-        case let .updateNickname(nickname):
-            return Observable.just(Mutation.setNickname(nickname))
-        case .signupRequest():
+        case let .fetchDepartments:
             return Observable.concat([
                 Observable.just(Mutation.setIsLoading(true)),
-                signup(username: currentState.username, password: currentState.password, nickname: currentState.nickname, department_id: currentState.department_id)
-                    .map { (response: Response) in
-                        if response.statusCode == 200 {
-                            return Mutation.setSignupSuccess(true)
-                        } else {
-                            if let json = try response.mapJSON() as? [String: Any], let message = json["erros"] as? String {
-                                return Mutation.setErrorMessage(message)
+                fetchDepartments()
+                    .map { response in
+                        do {
+                            let filteredResponse = try response.filterSuccessfulStatusCodes()
+                            let x = try Japx.Decoder.jsonObject(withJSONAPIObject: response.mapJSON() as! Parameters)
+                            let departments = x["data"] as! [[String: Any]]
+                            let y = departments.makeIterator()
+                            var departmentDictionary = [String: String]()
+                            let depts = departments.makeIterator()
+                            for index in depts {
+                                departmentDictionary.updateValue(index["name"] as! String, forKey: index["id"] as! String)
                             }
-                            return Mutation.setErrorMessage("Signup Failure")
+                            let sortedDepartment = departmentDictionary.sorted(by: { $0.key < $1.key })
+                            return Mutation.setDepartments(departmentDictionary)
                         }
-                }
+                        catch let error {
+                            return Mutation.setErrorMessage(error.localizedDescription)
+                        }
+                    }
                 ])
         }
     }
@@ -84,22 +89,22 @@ final class SingupViewReactor: Reactor {
         case let .setIsLoading(isLoading):
             newState.isLoading = isLoading
             
-        case let .setLoginSuccess(success):
-            newState.loginSuccess = success
-            
         case let .setErrorMessage(message):
             newState.errorMessage = message
+            
+        case let .setDepartments(departments):
+            newState.departments = departments
         }
-        
         return newState
     }
     
-    private func signup(username: String, password: String, nickname: String, deparment_id: String) -> Observable<Response> {
-        return provider.rx.request(Login.signup(username: username, password: password, nickname: nickname, department_id: deparment_id))
+    private func fetchDepartments() -> Observable<Response> {
+        return provider.rx.request(Login.fetchDepartments)
             .debug()
             .subscribeOn(MainScheduler.instance)
             .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .asObservable()
     }
+    
 }
 

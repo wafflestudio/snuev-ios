@@ -14,8 +14,9 @@ import RxCocoa
 import RxSwift
 import Moya
 import ReactorKit
+import DropDown
 
-class SignupViewController: UIViewController, StoryboardView {
+class SignupViewController: SNUEVBaseViewController, StoryboardView {
     var disposeBag = DisposeBag()
     typealias Reactor = SignupViewReactor
     @IBOutlet weak var inputDepartment: UITextField!
@@ -28,24 +29,30 @@ class SignupViewController: UIViewController, StoryboardView {
         super.viewDidLoad()
         reactor = SignupViewReactor()
         btnSignup.setButtonType(.Square)
-        btnLogin.setButtonType(.Square)
+        let dropDown = DropDown()
+        dropDown.show()
+        dropDown.anchorView = inputDepartment
+        dropDown.dataSource = ["Car"]
+//        btnLogin.setButtonType(.Square)
     }
     
     func bind(reactor: SignupViewReactor) {
         // Action
-        buttonLogin.rx.tap
-            .map { Reactor.Action.loginRequest(username: self.inputUsername.text, password: self.inputPassword.text) }
+        btnSignup.rx.tap
+            .map { Reactor.Action.fetchDepartments }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
         // State
         
-        reactor.state.map { $0.loginSuccess }
-            .subscribe(onNext: { success in
-                if success {
-                    print("fetch departments success!!!")
-                }
-            }).disposed(by: disposeBag)
+//        reactor.state.map { $0.loginSuccess }
+//            .subscribe(onNext: { success in
+//                if success {
+//                    print("fetching departments success!!!")
+//                }
+//            }).disposed(by: disposeBag)
+        
+        
         
         reactor.state.map { $0.errorMessage }
             .distinctUntilChanged()

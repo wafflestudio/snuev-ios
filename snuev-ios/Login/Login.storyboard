@@ -194,7 +194,7 @@
         <!--Signup View Controller-->
         <scene sceneID="qka-eO-iCj">
             <objects>
-                <viewController storyboardIdentifier="SignupViewController" id="L2Y-8l-moD" customClass="SignupViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignupViewController" id="L2Y-8l-moD" customClass="SignupViewController" customModule="snuev_ios" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vGr-us-ghr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -353,18 +353,12 @@
                                             <constraint firstAttribute="height" constant="52" id="Y3S-ci-YCI"/>
                                         </constraints>
                                         <state key="normal" title="가입하기"/>
-                                        <connections>
-                                            <action selector="btnSignup:" destination="L2Y-8l-moD" eventType="touchUpInside" id="3lE-qQ-Ydp"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkj-JQ-PnI" customClass="SNUEVButton" customModule="snuev_ios">
                                         <rect key="frame" x="20" y="525" width="235" height="34"/>
                                         <state key="normal" title="로그인하기">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                        <connections>
-                                            <action selector="btnLogin:" destination="L2Y-8l-moD" eventType="touchUpInside" id="dbH-gT-Y0X"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -392,7 +386,6 @@
                                     <constraint firstAttribute="trailing" secondItem="5HF-NW-vzH" secondAttribute="trailing" constant="97.5" id="hzz-jk-hyr"/>
                                     <constraint firstItem="FUq-9a-uHM" firstAttribute="top" secondItem="ynl-gu-01T" secondAttribute="bottom" constant="20" id="pbR-S9-atY"/>
                                     <constraint firstItem="Kv1-bF-8tT" firstAttribute="top" secondItem="egf-x5-K7T" secondAttribute="bottom" constant="30" id="s5H-q2-Usi"/>
-                                    <constraint firstItem="xkj-JQ-PnI" firstAttribute="top" secondItem="Kv1-bF-8tT" secondAttribute="bottom" constant="30" id="t5f-T8-6MP"/>
                                     <constraint firstAttribute="trailing" secondItem="axn-Z2-NEW" secondAttribute="trailing" constant="100" id="tXV-IK-2OL"/>
                                     <constraint firstItem="FUq-9a-uHM" firstAttribute="leading" secondItem="0LH-uG-htR" secondAttribute="leading" id="vKO-gl-8VI"/>
                                     <constraint firstItem="ynl-gu-01T" firstAttribute="leading" secondItem="0LH-uG-htR" secondAttribute="leading" id="vn3-GZ-jYf"/>
