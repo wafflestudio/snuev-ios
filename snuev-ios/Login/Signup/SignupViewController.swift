@@ -14,11 +14,10 @@ import RxCocoa
 import RxSwift
 import Moya
 import ReactorKit
-import DropDown
 
 class SignupViewController: SNUEVBaseViewController, StoryboardView {
-    var disposeBag = DisposeBag()
     typealias Reactor = SignupViewReactor
+    @IBOutlet weak var inputUsername: UITextField!
     @IBOutlet weak var inputDepartment: UITextField!
     @IBOutlet weak var inputNickname: UITextField!
     @IBOutlet weak var inputPassword: UITextField!
@@ -27,38 +26,29 @@ class SignupViewController: SNUEVBaseViewController, StoryboardView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        reactor = SignupViewReactor()
         btnSignup.setButtonType(.Square)
-        let dropDown = DropDown()
-        dropDown.show()
-        dropDown.anchorView = inputDepartment
-        dropDown.dataSource = ["Car"]
-//        btnLogin.setButtonType(.Square)
     }
     
     func bind(reactor: SignupViewReactor) {
         // Action
         btnSignup.rx.tap
-            .map { Reactor.Action.fetchDepartments }
+            .map { Reactor.Action.signupRequest(username: self.inputUsername.text, department: self.inputDepartment.text, nickname: self.inputNickname.text, password: self.inputPassword.text) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
-        
+
         // State
-        
-//        reactor.state.map { $0.loginSuccess }
-//            .subscribe(onNext: { success in
-//                if success {
-//                    print("fetching departments success!!!")
-//                }
-//            }).disposed(by: disposeBag)
-        
-        
+        reactor.state.map { $0.signupSuccess }
+            .distinctUntilChanged()
+            .filter { $0 }
+            .subscribe(onNext: { [weak self] success in
+                self?.showToast(message: "Signup success!!!")
+            }).disposed(by: disposeBag)
         
         reactor.state.map { $0.errorMessage }
-            .distinctUntilChanged()
-            .subscribe(onNext: { error in
-                if !error.isEmpty {
-                    print(error)
+            .filter { $0 != nil }
+            .subscribe(onNext: { [weak self] error in
+                if let error = error, !error.isEmpty {
+                    self?.showToast(message: error)
                 }
             }).disposed(by: disposeBag)
     }

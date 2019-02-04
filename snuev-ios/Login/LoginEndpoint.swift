@@ -12,6 +12,7 @@ import Moya
 enum Login {
     case login(username: String, password: String)
     case fetchDepartments
+    case signup(username: String, password: String, nickname: String, department: String)
 }
 
 extension Login: TargetType {
@@ -20,6 +21,8 @@ extension Login: TargetType {
         case .login:
             return nil
         case .fetchDepartments:
+            return nil
+        case .signup:
             return nil
         }
     }
@@ -31,6 +34,8 @@ extension Login: TargetType {
             return "/v1/user/sign_in"
         case .fetchDepartments:
             return "/v1/departments"
+        case .signup:
+            return "/v1/user"
         }
     }
     var method: Moya.Method {
@@ -39,6 +44,8 @@ extension Login: TargetType {
             return .post
         case .fetchDepartments:
             return .get
+        case .signup:
+            return .post
         }
     }
     
@@ -52,6 +59,8 @@ extension Login: TargetType {
             return .requestParameters(parameters: ["username": username, "password": password], encoding: JSONEncoding.default)
         case .fetchDepartments:
             return .requestPlain
+        case .signup(let username, let password, let nickname, let department):
+            return .requestParameters(parameters: ["username": username, "password": password, "nickname": nickname, "department": department], encoding: JSONEncoding.default)
         }
     }
     var parameterEncoding: ParameterEncoding {

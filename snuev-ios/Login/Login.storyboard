@@ -410,6 +410,7 @@
                         <outlet property="inputDepartment" destination="mkw-EG-rhC" id="2Ib-X8-CQ1"/>
                         <outlet property="inputNickname" destination="MoK-xK-Jzq" id="thw-4v-Jtt"/>
                         <outlet property="inputPassword" destination="KJl-7T-3fJ" id="8lo-hX-LIE"/>
+                        <outlet property="inputUsername" destination="rVO-Ny-dzq" id="I6N-gC-hE0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NAQ-j9-7Sh" userLabel="First Responder" sceneMemberID="firstResponder"/>

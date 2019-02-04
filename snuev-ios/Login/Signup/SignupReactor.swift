@@ -15,27 +15,28 @@ import Japx
 
 final class SignupViewReactor: Reactor {
     var provider = MoyaProvider<Login>()
+    var authManager: AuthManager
+    
+    init(provider: MoyaProvider<Login>, authManager: AuthManager) {
+        self.provider = provider
+        self.authManager = authManager
+    }
     
     enum Action {
-        case updateUsername(String)
-        case updatePassword(String)
         case fetchDepartments
+        case signupRequest(username: String?, department: String?, nickname: String?, password: String?)
     }
     
     enum Mutation {
-        case setUsername(String)
-        case setPassword(String)
         case setErrorMessage(String)
         case setIsLoading(Bool)
         case setDepartments([String: String])
+        case setSignupSuccess(Bool)
     }
     
     struct State {
-        var username = ""
-        var password = ""
-        var nickname = ""
         var signup = ""
-        var errorMessage = ""
+        var errorMessage: String?
         var isLoading = false
         var signupSuccess = false
         var departments: [String: String] = [:]
@@ -45,10 +46,42 @@ final class SignupViewReactor: Reactor {
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
-        case let .updateUsername(username):
-            return Observable.just(Mutation.setUsername(username))
-        case let .updatePassword(password):
-            return Observable.just(Mutation.setPassword(password))
+        case let .signupRequest(username, department, nickname, password):
+            guard let username = username, !username.isEmpty else {
+                return Observable.just(Mutation.setErrorMessage("Enter username"))
+            }
+            
+            guard let password = password, !password.isEmpty else {
+                return Observable.just(Mutation.setErrorMessage("Enter password"))
+            }
+            
+            guard let password = password, password.count > 7 else {
+                return Observable.just(Mutation.setErrorMessage("Password too short"))
+            }
+            
+            guard let nickname = nickname, !nickname.isEmpty else {
+                return Observable.just(Mutation.setErrorMessage("Enter nickname"))
+            }
+
+            guard let department = department, !department.isEmpty else {
+                return Observable.just(Mutation.setErrorMessage("Enter department"))
+            }
+            return Observable.concat([
+                Observable.just(Mutation.setIsLoading(true)),
+                signup(username: username, password: password, nickname: nickname, department: department)
+                    .map { response in
+                        do {
+                            let filteredResponse = try response.filterSuccessfulStatusCodes()
+                            if let jsonRespose = try filteredResponse.mapJSON() as? [String: Any], let meta = jsonRespose["meta"] as? [String: Any], let token = meta["auth_token"] as? String {
+                                self.authManager.setToken(token: token)
+                            }
+                            return Mutation.setSignupSuccess(true)
+                        }
+                        catch let error {
+                            return Mutation.setErrorMessage(error.localizedDescription)
+                        }
+                }
+            ])
         case let .fetchDepartments:
             return Observable.concat([
                 Observable.just(Mutation.setIsLoading(true)),
@@ -78,14 +111,6 @@ final class SignupViewReactor: Reactor {
     func reduce(state: State, mutation: Mutation) -> State {
         var newState = state
         switch mutation {
-        case let .setUsername(username):
-            newState.username = username
-            print(username)
-            
-        case let .setPassword(password):
-            newState.password = password
-            print(password)
-            
         case let .setIsLoading(isLoading):
             newState.isLoading = isLoading
             
@@ -94,7 +119,12 @@ final class SignupViewReactor: Reactor {
             
         case let .setDepartments(departments):
             newState.departments = departments
+            
+        case let .setSignupSuccess(success):
+            newState.signupSuccess = success
+            newState.errorMessage = nil
         }
+        
         return newState
     }
     
@@ -106,5 +136,11 @@ final class SignupViewReactor: Reactor {
             .asObservable()
     }
     
+    private func signup(username: String, password: String, nickname: String, department: String) -> Observable<Response> {
+        return provider.rx.request(Login.signup(username: username, password: password, nickname: nickname, department: department))
+            .subscribeOn(MainScheduler.instance)
+            .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .asObservable()
+    }
 }
 

@@ -33,7 +33,7 @@
 		64F681FE21E4D1870017E63A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64F681FC21E4D1870017E63A /* Main.storyboard */; };
 		64F6820021E4D1880017E63A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64F681FF21E4D1880017E63A /* Assets.xcassets */; };
 		64F6820321E4D1880017E63A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64F6820121E4D1880017E63A /* LaunchScreen.storyboard */; };
-		B7B8942FACF2F0B8BF94B2D7 /* Pods_snuev_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99332AA8B204CFF7F37E68D1 /* Pods_snuev_ios.framework */; };
+		A8DDD291725409292572947D /* Pods_snuev_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C39BC3E1723348E5FD29A81A /* Pods_snuev_ios.framework */; };
 		F96AD32321F1778500EC8799 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96AD32221F1778500EC8799 /* SignupViewController.swift */; };
 		F96AD32521F177A200EC8799 /* SignupReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96AD32421F177A200EC8799 /* SignupReactor.swift */; };
 		F96AD32921F1AD4100EC8799 /* img-signup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96AD32621F1AD4100EC8799 /* img-signup@2x.png */; };
@@ -55,8 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		29F386CDDCBC44430A2F839C /* Pods-snuev-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snuev-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-snuev-ios/Pods-snuev-ios.release.xcconfig"; sourceTree = "<group>"; };
-		3B2C0C6DA3622C8A68E09688 /* Pods-snuev-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snuev-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-snuev-ios/Pods-snuev-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		36A71B972EEA2434AC36E55A /* Pods-snuev-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snuev-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-snuev-ios/Pods-snuev-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		496C52B528C077C05CDF37FB /* Pods-snuev-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snuev-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-snuev-ios/Pods-snuev-ios.release.xcconfig"; sourceTree = "<group>"; };
 		641ADB5521F470B4002DD367 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		648E262621E9845C00DE0A0F /* ExampleEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleEndpoint.swift; sourceTree = "<group>"; };
 		648E262821E984AC00DE0A0F /* ExampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleModel.swift; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 		64F681FF21E4D1880017E63A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64F6820221E4D1880017E63A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64F6820421E4D1880017E63A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		99332AA8B204CFF7F37E68D1 /* Pods_snuev_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snuev_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C39BC3E1723348E5FD29A81A /* Pods_snuev_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snuev_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F96AD32221F1778500EC8799 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		F96AD32421F177A200EC8799 /* SignupReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupReactor.swift; sourceTree = "<group>"; };
 		F96AD32621F1AD4100EC8799 /* img-signup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-signup@2x.png"; sourceTree = "<group>"; };
@@ -110,13 +110,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7B8942FACF2F0B8BF94B2D7 /* Pods_snuev_ios.framework in Frameworks */,
+				A8DDD291725409292572947D /* Pods_snuev_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F045A25BD484CBAD68DE516 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				36A71B972EEA2434AC36E55A /* Pods-snuev-ios.debug.xcconfig */,
+				496C52B528C077C05CDF37FB /* Pods-snuev-ios.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		648E263221EB857600DE0A0F /* example */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,8 +212,8 @@
 				64F681F721E4D1870017E63A /* snuev-ios */,
 				64CE467521F0D393007EE055 /* snuev-ios-tests */,
 				64F681F621E4D1870017E63A /* Products */,
-				9A0B9A98985347458148B6CD /* Pods */,
-				8FED9A3704CCDD9AE5BEDE5B /* Frameworks */,
+				2F045A25BD484CBAD68DE516 /* Pods */,
+				EE1782AD557470B5BEDF1433 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -234,21 +243,12 @@
 			path = "snuev-ios";
 			sourceTree = "<group>";
 		};
-		8FED9A3704CCDD9AE5BEDE5B /* Frameworks */ = {
+		EE1782AD557470B5BEDF1433 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				99332AA8B204CFF7F37E68D1 /* Pods_snuev_ios.framework */,
+				C39BC3E1723348E5FD29A81A /* Pods_snuev_ios.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9A0B9A98985347458148B6CD /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3B2C0C6DA3622C8A68E09688 /* Pods-snuev-ios.debug.xcconfig */,
-				29F386CDDCBC44430A2F839C /* Pods-snuev-ios.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		F96AD33221F389E200EC8799 /* Signup */ = {
@@ -285,11 +285,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 64F6820721E4D1880017E63A /* Build configuration list for PBXNativeTarget "snuev-ios" */;
 			buildPhases = (
-				0401A495318F687131850F20 /* [CP] Check Pods Manifest.lock */,
+				F3C1E758FDBA44F37E37E032 /* [CP] Check Pods Manifest.lock */,
 				64F681F121E4D1870017E63A /* Sources */,
 				64F681F221E4D1870017E63A /* Frameworks */,
 				64F681F321E4D1870017E63A /* Resources */,
-				61CE17C7D5B9B5640222F7B6 /* [CP] Embed Pods Frameworks */,
+				FD461BE5FF0EEDDBEBF939DC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -370,7 +370,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0401A495318F687131850F20 /* [CP] Check Pods Manifest.lock */ = {
+		F3C1E758FDBA44F37E37E032 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -392,7 +392,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		61CE17C7D5B9B5640222F7B6 /* [CP] Embed Pods Frameworks */ = {
+		FD461BE5FF0EEDDBEBF939DC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -466,7 +466,7 @@
 				648E262B21E98C7800DE0A0F /* Observable.swift in Sources */,
 				64CE465221ECBA7E007EE055 /* SNUEVButton.swift in Sources */,
 				F96AD32321F1778500EC8799 /* SignupViewController.swift in Sources */,
-				64CE465921ECBFD5007EE055 /* UIColorExtension.swift in Sources */,
+				64CE465921ECBFD5007EE055 /* UIColor.swift in Sources */,
 				F96AD32521F177A200EC8799 /* SignupReactor.swift in Sources */,
 				64CE465921ECBFD5007EE055 /* UIColor.swift in Sources */,
 				648E263121EB4CBE00DE0A0F /* ExampleViewReactor.swift in Sources */,
@@ -662,7 +662,7 @@
 		};
 		64F6820821E4D1880017E63A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B2C0C6DA3622C8A68E09688 /* Pods-snuev-ios.debug.xcconfig */;
+			baseConfigurationReference = 36A71B972EEA2434AC36E55A /* Pods-snuev-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -680,7 +680,7 @@
 		};
 		64F6820921E4D1880017E63A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29F386CDDCBC44430A2F839C /* Pods-snuev-ios.release.xcconfig */;
+			baseConfigurationReference = 496C52B528C077C05CDF37FB /* Pods-snuev-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
