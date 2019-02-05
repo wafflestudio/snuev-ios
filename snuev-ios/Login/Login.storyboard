@@ -200,34 +200,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0LH-uG-htR">
-                                <rect key="frame" x="50" y="54" width="275" height="559"/>
+                                <rect key="frame" x="60" y="34" width="255" height="599.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-signup.png" translatesAutoresizingMaskIntoConstraints="NO" id="jd8-cf-jyi">
-                                        <rect key="frame" x="83.5" y="0.0" width="108" height="108"/>
+                                        <rect key="frame" x="73.5" y="0.0" width="108" height="108"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가입하기" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5HF-NW-vzH">
-                                        <rect key="frame" x="97.5" y="138" width="80" height="27.5"/>
+                                        <rect key="frame" x="97.5" y="138" width="60" height="55"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="31u-oY-69A">
-                                        <rect key="frame" x="0.0" y="195.5" width="275" height="27"/>
+                                        <rect key="frame" x="0.0" y="223" width="255" height="27"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="마이스누 계정" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rVO-Ny-dzq">
-                                                <rect key="frame" x="10" y="0.0" width="159" height="17"/>
+                                                <rect key="frame" x="10" y="0.0" width="139" height="17"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@snu.ac.kr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psO-hN-MAG">
-                                                <rect key="frame" x="179" y="-2" width="86" height="21"/>
+                                                <rect key="frame" x="159" y="-2" width="86" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1gb-OD-p7o">
-                                                <rect key="frame" x="0.0" y="26" width="275" height="1"/>
+                                                <rect key="frame" x="0.0" y="26" width="255" height="1"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="cPq-i1-pnT"/>
@@ -248,29 +248,29 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울대학교 이메일 인증이 필요하므로  마이스누 계정과 동일하게 입력해주세요." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axn-Z2-NEW">
-                                        <rect key="frame" x="0.0" y="242.5" width="175" height="26.5"/>
+                                        <rect key="frame" x="0.0" y="270" width="155" height="39.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ynl-gu-01T" userLabel="DepartmentView">
-                                        <rect key="frame" x="0.0" y="289" width="275" height="30"/>
+                                        <rect key="frame" x="0.0" y="329.5" width="255" height="30"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="학과명 검색" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mkw-EG-rhC">
-                                                <rect key="frame" x="10" y="0.0" width="265" height="30"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="학과명 검색" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mkw-EG-rhC" customClass="Drop">
+                                                <rect key="frame" x="10" y="0.0" width="245" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KkJ-7C-JzS">
-                                                <rect key="frame" x="0.0" y="29" width="275" height="1"/>
+                                                <rect key="frame" x="0.0" y="29" width="255" height="1"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="iPB-f6-8r5"/>
                                                 </constraints>
                                             </view>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-search-30-px.png" translatesAutoresizingMaskIntoConstraints="NO" id="8Zn-Gd-k9e">
-                                                <rect key="frame" x="245" y="0.0" width="30" height="30"/>
+                                                <rect key="frame" x="225" y="0.0" width="30" height="30"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -289,16 +289,16 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FUq-9a-uHM" userLabel="NicknameView">
-                                        <rect key="frame" x="0.0" y="339" width="275" height="27"/>
+                                        <rect key="frame" x="0.0" y="379.5" width="255" height="27"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="별명" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MoK-xK-Jzq">
-                                                <rect key="frame" x="10" y="0.0" width="265" height="17"/>
+                                                <rect key="frame" x="10" y="0.0" width="245" height="17"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pMR-M2-rZl">
-                                                <rect key="frame" x="0.0" y="26" width="275" height="1"/>
+                                                <rect key="frame" x="0.0" y="26" width="255" height="1"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="Wgh-7B-F8C"/>
@@ -318,16 +318,16 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egf-x5-K7T" userLabel="PasswordView">
-                                        <rect key="frame" x="0.0" y="386" width="275" height="27"/>
+                                        <rect key="frame" x="0.0" y="426.5" width="255" height="27"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="비밀번호" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KJl-7T-3fJ">
-                                                <rect key="frame" x="10" y="0.0" width="265" height="17"/>
+                                                <rect key="frame" x="10" y="0.0" width="245" height="17"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wNr-bw-COI">
-                                                <rect key="frame" x="0.0" y="26" width="275" height="1"/>
+                                                <rect key="frame" x="0.0" y="26" width="255" height="1"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="bGo-xd-zgg"/>
@@ -347,7 +347,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kv1-bF-8tT" customClass="SNUEVButton" customModule="snuev_ios">
-                                        <rect key="frame" x="0.0" y="443" width="275" height="52"/>
+                                        <rect key="frame" x="0.0" y="483.5" width="255" height="52"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="52" id="Y3S-ci-YCI"/>
@@ -355,7 +355,7 @@
                                         <state key="normal" title="가입하기"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkj-JQ-PnI" customClass="SNUEVButton" customModule="snuev_ios">
-                                        <rect key="frame" x="20" y="525" width="235" height="34"/>
+                                        <rect key="frame" x="20" y="565.5" width="215" height="34"/>
                                         <state key="normal" title="로그인하기">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -396,8 +396,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Frn-Ef-USZ" firstAttribute="trailing" secondItem="0LH-uG-htR" secondAttribute="trailing" constant="50" id="5Qt-ar-c9G"/>
-                            <constraint firstItem="0LH-uG-htR" firstAttribute="leading" secondItem="Frn-Ef-USZ" secondAttribute="leading" constant="50" id="KfE-iu-7f5"/>
+                            <constraint firstItem="Frn-Ef-USZ" firstAttribute="trailing" secondItem="0LH-uG-htR" secondAttribute="trailing" constant="60" id="5Qt-ar-c9G"/>
+                            <constraint firstItem="0LH-uG-htR" firstAttribute="leading" secondItem="Frn-Ef-USZ" secondAttribute="leading" constant="60" id="KfE-iu-7f5"/>
                             <constraint firstItem="0LH-uG-htR" firstAttribute="centerY" secondItem="vGr-us-ghr" secondAttribute="centerY" id="RwM-eM-1GY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Frn-Ef-USZ"/>

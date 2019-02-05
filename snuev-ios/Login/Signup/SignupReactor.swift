@@ -55,7 +55,7 @@ final class SignupViewReactor: Reactor {
                 return Observable.just(Mutation.setErrorMessage("Enter password"))
             }
             
-            guard let password = password, password.count > 7 else {
+            if password.count < 8 {
                 return Observable.just(Mutation.setErrorMessage("Password too short"))
             }
             
