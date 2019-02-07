@@ -51,6 +51,14 @@ final class SignupViewReactor: Reactor {
                 return Observable.just(Mutation.setErrorMessage("Enter username"))
             }
             
+            guard let department = department, !department.isEmpty else {
+                return Observable.just(Mutation.setErrorMessage("Enter department"))
+            }
+            
+            guard let nickname = nickname, !nickname.isEmpty else {
+                return Observable.just(Mutation.setErrorMessage("Enter nickname"))
+            }
+            
             guard let password = password, !password.isEmpty else {
                 return Observable.just(Mutation.setErrorMessage("Enter password"))
             }
@@ -58,14 +66,7 @@ final class SignupViewReactor: Reactor {
             if password.count < 8 {
                 return Observable.just(Mutation.setErrorMessage("Password too short"))
             }
-            
-            guard let nickname = nickname, !nickname.isEmpty else {
-                return Observable.just(Mutation.setErrorMessage("Enter nickname"))
-            }
-
-            guard let department = department, !department.isEmpty else {
-                return Observable.just(Mutation.setErrorMessage("Enter department"))
-            }
+        
             return Observable.concat([
                 Observable.just(Mutation.setIsLoading(true)),
                 signup(username: username, password: password, nickname: nickname, department: department)
@@ -78,7 +79,11 @@ final class SignupViewReactor: Reactor {
                             return Mutation.setSignupSuccess(true)
                         }
                         catch let error {
-                            return Mutation.setErrorMessage(error.localizedDescription)
+                            let decodedResponse = try Japx.Decoder.jsonObject(withJSONAPIObject: response.mapJSON() as! Parameters)
+                            let errors = decodedResponse["errors"] as! [[String: Any]]
+                            let errors2 = errors[0] as! [String: String]
+                            let errorTitle = errors2["title"]
+                            return Mutation.setErrorMessage(errorTitle!)
                         }
                 }
             ])
@@ -89,8 +94,8 @@ final class SignupViewReactor: Reactor {
                     .map { response in
                         do {
                             let filteredResponse = try response.filterSuccessfulStatusCodes()
-                            let x = try Japx.Decoder.jsonObject(withJSONAPIObject: response.mapJSON() as! Parameters)
-                            let departments = x["data"] as! [[String: Any]]
+                            let decodedResponse = try Japx.Decoder.jsonObject(withJSONAPIObject: response.mapJSON() as! Parameters)
+                            let departments = decodedResponse["data"] as! [[String: Any]]
                             let y = departments.makeIterator()
                             var departmentDictionary = [String: String]()
                             let depts = departments.makeIterator()

@@ -54,5 +54,13 @@ class LoginViewController: SNUEVBaseViewController, StoryboardView {
                     self?.showToast(message: error)
                 }
             }).disposed(by: disposeBag)
+        
+        // View
+        btnSignin.rx.tap
+            .subscribe(onNext: {
+                let signupViewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
+                signupViewController.reactor = SignupViewReactor(provider: MoyaProvider<Login>(plugins: [NetworkLoggerPlugin(verbose: true)]), authManager: AuthManager())
+                self.present(signupViewController, animated: true, completion: nil)
+        })
     }
 }

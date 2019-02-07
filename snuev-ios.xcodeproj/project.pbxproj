@@ -35,7 +35,7 @@
 		64F6820321E4D1880017E63A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64F6820121E4D1880017E63A /* LaunchScreen.storyboard */; };
 		A8DDD291725409292572947D /* Pods_snuev_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C39BC3E1723348E5FD29A81A /* Pods_snuev_ios.framework */; };
 		F96AD32321F1778500EC8799 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96AD32221F1778500EC8799 /* SignupViewController.swift */; };
-		F96AD32521F177A200EC8799 /* SignupReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96AD32421F177A200EC8799 /* SignupReactor.swift */; };
+		F96AD32521F177A200EC8799 /* SignupViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96AD32421F177A200EC8799 /* SignupViewReactor.swift */; };
 		F96AD32921F1AD4100EC8799 /* img-signup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96AD32621F1AD4100EC8799 /* img-signup@2x.png */; };
 		F96AD32A21F1AD4100EC8799 /* img-signup.png in Resources */ = {isa = PBXBuildFile; fileRef = F96AD32721F1AD4100EC8799 /* img-signup.png */; };
 		F96AD32B21F1AD4100EC8799 /* img-signup@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96AD32821F1AD4100EC8799 /* img-signup@3x.png */; };
@@ -89,7 +89,7 @@
 		64F6820421E4D1880017E63A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C39BC3E1723348E5FD29A81A /* Pods_snuev_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snuev_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F96AD32221F1778500EC8799 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
-		F96AD32421F177A200EC8799 /* SignupReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupReactor.swift; sourceTree = "<group>"; };
+		F96AD32421F177A200EC8799 /* SignupViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewReactor.swift; sourceTree = "<group>"; };
 		F96AD32621F1AD4100EC8799 /* img-signup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-signup@2x.png"; sourceTree = "<group>"; };
 		F96AD32721F1AD4100EC8799 /* img-signup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-signup.png"; sourceTree = "<group>"; };
 		F96AD32821F1AD4100EC8799 /* img-signup@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-signup@3x.png"; sourceTree = "<group>"; };
@@ -255,7 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				F96AD32221F1778500EC8799 /* SignupViewController.swift */,
-				F96AD32421F177A200EC8799 /* SignupReactor.swift */,
+				F96AD32421F177A200EC8799 /* SignupViewReactor.swift */,
 			);
 			path = Signup;
 			sourceTree = "<group>";
@@ -467,7 +467,7 @@
 				64CE465221ECBA7E007EE055 /* SNUEVButton.swift in Sources */,
 				F96AD32321F1778500EC8799 /* SignupViewController.swift in Sources */,
 				64CE465921ECBFD5007EE055 /* UIColor.swift in Sources */,
-				F96AD32521F177A200EC8799 /* SignupReactor.swift in Sources */,
+				F96AD32521F177A200EC8799 /* SignupViewReactor.swift in Sources */,
 				64CE465921ECBFD5007EE055 /* UIColor.swift in Sources */,
 				648E263121EB4CBE00DE0A0F /* ExampleViewReactor.swift in Sources */,
 				648E262921E984AC00DE0A0F /* ExampleModel.swift in Sources */,

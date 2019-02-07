@@ -60,7 +60,7 @@ extension Login: TargetType {
         case .fetchDepartments:
             return .requestPlain
         case .signup(let username, let password, let nickname, let department):
-            return .requestParameters(parameters: ["username": username, "password": password, "nickname": nickname, "department": department], encoding: JSONEncoding.default)
+            return .requestParameters(parameters: ["username": username, "password": password, "nickname": nickname, "department_id": department], encoding: JSONEncoding.default)
         }
     }
     var parameterEncoding: ParameterEncoding {
