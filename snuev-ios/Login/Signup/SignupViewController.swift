@@ -27,6 +27,9 @@ class SignupViewController: SNUEVBaseViewController, StoryboardView {
     override func viewDidLoad() {
         super.viewDidLoad()
         btnSignup.setButtonType(.Square)
+        btnLogin.setButtonType(.withRoundImage)
+        Reactor.Action.fetchDepartments
+        
     }
     
     func bind(reactor: SignupViewReactor) {
@@ -51,6 +54,13 @@ class SignupViewController: SNUEVBaseViewController, StoryboardView {
                     self?.showToast(message: error)
                 }
             }).disposed(by: disposeBag)
+        // View
+        btnLogin.rx.tap
+            .subscribe(onNext: {
+                let loginViewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                loginViewController.reactor = LoginViewReactor(provider: MoyaProvider<Login>(plugins: [NetworkLoggerPlugin(verbose: true)]), authManager: AuthManager())
+                self.present(loginViewController, animated: true, completion: nil)
+            })
     }
 }
 
