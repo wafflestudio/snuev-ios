@@ -14,6 +14,7 @@ import RxCocoa
 import RxSwift
 import Moya
 import ReactorKit
+import DropDown
 
 class SignupViewController: SNUEVBaseViewController, StoryboardView {
     typealias Reactor = SignupViewReactor
@@ -23,6 +24,7 @@ class SignupViewController: SNUEVBaseViewController, StoryboardView {
     @IBOutlet weak var inputPassword: UITextField!
     @IBOutlet weak var btnSignup: SNUEVButton!
     @IBOutlet weak var btnLogin: SNUEVButton!
+    let dropDown = DropDown()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,14 +34,42 @@ class SignupViewController: SNUEVBaseViewController, StoryboardView {
         
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        dropDown.anchorView = inputDepartment // UIView or UIBarButtonItem
+        dropDown.dataSource = ["Car", "Motorcycle", "Truck"]
+        dropDown.bottomOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)!)
+        dropDown.dismissMode = .onTap
+    }
+    
     func bind(reactor: SignupViewReactor) {
         // Action
         btnSignup.rx.tap
             .map { Reactor.Action.signupRequest(username: self.inputUsername.text, department: self.inputDepartment.text, nickname: self.inputNickname.text, password: self.inputPassword.text) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
-
+//
+//        btnSignup.rx.tap
+//            .map { Reactor.Action.fetchDepartments }
+//            .bind(to: reactor.action)
+//            .disposed(by: disposeBag)
+//
+        inputDepartment.rx.text
+            .asObservable()
+            .subscribe({_ in
+                self.dropDown.show()
+            }).disposed(by: disposeBag)
+        
+        inputDepartment.rx.text
+            .subscribe({_ in
+                self.dropDown.show()
+            }).disposed(by: disposeBag)
         // State
+//        reactor.state.map { $0.departments }
+//            .bind(to: UITableView.rx.items(cellIdentifier: "cell")) { indexPath, repo, cell in
+//                cell.textLabel?.text = repo
+//            }
+//            .disposed(by: disposeBag)
         reactor.state.map { $0.signupSuccess }
             .distinctUntilChanged()
             .filter { $0 }
@@ -54,6 +84,12 @@ class SignupViewController: SNUEVBaseViewController, StoryboardView {
                     self?.showToast(message: error)
                 }
             }).disposed(by: disposeBag)
+        
+        reactor.state.map { $0.selectedDepartments }
+            .bind(to: tableView.rx.items(cellIdentifier: "cell")) { indexPath, repo, cell in
+                cell.textLabel?.text = repo
+            }
+            .disposed(by: disposeBag)
         // View
         btnLogin.rx.tap
             .subscribe(onNext: {

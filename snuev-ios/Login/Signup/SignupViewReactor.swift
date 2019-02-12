@@ -25,6 +25,7 @@ final class SignupViewReactor: Reactor {
     enum Action {
         case fetchDepartments
         case signupRequest(username: String?, department: String?, nickname: String?, password: String?)
+        case setDepartmentTable(searchText: String?)
     }
     
     enum Mutation {
@@ -32,6 +33,7 @@ final class SignupViewReactor: Reactor {
         case setIsLoading(Bool)
         case setDepartments([String: String])
         case setSignupSuccess(Bool)
+        case setDepartmentTables(String)
     }
     
     struct State {
@@ -39,13 +41,25 @@ final class SignupViewReactor: Reactor {
         var errorMessage: String?
         var isLoading = false
         var signupSuccess = false
-        var departments: [String: String] = [:]
+        var departments = [String: String]()
+        var d = ["csi", "com", "bbdb"]
+        var searchText: String?
+        var selectedDepartments: String
     }
     
     let initialState = State()
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
+        case let .setDepartmentTable(searchText):
+            guard let searchText = searchText, !searchText.isEmpty else {
+                return Observable.just(Mutation.setDepartmentTables(self.currentState.d))
+            }
+            let filteredDepts = d.filter {
+                return $0.range(of: searchText) != nil
+            }
+            return Observable.just(filteredDepts)
+
         case let .signupRequest(username, department, nickname, password):
             guard let username = username, !username.isEmpty else {
                 return Observable.just(Mutation.setErrorMessage("Enter username"))
@@ -96,14 +110,20 @@ final class SignupViewReactor: Reactor {
                             let filteredResponse = try response.filterSuccessfulStatusCodes()
                             let decodedResponse = try Japx.Decoder.jsonObject(withJSONAPIObject: response.mapJSON() as! Parameters)
                             let departments = decodedResponse["data"] as! [[String: Any]]
-                            let y = departments.makeIterator()
                             var departmentDictionary = [String: String]()
                             let depts = departments.makeIterator()
                             for index in depts {
                                 departmentDictionary.updateValue(index["name"] as! String, forKey: index["id"] as! String)
                             }
-                            let sortedDepartment = departmentDictionary.sorted(by: { $0.key < $1.key })
-                            return Mutation.setDepartments(departmentDictionary)
+                            let sortedDepartment = departmentDictionary.sorted(by: { $0.value < $1.value })
+                            var dictionary = [String:String]()
+                            sortedDepartment.forEach{
+                                dictionary[$0.0] = $0.1
+                                //since you have named tuples, you could also write dictionary[$0.key] = $0.value
+                            }
+                            
+                            print(sortedDepartment)
+                            return Mutation.setDepartments(dictionary)
                         }
                         catch let error {
                             return Mutation.setErrorMessage(error.localizedDescription)
@@ -128,6 +148,9 @@ final class SignupViewReactor: Reactor {
         case let .setSignupSuccess(success):
             newState.signupSuccess = success
             newState.errorMessage = nil
+        
+        case let .setDepartmentTables(Departments)
+            newState.selectedDepartments = Departments
         }
         
         return newState
