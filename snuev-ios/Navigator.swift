@@ -34,7 +34,9 @@ class DefaultLoginNavigator: LoginNavigator {
     }
     
     func toSignup() {
-        
+        let vc = storyboard.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
+        vc.reactor = SignupViewReactor(provider: network.makeLoginNetwork(), authManager: AuthManager(), navigator: self)
+        navigationController.pushViewController(vc, animated: true)
     }
     
     func toMain() {

@@ -13,11 +13,11 @@ import Moya
 import ObjectMapper
 
 final class LoginViewReactor: Reactor {
-    var provider: LoginNetwork
+    var provider: LoginNetworkProvider
     var authManager: AuthManager
     var navigator: LoginNavigator
     
-    init(provider: LoginNetwork, authManager: AuthManager, navigator: LoginNavigator) {
+    init(provider: LoginNetworkProvider, authManager: AuthManager, navigator: LoginNavigator) {
         self.provider = provider
         self.authManager = authManager
         self.navigator = navigator

@@ -14,16 +14,17 @@ import ObjectMapper
 import Japx
 
 final class SignupViewReactor: Reactor {
-    var provider = MoyaProvider<Login>()
+    var provider: LoginNetworkProvider
     var authManager: AuthManager
+    var navigator: LoginNavigator
     
-    init(provider: MoyaProvider<Login>, authManager: AuthManager) {
+    init(provider: LoginNetworkProvider, authManager: AuthManager, navigator: LoginNavigator) {
         self.provider = provider
         self.authManager = authManager
+        self.navigator = navigator
     }
     
     enum Action {
-        case fetchDepartments
         case signupRequest(username: String?, department: String?, nickname: String?, password: String?)
         case setDepartmentTable(searchText: String?)
     }
@@ -33,7 +34,7 @@ final class SignupViewReactor: Reactor {
         case setIsLoading(Bool)
         case setDepartments([String: String])
         case setSignupSuccess(Bool)
-        case setDepartmentTables(String)
+        case setDepartmentTables([String])
     }
     
     struct State {
@@ -44,7 +45,7 @@ final class SignupViewReactor: Reactor {
         var departments = [String: String]()
         var d = ["csi", "com", "bbdb"]
         var searchText: String?
-        var selectedDepartments: String
+        var selectedDepartments: [String]?
     }
     
     let initialState = State()
@@ -55,10 +56,10 @@ final class SignupViewReactor: Reactor {
             guard let searchText = searchText, !searchText.isEmpty else {
                 return Observable.just(Mutation.setDepartmentTables(self.currentState.d))
             }
-            let filteredDepts = d.filter {
+            let filteredDepts = self.currentState.d.filter {
                 return $0.range(of: searchText) != nil
             }
-            return Observable.just(filteredDepts)
+            return Observable.just(Mutation.setDepartmentTables(filteredDepts))
 
         case let .signupRequest(username, department, nickname, password):
             guard let username = username, !username.isEmpty else {
@@ -83,7 +84,7 @@ final class SignupViewReactor: Reactor {
         
             return Observable.concat([
                 Observable.just(Mutation.setIsLoading(true)),
-                signup(username: username, password: password, nickname: nickname, department: department)
+                provider.signup(["username": username, "password": password, "nickname": nickname, "department": department])
                     .map { response in
                         do {
                             let filteredResponse = try response.filterSuccessfulStatusCodes()
@@ -101,35 +102,35 @@ final class SignupViewReactor: Reactor {
                         }
                 }
             ])
-        case let .fetchDepartments:
-            return Observable.concat([
-                Observable.just(Mutation.setIsLoading(true)),
-                fetchDepartments()
-                    .map { response in
-                        do {
-                            let filteredResponse = try response.filterSuccessfulStatusCodes()
-                            let decodedResponse = try Japx.Decoder.jsonObject(withJSONAPIObject: response.mapJSON() as! Parameters)
-                            let departments = decodedResponse["data"] as! [[String: Any]]
-                            var departmentDictionary = [String: String]()
-                            let depts = departments.makeIterator()
-                            for index in depts {
-                                departmentDictionary.updateValue(index["name"] as! String, forKey: index["id"] as! String)
-                            }
-                            let sortedDepartment = departmentDictionary.sorted(by: { $0.value < $1.value })
-                            var dictionary = [String:String]()
-                            sortedDepartment.forEach{
-                                dictionary[$0.0] = $0.1
-                                //since you have named tuples, you could also write dictionary[$0.key] = $0.value
-                            }
-                            
-                            print(sortedDepartment)
-                            return Mutation.setDepartments(dictionary)
-                        }
-                        catch let error {
-                            return Mutation.setErrorMessage(error.localizedDescription)
-                        }
-                    }
-                ])
+//        case let .fetchDepartments:
+//            return Observable.concat([
+//                Observable.just(Mutation.setIsLoading(true)),
+//                provider.fetchDepartments()
+//                    .map { response in
+//                        do {
+//                            let filteredResponse = try response.filterSuccessfulStatusCodes()
+//                            let decodedResponse = try Japx.Decoder.jsonObject(withJSONAPIObject: response.mapJSON() as! Parameters)
+//                            let departments = decodedResponse["data"] as! [[String: Any]]
+//                            var departmentDictionary = [String: String]()
+//                            let depts = departments.makeIterator()
+//                            for index in depts {
+//                                departmentDictionary.updateValue(index["name"] as! String, forKey: index["id"] as! String)
+//                            }
+//                            let sortedDepartment = departmentDictionary.sorted(by: { $0.value < $1.value })
+//                            var dictionary = [String:String]()
+//                            sortedDepartment.forEach{
+//                                dictionary[$0.0] = $0.1
+//                                //since you have named tuples, you could also write dictionary[$0.key] = $0.value
+//                            }
+//
+//                            print(sortedDepartment)
+//                            return Mutation.setDepartments(dictionary)
+//                        }
+//                        catch let error {
+//                            return Mutation.setErrorMessage(error.localizedDescription)
+//                        }
+//                    }
+//                ])
         }
     }
     
@@ -156,19 +157,40 @@ final class SignupViewReactor: Reactor {
         return newState
     }
     
-    private func fetchDepartments() -> Observable<Response> {
-        return provider.rx.request(Login.fetchDepartments)
-            .debug()
-            .subscribeOn(MainScheduler.instance)
-            .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-            .asObservable()
+    func fetchDepartments() -> Observable<[String: String]> {
+        return provider.fetchDepartments()
+            .flatMap { response -> Observable<[String : String]> in
+                do {
+                    let filteredResponse = try response.filterSuccessfulStatusCodes()
+                    let decodedResponse = try Japx.Decoder.jsonObject(withJSONAPIObject: response.mapJSON() as! Parameters)
+                    let departments = decodedResponse["data"] as! [[String: Any]]
+                    var departmentDictionary = [String: String]()
+                    let depts = departments.makeIterator()
+                    for index in depts {
+                        departmentDictionary.updateValue(index["name"] as! String, forKey: index["id"] as! String)
+                    }
+                    let sortedDepartment = departmentDictionary.sorted(by: { $0.value < $1.value })
+                    var dictionary = [String:String]()
+                    sortedDepartment.forEach{
+                        dictionary[$0.0] = $0.1
+                    }
+                    
+                    print(sortedDepartment)
+                    return Observable.just(dictionary)
+                }
+                catch let error {
+                    return Observable.just(["error": "error"])
+                }
+        }
+    }
+    // to view
+    
+    func toMain() {
+        navigator.toMain()
     }
     
-    private func signup(username: String, password: String, nickname: String, department: String) -> Observable<Response> {
-        return provider.rx.request(Login.signup(username: username, password: password, nickname: nickname, department: department))
-            .subscribeOn(MainScheduler.instance)
-            .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-            .asObservable()
+    func toLogin() {
+        navigator.toLogin()
     }
 }
 

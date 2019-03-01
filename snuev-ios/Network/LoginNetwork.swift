@@ -12,16 +12,6 @@ import RxSwift
 
 protocol LoginNetworkProvider {
     func login(_ parameters: [String: Any]) -> Observable<Response>
-}
-
-final class LoginNetwork {
-    private let provider: LoginNetworkProvider
-    
-    init(_ provider: LoginNetworkProvider) {
-        self.provider = provider
-    }
-    
-    func login(_ parameters: [String: Any]) -> Observable<Response> {
-        return provider.login(parameters)
-    }
+    func signup(_ parameters: [String: Any]) -> Observable<Response>
+    func fetchDepartments() -> Observable<Response>
 }

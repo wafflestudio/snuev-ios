@@ -9,8 +9,7 @@
 import Foundation
 
 final class Network {
-    public func makeLoginNetwork() -> LoginNetwork {
-        let provider = MoyaLoginNetwork()
-        return LoginNetwork(provider)
+    public func makeLoginNetwork() -> LoginNetworkProvider {
+        return MoyaLoginNetwork()
     }
 }
