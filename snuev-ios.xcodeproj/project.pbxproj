@@ -56,6 +56,11 @@
 		64F6820021E4D1880017E63A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64F681FF21E4D1880017E63A /* Assets.xcassets */; };
 		64F6820321E4D1880017E63A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64F6820121E4D1880017E63A /* LaunchScreen.storyboard */; };
 		B7B8942FACF2F0B8BF94B2D7 /* Pods_snuev_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99332AA8B204CFF7F37E68D1 /* Pods_snuev_ios.framework */; };
+		F9040071222933830000A906 /* img-signup.png in Resources */ = {isa = PBXBuildFile; fileRef = F904006E222933830000A906 /* img-signup.png */; };
+		F9040072222933830000A906 /* img-signup@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F904006F222933830000A906 /* img-signup@3x.png */; };
+		F9040073222933830000A906 /* img-signup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9040070222933830000A906 /* img-signup@2x.png */; };
+		F9040077222934F20000A906 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9040075222934F20000A906 /* SignupViewController.swift */; };
+		F9040078222934F20000A906 /* SignupViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9040076222934F20000A906 /* SignupViewReactor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +129,11 @@
 		64F6820221E4D1880017E63A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64F6820421E4D1880017E63A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99332AA8B204CFF7F37E68D1 /* Pods_snuev_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snuev_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F904006E222933830000A906 /* img-signup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-signup.png"; sourceTree = "<group>"; };
+		F904006F222933830000A906 /* img-signup@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-signup@3x.png"; sourceTree = "<group>"; };
+		F9040070222933830000A906 /* img-signup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-signup@2x.png"; sourceTree = "<group>"; };
+		F9040075222934F20000A906 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		F9040076222934F20000A906 /* SignupViewReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewReactor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +180,9 @@
 		64CE464F21ECB9BB007EE055 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				F904006E222933830000A906 /* img-signup.png */,
+				F9040070222933830000A906 /* img-signup@2x.png */,
+				F904006F222933830000A906 /* img-signup@3x.png */,
 				645322B922292C2100A842C0 /* ic-bookmark-normal.png */,
 				645322B322292C2000A842C0 /* ic-bookmark-normal@2x.png */,
 				645322C022292C2100A842C0 /* ic-bookmark-normal@3x.png */,
@@ -220,6 +233,7 @@
 		64CE465C21ECD001007EE055 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				F9040074222934F20000A906 /* Signup */,
 				64CE466F21F0AF43007EE055 /* Login */,
 				64CE465D21ECD064007EE055 /* Login.storyboard */,
 				64CE466721ECE4ED007EE055 /* LoginEndpoint.swift */,
@@ -300,6 +314,15 @@
 				29F386CDDCBC44430A2F839C /* Pods-snuev-ios.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F9040074222934F20000A906 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				F9040075222934F20000A906 /* SignupViewController.swift */,
+				F9040076222934F20000A906 /* SignupViewReactor.swift */,
+			);
+			path = Signup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -403,12 +426,15 @@
 				64F6820021E4D1880017E63A /* Assets.xcassets in Resources */,
 				64CE465E21ECD064007EE055 /* Login.storyboard in Resources */,
 				645322C822292C2100A842C0 /* ic-bookmark-normal.png in Resources */,
+				F9040072222933830000A906 /* img-signup@3x.png in Resources */,
 				645322CA22292C2100A842C0 /* ic-logout-normal@2x.png in Resources */,
 				645322CC22292C2100A842C0 /* ic-detailsearch-normal@3x.png in Resources */,
 				645322C922292C2100A842C0 /* ic-detailsearch-normal.png in Resources */,
 				645322C722292C2100A842C0 /* ic-profile-normal@2x.png in Resources */,
 				645322CD22292C2100A842C0 /* ic-search-30-px@2x.png in Resources */,
+				F9040073222933830000A906 /* img-signup@2x.png in Resources */,
 				645322C622292C2100A842C0 /* ic-profile-normal.png in Resources */,
+				F9040071222933830000A906 /* img-signup.png in Resources */,
 				645322CE22292C2100A842C0 /* ic-search-30-px@3x.png in Resources */,
 				645322C222292C2100A842C0 /* ic-bookmark-normal@2x.png in Resources */,
 				645322C322292C2100A842C0 /* ic-detailsearch-normal@2x.png in Resources */,
@@ -456,6 +482,8 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-snuev-ios/Pods-snuev-ios-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
+				"${BUILT_PRODUCTS_DIR}/Japx/Japx.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
@@ -472,6 +500,8 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Japx.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
@@ -505,6 +535,7 @@
 			files = (
 				645322A92229113B00A842C0 /* Application.swift in Sources */,
 				64CE466C21F0A5D4007EE055 /* LoginViewController.swift in Sources */,
+				F9040077222934F20000A906 /* SignupViewController.swift in Sources */,
 				64CE466821ECE4ED007EE055 /* LoginEndpoint.swift in Sources */,
 				64CE465B21ECC386007EE055 /* UIView.swift in Sources */,
 				645322A52229110D00A842C0 /* Navigator.swift in Sources */,
@@ -515,6 +546,7 @@
 				64CE466E21F0A8FC007EE055 /* LoginViewReactor.swift in Sources */,
 				645322A72229112D00A842C0 /* NetworkProvider.swift in Sources */,
 				641ADB5621F470B4002DD367 /* AuthManager.swift in Sources */,
+				F9040078222934F20000A906 /* SignupViewReactor.swift in Sources */,
 				648E262721E9845C00DE0A0F /* ExampleEndpoint.swift in Sources */,
 				64CE466621ECDFB1007EE055 /* UIImage.swift in Sources */,
 				648E262B21E98C7800DE0A0F /* Observable.swift in Sources */,

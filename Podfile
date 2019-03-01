@@ -14,4 +14,6 @@ target 'snuev-ios' do
   pod 'RxOptional'
   pod 'SnapKit'
   pod 'KeychainSwift'
+  pod 'DropDown'
+  pod 'Japx'
 end

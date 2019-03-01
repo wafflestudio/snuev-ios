@@ -1,5 +1,9 @@
 PODS:
   - Alamofire (4.8.0)
+  - DropDown (2.3.12)
+  - Japx (2.0.1):
+    - Japx/Core (= 2.0.1)
+  - Japx/Core (2.0.1)
   - KeychainSwift (13.0.0)
   - Moya/Core (12.0.1):
     - Alamofire (~> 4.1)
@@ -22,6 +26,8 @@ PODS:
   - SnapKit (4.2.0)
 
 DEPENDENCIES:
+  - DropDown
+  - Japx
   - KeychainSwift
   - Moya/RxSwift (~> 12.0)
   - ObjectMapper
@@ -33,6 +39,8 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - DropDown
+    - Japx
     - KeychainSwift
     - Moya
     - ObjectMapper
@@ -46,6 +54,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  DropDown: 0bcc278799ec11a3d34ce1aac9367fbbaf5423d9
+  Japx: 153a8a39a71121827bcf89c6f89ef28091f2b3e7
   KeychainSwift: 23d6c16cbc33f20fafa30c3d783241b4b87d998c
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
@@ -57,6 +67,6 @@ SPEC CHECKSUMS:
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: 0ff0f716c53db5541af5bb982bdfccc8ea2ca294
+PODFILE CHECKSUM: ed23a4a4b33e772c47d18a3c23483631f9296089
 
 COCOAPODS: 1.5.3
