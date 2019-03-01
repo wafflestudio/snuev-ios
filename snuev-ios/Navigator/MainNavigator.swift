@@ -1,5 +1,5 @@
 //
-//  navigator.swift
+//  MainNavigator.swift
 //  snuev-ios
 //
 //  Created by 이동현 on 01/03/2019.
@@ -8,18 +8,14 @@
 
 import UIKit
 
-protocol LoginNavigator {
-    func toLogin()
-    func toSignup()
+protocol MainNavigator {
     func toMain()
 }
 
-class DefaultLoginNavigator: LoginNavigator {
+class DefaultMainNavigator: MainNavigator {
     private let storyboard: UIStoryboard
     private let navigationController: UINavigationController
     private let network: Network
-    
-    var mainNavigator: MainNavigator?
     
     init(navigationController: UINavigationController, storyboard: UIStoryboard, network: Network) {
         self.navigationController = navigationController
@@ -27,17 +23,8 @@ class DefaultLoginNavigator: LoginNavigator {
         self.network = network
     }
     
-    func toLogin() {
-        let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        vc.reactor = LoginViewReactor(provider: network.makeLoginNetwork(), authManager: AuthManager(), navigator: self)
+    func toMain() { // test, 다시짜야함
+        let vc = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! SNUEVBaseViewController
         navigationController.pushViewController(vc, animated: true)
-    }
-    
-    func toSignup() {
-        
-    }
-    
-    func toMain() {
-        mainNavigator?.toMain()
     }
 }

@@ -810,11 +810,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "snuev-ios/Login/Login/LoginViewReactor.swift"
-            timestampString = "573123193.5037839"
+            timestampString = "573126136.566236"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "mutate(action:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -825,24 +825,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "snuev-ios/Login/Login/LoginViewReactor.swift"
-            timestampString = "573123193.503861"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "reduce(state:mutation:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "snuev-ios/Login/Login/LoginViewController.swift"
-            timestampString = "573123193.503907"
+            timestampString = "573126136.566324"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "51"
@@ -858,12 +842,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "snuev-ios/Login/Login/LoginViewReactor.swift"
-            timestampString = "573123193.504243"
+            timestampString = "573126136.566815"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "mutate(action:)"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "reduce(state:mutation:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -874,12 +858,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "snuev-ios/Login/Login/LoginViewReactor.swift"
-            timestampString = "573123193.504292"
+            timestampString = "573126136.566883"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "mutate(action:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "snuev-ios/Navigator.swift"
+            timestampString = "573126136.5669481"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "toMain()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "snuev-ios/Navigator.swift"
+            timestampString = "573126136.5669889"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "toMain()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

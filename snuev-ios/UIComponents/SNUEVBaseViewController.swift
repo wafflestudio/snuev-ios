@@ -16,6 +16,8 @@ import ReactorKit
 import SnapKit
 
 class SNUEVBaseViewController: UIViewController {
+    @IBOutlet weak var viewHeader: UIView?
+    
     var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
