@@ -21,9 +21,6 @@ final class Application {
         let storyboard = UIStoryboard(name: "Login", bundle: nil)
         let navigationController = UINavigationController()
         navigationController.isNavigationBarHidden = true
-        navigationController.tabBarItem = UITabBarItem(title: "CoreData",
-                                                         image: UIImage(named: "Box"),
-                                                         selectedImage: nil)
         let navigator = DefaultLoginNavigator(navigationController: navigationController, storyboard: storyboard, network: network)
 
         window.rootViewController = navigationController

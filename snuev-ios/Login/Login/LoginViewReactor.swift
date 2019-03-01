@@ -25,11 +25,12 @@ final class LoginViewReactor: Reactor {
     
     enum Action {
         case loginRequest(username: String?, password: String?)
+        case toSignup()
     }
     
     enum Mutation {
         case setLoginSuccess(Bool)
-        case setErrorMessage(String)
+        case setErrorMessage(String?)
         case setIsLoading(Bool)
     }
     
@@ -67,6 +68,13 @@ final class LoginViewReactor: Reactor {
                             return Mutation.setErrorMessage(error.localizedDescription)
                         }
                     }
+            ])
+        case .toSignup:
+            navigator.toSignup()
+            return Observable.concat([
+                Observable.just(Mutation.setErrorMessage(nil)),
+                Observable.just(Mutation.setIsLoading(false)),
+                Observable.just(Mutation.setLoginSuccess(false))
             ])
         }
     }

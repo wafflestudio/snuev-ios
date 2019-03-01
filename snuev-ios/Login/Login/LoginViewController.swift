@@ -37,7 +37,11 @@ class LoginViewController: SNUEVBaseViewController, StoryboardView {
             .map { Reactor.Action.loginRequest(username: self.inputUsername.text, password: self.inputPassword.text) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
-
+        
+        btnSignin.rx.tap
+            .map { Reactor.Action.toSignup() }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
         // State
         
         reactor.state.map { $0.loginSuccess }
