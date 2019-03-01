@@ -13,12 +13,14 @@ import Moya
 import ObjectMapper
 
 final class LoginViewReactor: Reactor {
-    var provider: MoyaProvider<Login>
+    var provider: LoginNetwork
     var authManager: AuthManager
+    var navigator: LoginNavigator
     
-    init(provider: MoyaProvider<Login>, authManager: AuthManager) {
+    init(provider: LoginNetwork, authManager: AuthManager, navigator: LoginNavigator) {
         self.provider = provider
         self.authManager = authManager
+        self.navigator = navigator
     }
     
     enum Action {
@@ -52,7 +54,7 @@ final class LoginViewReactor: Reactor {
             
             return Observable.concat([
                 Observable.just(Mutation.setIsLoading(true)),
-                login(username: username, password: password)
+                provider.login(["username": username, "password": password])
                     .map { response in
                         do {
                             let filteredResponse = try response.filterSuccessfulStatusCodes()
@@ -64,8 +66,8 @@ final class LoginViewReactor: Reactor {
                         catch let error {
                             return Mutation.setErrorMessage(error.localizedDescription)
                         }
-                }
-                ])
+                    }
+            ])
         }
     }
     
@@ -84,13 +86,6 @@ final class LoginViewReactor: Reactor {
             newState.errorMessage = message
         }
         return newState
-    }
-    
-    private func login(username: String, password: String) -> Observable<Response> {
-        return provider.rx.request(Login.login(username: username, password: password))
-            .subscribeOn(MainScheduler.instance)
-            .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-            .asObservable()
     }
 }
 

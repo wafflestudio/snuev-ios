@@ -8,9 +8,10 @@
 
 import Foundation
 import Moya
+import RxSwift
 
 enum Login {
-    case login(username: String, password: String)
+    case login(_ parameters: [String: Any])
 }
 
 extension Login: TargetType {
@@ -41,12 +42,24 @@ extension Login: TargetType {
     
     var task: Task {
         switch self {
-        case .login(let username, let password):
-            return .requestParameters(parameters: ["username": username, "password": password], encoding: JSONEncoding.default)
+        case .login(let parameters):
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         }
     }
     var parameterEncoding: ParameterEncoding {
         return JSONEncoding.default
     }
 }
+
+final class MoyaLoginNetwork: LoginNetworkProvider {
+    private let provider = MoyaProvider<Login>()
+    
+    func login(_ parameters: [String: Any]) -> Observable<Response> {
+        return provider.rx.request(Login.login(parameters))
+            .subscribeOn(MainScheduler.instance)
+            .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .asObservable()
+    }
+}
+
 

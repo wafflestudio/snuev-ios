@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		641ADB5621F470B4002DD367 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641ADB5521F470B4002DD367 /* AuthManager.swift */; };
+		645322A52229110D00A842C0 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645322A42229110D00A842C0 /* Navigator.swift */; };
+		645322A72229112D00A842C0 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645322A62229112D00A842C0 /* NetworkProvider.swift */; };
+		645322A92229113B00A842C0 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645322A82229113B00A842C0 /* Application.swift */; };
+		645322AC2229132600A842C0 /* LoginNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645322AB2229132600A842C0 /* LoginNetwork.swift */; };
 		648E262721E9845C00DE0A0F /* ExampleEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E262621E9845C00DE0A0F /* ExampleEndpoint.swift */; };
 		648E262921E984AC00DE0A0F /* ExampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E262821E984AC00DE0A0F /* ExampleModel.swift */; };
 		648E262B21E98C7800DE0A0F /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E262A21E98C7800DE0A0F /* Observable.swift */; };
@@ -50,6 +54,10 @@
 		29F386CDDCBC44430A2F839C /* Pods-snuev-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snuev-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-snuev-ios/Pods-snuev-ios.release.xcconfig"; sourceTree = "<group>"; };
 		3B2C0C6DA3622C8A68E09688 /* Pods-snuev-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snuev-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-snuev-ios/Pods-snuev-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		641ADB5521F470B4002DD367 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		645322A42229110D00A842C0 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		645322A62229112D00A842C0 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		645322A82229113B00A842C0 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
+		645322AB2229132600A842C0 /* LoginNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNetwork.swift; sourceTree = "<group>"; };
 		648E262621E9845C00DE0A0F /* ExampleEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleEndpoint.swift; sourceTree = "<group>"; };
 		648E262821E984AC00DE0A0F /* ExampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleModel.swift; sourceTree = "<group>"; };
 		648E262A21E98C7800DE0A0F /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
@@ -101,6 +109,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		645322AA222911D200A842C0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				645322A62229112D00A842C0 /* NetworkProvider.swift */,
+				645322AB2229132600A842C0 /* LoginNetwork.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		648E263221EB857600DE0A0F /* example */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +214,7 @@
 		64F681F721E4D1870017E63A /* snuev-ios */ = {
 			isa = PBXGroup;
 			children = (
+				645322AA222911D200A842C0 /* Network */,
 				64CE465C21ECD001007EE055 /* Login */,
 				64CE465321ECBAB4007EE055 /* Utils */,
 				64CE465021ECBA62007EE055 /* UIComponents */,
@@ -207,6 +225,8 @@
 				64F681FF21E4D1880017E63A /* Assets.xcassets */,
 				64F6820121E4D1880017E63A /* LaunchScreen.storyboard */,
 				64F6820421E4D1880017E63A /* Info.plist */,
+				645322A42229110D00A842C0 /* Navigator.swift */,
+				645322A82229113B00A842C0 /* Application.swift */,
 			);
 			path = "snuev-ios";
 			sourceTree = "<group>";
@@ -411,13 +431,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				645322A92229113B00A842C0 /* Application.swift in Sources */,
 				64CE466C21F0A5D4007EE055 /* LoginViewController.swift in Sources */,
 				64CE466821ECE4ED007EE055 /* LoginEndpoint.swift in Sources */,
 				64CE465B21ECC386007EE055 /* UIView.swift in Sources */,
+				645322A52229110D00A842C0 /* Navigator.swift in Sources */,
 				64CE467F21F31A19007EE055 /* SNUEVBaseViewController.swift in Sources */,
 				64F681FB21E4D1870017E63A /* ExampleViewController.swift in Sources */,
+				645322AC2229132600A842C0 /* LoginNetwork.swift in Sources */,
 				64F681F921E4D1870017E63A /* AppDelegate.swift in Sources */,
 				64CE466E21F0A8FC007EE055 /* LoginViewReactor.swift in Sources */,
+				645322A72229112D00A842C0 /* NetworkProvider.swift in Sources */,
 				641ADB5621F470B4002DD367 /* AuthManager.swift in Sources */,
 				648E262721E9845C00DE0A0F /* ExampleEndpoint.swift in Sources */,
 				64CE466621ECDFB1007EE055 /* UIImage.swift in Sources */,
