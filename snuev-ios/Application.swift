@@ -18,12 +18,17 @@ final class Application {
     }
     
     func configureMainInterface(in window: UIWindow) {
-        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let loginStoryboard = UIStoryboard(name: "Login", bundle: nil)
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let navigationController = UINavigationController()
         navigationController.isNavigationBarHidden = true
-        let navigator = DefaultLoginNavigator(navigationController: navigationController, storyboard: storyboard, network: network)
+        
+        let mainNavigator = DefaultMainNavigator(navigationController: navigationController, storyboard: mainStoryboard, network: network)
+        let loginNavigator = DefaultLoginNavigator(navigationController: navigationController, storyboard: loginStoryboard, network: network)
+        
+        loginNavigator.mainNavigator = mainNavigator
 
         window.rootViewController = navigationController
-        navigator.toLogin()
+        loginNavigator.toLogin()
     }
 }

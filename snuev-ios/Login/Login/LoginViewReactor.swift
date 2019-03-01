@@ -25,7 +25,6 @@ final class LoginViewReactor: Reactor {
     
     enum Action {
         case loginRequest(username: String?, password: String?)
-        case toSignup()
     }
     
     enum Mutation {
@@ -69,13 +68,6 @@ final class LoginViewReactor: Reactor {
                         }
                     }
             ])
-        case .toSignup:
-            navigator.toSignup()
-            return Observable.concat([
-                Observable.just(Mutation.setErrorMessage(nil)),
-                Observable.just(Mutation.setIsLoading(false)),
-                Observable.just(Mutation.setLoginSuccess(false))
-            ])
         }
     }
     
@@ -95,5 +87,14 @@ final class LoginViewReactor: Reactor {
         }
         return newState
     }
+    
+    // to view
+    
+    func toMain() {
+        navigator.toMain()
+    }
+    
+    func toSignup() {
+        navigator.toSignup()
+    }
 }
-

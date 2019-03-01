@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="-1747" y="22"/>
         </scene>
-        <!--View Controller-->
+        <!--Base View Controller-->
         <scene sceneID="UBz-to-Veq">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" id="04U-2O-EPE" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="04U-2O-EPE" customClass="SNUEVBaseViewController" customModule="snuev_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O0M-zs-ik4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,6 +126,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0Zz-fo-kMw"/>
                     </view>
+                    <connections>
+                        <outlet property="viewHeader" destination="JLM-eA-egr" id="TRX-Wt-CEi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WhN-jn-jt3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
