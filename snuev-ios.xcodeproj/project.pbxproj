@@ -62,6 +62,8 @@
 		F9040073222933830000A906 /* img-signup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9040070222933830000A906 /* img-signup@2x.png */; };
 		F9040077222934F20000A906 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9040075222934F20000A906 /* SignupViewController.swift */; };
 		F9040078222934F20000A906 /* SignupViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9040076222934F20000A906 /* SignupViewReactor.swift */; };
+		F904007D222A2ECF0000A906 /* SearchDepartmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F904007C222A2ECF0000A906 /* SearchDepartmentViewController.swift */; };
+		F9040080222A2EF80000A906 /* SearchDepartmentViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F904007F222A2EF80000A906 /* SearchDepartmentViewReactor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +138,8 @@
 		F9040070222933830000A906 /* img-signup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-signup@2x.png"; sourceTree = "<group>"; };
 		F9040075222934F20000A906 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		F9040076222934F20000A906 /* SignupViewReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewReactor.swift; sourceTree = "<group>"; };
+		F904007C222A2ECF0000A906 /* SearchDepartmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDepartmentViewController.swift; sourceTree = "<group>"; };
+		F904007F222A2EF80000A906 /* SearchDepartmentViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDepartmentViewReactor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +247,7 @@
 		64CE465C21ECD001007EE055 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				F904007E222A2ED60000A906 /* SearchDepartment */,
 				F9040074222934F20000A906 /* Signup */,
 				64CE466F21F0AF43007EE055 /* Login */,
 				64CE465D21ECD064007EE055 /* Login.storyboard */,
@@ -334,6 +339,15 @@
 				F9040076222934F20000A906 /* SignupViewReactor.swift */,
 			);
 			path = Signup;
+			sourceTree = "<group>";
+		};
+		F904007E222A2ED60000A906 /* SearchDepartment */ = {
+			isa = PBXGroup;
+			children = (
+				F904007C222A2ECF0000A906 /* SearchDepartmentViewController.swift */,
+				F904007F222A2EF80000A906 /* SearchDepartmentViewReactor.swift */,
+			);
+			path = SearchDepartment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -551,10 +565,12 @@
 				645322A52229110D00A842C0 /* Navigator.swift in Sources */,
 				64CE467F21F31A19007EE055 /* SNUEVBaseViewController.swift in Sources */,
 				64F681FB21E4D1870017E63A /* ExampleViewController.swift in Sources */,
+				F904007D222A2ECF0000A906 /* SearchDepartmentViewController.swift in Sources */,
 				645322AC2229132600A842C0 /* LoginNetwork.swift in Sources */,
 				64F681F921E4D1870017E63A /* AppDelegate.swift in Sources */,
 				64CE466E21F0A8FC007EE055 /* LoginViewReactor.swift in Sources */,
 				645322A72229112D00A842C0 /* NetworkProvider.swift in Sources */,
+				F9040080222A2EF80000A906 /* SearchDepartmentViewReactor.swift in Sources */,
 				641ADB5621F470B4002DD367 /* AuthManager.swift in Sources */,
 				F9040078222934F20000A906 /* SignupViewReactor.swift in Sources */,
 				648E262721E9845C00DE0A0F /* ExampleEndpoint.swift in Sources */,

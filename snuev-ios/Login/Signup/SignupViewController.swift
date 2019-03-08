@@ -3,7 +3,7 @@
 //  snuev-ios
 //
 //  Created by 김동욱 on 20/01/2019.
-//  Copyright © 2019 이동현. All rights reserved.
+//  Copyright © 2019 김동욱. All rights reserved.
 //
 
 import SafariServices
@@ -17,6 +17,7 @@ import ReactorKit
 
 class SignupViewController: SNUEVBaseViewController, StoryboardView {
     typealias Reactor = SignupViewReactor
+    @IBOutlet weak var btnSearchDepartment: UIButton!
     @IBOutlet weak var inputUsername: UITextField!
     @IBOutlet weak var inputDepartment: UITextField!
     @IBOutlet weak var inputNickname: UITextField!
@@ -57,6 +58,10 @@ class SignupViewController: SNUEVBaseViewController, StoryboardView {
         // View
         btnLogin.rx.tap.bind {
             reactor.toLogin()
+        }
+        
+        btnSearchDepartment.rx.tap.bind {
+            reactor.toSearchDepartment()
         }
     }
 }
