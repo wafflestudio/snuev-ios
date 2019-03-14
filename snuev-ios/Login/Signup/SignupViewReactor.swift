@@ -157,31 +157,8 @@ final class SignupViewReactor: Reactor {
         return newState
     }
     
-    func fetchDepartments() -> Observable<[String: String]> {
+    func fetchDepartments() -> Driver<[Department]?> {
         return provider.fetchDepartments()
-            .flatMap { response -> Observable<[String : String]> in
-                do {
-                    let filteredResponse = try response.filterSuccessfulStatusCodes()
-                    let decodedResponse = try Japx.Decoder.jsonObject(withJSONAPIObject: response.mapJSON() as! Parameters)
-                    let departments = decodedResponse["data"] as! [[String: Any]]
-                    var departmentDictionary = [String: String]()
-                    let depts = departments.makeIterator()
-                    for index in depts {
-                        departmentDictionary.updateValue(index["name"] as! String, forKey: index["id"] as! String)
-                    }
-                    let sortedDepartment = departmentDictionary.sorted(by: { $0.value < $1.value })
-                    var dictionary = [String:String]()
-                    sortedDepartment.forEach{
-                        dictionary[$0.0] = $0.1
-                    }
-                    
-                    print(sortedDepartment)
-                    return Observable.just(dictionary)
-                }
-                catch let error {
-                    return Observable.just(["error": "error"])
-                }
-        }
     }
     // to view
     

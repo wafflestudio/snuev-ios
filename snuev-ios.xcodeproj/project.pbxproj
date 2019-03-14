@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64087B27222A6B7F00D374B9 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64087B26222A6B7F00D374B9 /* Department.swift */; };
 		641ADB5621F470B4002DD367 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641ADB5521F470B4002DD367 /* AuthManager.swift */; };
 		645322A52229110D00A842C0 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645322A42229110D00A842C0 /* Navigator.swift */; };
 		645322A72229112D00A842C0 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645322A62229112D00A842C0 /* NetworkProvider.swift */; };
@@ -51,6 +52,7 @@
 		64CE466E21F0A8FC007EE055 /* LoginViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE466D21F0A8FC007EE055 /* LoginViewReactor.swift */; };
 		64CE467721F0D393007EE055 /* snuev_ios_tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE467621F0D393007EE055 /* snuev_ios_tests.swift */; };
 		64CE467F21F31A19007EE055 /* SNUEVBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE467E21F31A19007EE055 /* SNUEVBaseViewController.swift */; };
+		64D61404223AAEE9001011F4 /* PrimitiveSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D61403223AAEE9001011F4 /* PrimitiveSequence.swift */; };
 		64F681F921E4D1870017E63A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F681F821E4D1870017E63A /* AppDelegate.swift */; };
 		64F681FB21E4D1870017E63A /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F681FA21E4D1870017E63A /* ExampleViewController.swift */; };
 		64F681FE21E4D1870017E63A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64F681FC21E4D1870017E63A /* Main.storyboard */; };
@@ -77,6 +79,7 @@
 /* Begin PBXFileReference section */
 		29F386CDDCBC44430A2F839C /* Pods-snuev-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snuev-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-snuev-ios/Pods-snuev-ios.release.xcconfig"; sourceTree = "<group>"; };
 		3B2C0C6DA3622C8A68E09688 /* Pods-snuev-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snuev-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-snuev-ios/Pods-snuev-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		64087B26222A6B7F00D374B9 /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
 		641ADB5521F470B4002DD367 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		645322A42229110D00A842C0 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		645322A62229112D00A842C0 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
@@ -123,6 +126,7 @@
 		64CE467621F0D393007EE055 /* snuev_ios_tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = snuev_ios_tests.swift; sourceTree = "<group>"; };
 		64CE467821F0D393007EE055 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64CE467E21F31A19007EE055 /* SNUEVBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNUEVBaseViewController.swift; sourceTree = "<group>"; };
+		64D61403223AAEE9001011F4 /* PrimitiveSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimitiveSequence.swift; sourceTree = "<group>"; };
 		64F681F521E4D1870017E63A /* snuev-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "snuev-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F681F821E4D1870017E63A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64F681FA21E4D1870017E63A /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +161,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		64087B25222A6B6400D374B9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				64087B26222A6B7F00D374B9 /* Department.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		645322AA222911D200A842C0 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +248,7 @@
 				64CE466521ECDFB1007EE055 /* UIImage.swift */,
 				64CE466921ECE5D3007EE055 /* String.swift */,
 				641ADB5521F470B4002DD367 /* AuthManager.swift */,
+				64D61403223AAEE9001011F4 /* PrimitiveSequence.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -292,6 +305,7 @@
 		64F681F721E4D1870017E63A /* snuev-ios */ = {
 			isa = PBXGroup;
 			children = (
+				64087B25222A6B6400D374B9 /* Models */,
 				645322D12229316100A842C0 /* Navigator */,
 				645322AA222911D200A842C0 /* Network */,
 				64CE465C21ECD001007EE055 /* Login */,
@@ -544,6 +558,7 @@
 			files = (
 				645322A92229113B00A842C0 /* Application.swift in Sources */,
 				64CE466C21F0A5D4007EE055 /* LoginViewController.swift in Sources */,
+				64087B27222A6B7F00D374B9 /* Department.swift in Sources */,
 				F9040077222934F20000A906 /* SignupViewController.swift in Sources */,
 				645322D32229317900A842C0 /* MainNavigator.swift in Sources */,
 				64CE466821ECE4ED007EE055 /* LoginEndpoint.swift in Sources */,
@@ -553,6 +568,7 @@
 				64F681FB21E4D1870017E63A /* ExampleViewController.swift in Sources */,
 				645322AC2229132600A842C0 /* LoginNetwork.swift in Sources */,
 				64F681F921E4D1870017E63A /* AppDelegate.swift in Sources */,
+				64D61404223AAEE9001011F4 /* PrimitiveSequence.swift in Sources */,
 				64CE466E21F0A8FC007EE055 /* LoginViewReactor.swift in Sources */,
 				645322A72229112D00A842C0 /* NetworkProvider.swift in Sources */,
 				641ADB5621F470B4002DD367 /* AuthManager.swift in Sources */,

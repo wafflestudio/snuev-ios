@@ -23,12 +23,15 @@ class SignupViewController: SNUEVBaseViewController, StoryboardView {
     @IBOutlet weak var inputPassword: UITextField!
     @IBOutlet weak var btnSignup: SNUEVButton!
     @IBOutlet weak var btnLogin: SNUEVButton!
-    var departments: [String: String]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         btnSignup.setButtonType(.Square)
         btnLogin.setButtonType(.withRoundImage)
+        reactor?.fetchDepartments().drive(onNext: { department in
+            print(department)
+        })
+        .disposed(by: disposeBag)
     }
     
     func bind(reactor: SignupViewReactor) {
@@ -56,8 +59,8 @@ class SignupViewController: SNUEVBaseViewController, StoryboardView {
         
         // View
         btnLogin.rx.tap.bind {
-            reactor.toLogin()
-        }
+            self.navigationController?.popViewController(animated: true)
+        }.disposed(by: disposeBag)
     }
 }
 

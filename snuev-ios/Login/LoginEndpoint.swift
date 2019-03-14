@@ -9,6 +9,9 @@
 import Foundation
 import Moya
 import RxSwift
+import RxCocoa
+import Japx
+import ObjectMapper
 
 enum Login {
     case login(_ parameters: [String: Any])
@@ -70,6 +73,7 @@ extension Login: TargetType {
 }
 
 final class MoyaLoginNetwork: LoginNetworkProvider {
+    
     private let provider = MoyaProvider<Login>()
     
     func login(_ parameters: [String: Any]) -> Observable<Response> {
@@ -86,12 +90,10 @@ final class MoyaLoginNetwork: LoginNetworkProvider {
             .asObservable()
     }
     
-    func fetchDepartments() -> Observable<Response> {
+    func fetchDepartments() -> Driver<[Department]?> {
         return provider.rx.request(Login.fetchDepartments)
-            .debug()
-            .subscribeOn(MainScheduler.instance)
-            .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-            .asObservable()
+            .mapResponseToArray(Department.self)
+            .asDriver(onErrorJustReturn: nil)
     }
 }
 
