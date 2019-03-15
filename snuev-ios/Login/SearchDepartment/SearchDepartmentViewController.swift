@@ -23,11 +23,6 @@ class SearchDepartmentViewController: SNUEVBaseViewController, StoryboardView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let defaultDepartments: [Department] = [
-            Department(id: "1", title: "컴공"),
-            Department(id: "2", title: "전기과"),
-            Department(id: "3", title: "간호학과"),
-            ]
     }
     
     func bind(reactor: SearchDepartmentViewReactor) {

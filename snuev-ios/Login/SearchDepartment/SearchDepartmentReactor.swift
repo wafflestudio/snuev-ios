@@ -2,8 +2,56 @@
 //  SearchDepartmentReactor.swift
 //  snuev-ios
 //
-//  Created by 김동욱 on 15/03/2019.
-//  Copyright © 2019 이동현. All rights reserved.
+//  Created by easi6 on 2019. 3. 2..
+//  Copyright © 2019년 김동욱. All rights reserved.
 //
 
-import Foundation
+import ReactorKit
+import RxCocoa
+import RxSwift
+import Moya
+import ObjectMapper
+
+final class SearchDepartmentViewReactor: Reactor {
+    var provider: LoginNetworkProvider
+    var authManager: AuthManager
+    var navigator: LoginNavigator
+    
+    init(provider: LoginNetworkProvider, authManager: AuthManager, navigator: LoginNavigator) {
+        self.provider = provider
+        self.authManager = authManager
+        self.navigator = navigator
+    }
+    
+    enum Action {
+        case updateQuery(String)
+    }
+    
+    enum Mutation {
+        case setQuery(String)
+    }
+    
+    struct State {
+        var query: String = ""
+        var departments: [Department] = []
+    }
+    
+    let initialState = State()
+    
+    func mutate(action: Action) -> Observable<Mutation> {
+        switch action {
+        case let .updateQuery(query):
+            return Observable.just(Mutation.setQuery(query))
+        }
+    }
+    
+    func reduce(state: State, mutation: Mutation) -> State {
+        switch mutation {
+        case let .setQuery(query):
+            var newState = state
+            newState.query = query
+            return newState
+        }
+    }
+}
+
