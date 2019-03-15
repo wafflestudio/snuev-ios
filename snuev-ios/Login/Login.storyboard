@@ -272,6 +272,10 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-search-30-px.png" translatesAutoresizingMaskIntoConstraints="NO" id="X1i-qS-a4e">
                                                 <rect key="frame" x="225" y="0.0" width="30" height="30"/>
                                             </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ki-um-fpj">
+                                                <rect key="frame" x="0.0" y="-9" width="255" height="39"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -411,6 +415,7 @@
                         <outlet property="inputNickname" destination="mQ1-iZ-8Ab" id="HPN-eL-WTj"/>
                         <outlet property="inputPassword" destination="74r-RJ-ykK" id="Z2c-hE-L1G"/>
                         <outlet property="inputUsername" destination="WyW-l0-u32" id="aKs-B4-ksM"/>
+                        <outlet property="searchDepartmentButton" destination="3Ki-um-fpj" id="xd8-S6-IrR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tkJ-nU-07N" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -420,7 +425,7 @@
         <!--Search Department View Controller-->
         <scene sceneID="rCP-Y8-hpi">
             <objects>
-                <viewController storyboardIdentifier="SearchDepartmentViewController" id="A6q-GN-wGZ" customClass="SearchDepartmentViewController" customModule="snuev_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchDepartmentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="A6q-GN-wGZ" customClass="SearchDepartmentViewController" customModule="snuev_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FX0-n4-mOj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

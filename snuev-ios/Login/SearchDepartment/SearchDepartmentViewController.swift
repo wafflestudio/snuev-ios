@@ -32,6 +32,11 @@ class SearchDepartmentViewController: SNUEVBaseViewController, StoryboardView {
             .map { Reactor.Action.updateQuery($0) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
+        
+        
+//         when clicked department 
+//        self.navigationController?.popViewController(animated: true)
+        
     }
 }
 

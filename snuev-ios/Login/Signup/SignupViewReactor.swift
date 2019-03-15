@@ -169,5 +169,9 @@ final class SignupViewReactor: Reactor {
     func toLogin() {
         navigator.toLogin()
     }
+    
+    func toSearchDepartment(_ departments: [Department]?) {
+        navigator.toSearchDepartment(departments)
+    }
 }
 

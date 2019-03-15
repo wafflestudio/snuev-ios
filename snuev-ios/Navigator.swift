@@ -12,6 +12,7 @@ protocol LoginNavigator {
     func toLogin()
     func toSignup()
     func toMain()
+    func toSearchDepartment(_: [Department]?)
 }
 
 class DefaultLoginNavigator: LoginNavigator {
@@ -41,5 +42,12 @@ class DefaultLoginNavigator: LoginNavigator {
     
     func toMain() {
         mainNavigator?.toMain()
+    }
+    
+    func toSearchDepartment(_ departments: [Department]?) {
+        let vc = storyboard.instantiateViewController(withIdentifier: "SearchDepartmentViewController") as! SearchDepartmentViewController
+        vc.reactor = SearchDepartmentViewReactor(provider: network.makeLoginNetwork(), authManager: AuthManager(), navigator: self)
+        vc.departments = departments
+        navigationController.pushViewController(vc, animated: true)
     }
 }
