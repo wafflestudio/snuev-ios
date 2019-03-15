@@ -9,6 +9,7 @@
 import RxSwift
 import Moya
 import ObjectMapper
+import Japx
 
 extension PrimitiveSequence where PrimitiveSequence.TraitType == RxSwift.SingleTrait {
     func mapResponseToArray<T: Mappable>(_ type: T.Type) -> RxSwift.PrimitiveSequence<RxSwift.SingleTrait, [T]?> {
