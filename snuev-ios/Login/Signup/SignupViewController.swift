@@ -61,6 +61,10 @@ class SignupViewController: SNUEVBaseViewController, StoryboardView {
         btnLogin.rx.tap.bind {
             self.navigationController?.popViewController(animated: true)
         }.disposed(by: disposeBag)
+        
+        btnSearchDepartment.rx.tap.bind {
+            reactor.toSearchDepartment(self.department)
+        }
     }
 }
 
