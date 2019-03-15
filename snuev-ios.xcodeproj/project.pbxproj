@@ -59,6 +59,8 @@
 		64F6820021E4D1880017E63A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64F681FF21E4D1880017E63A /* Assets.xcassets */; };
 		64F6820321E4D1880017E63A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64F6820121E4D1880017E63A /* LaunchScreen.storyboard */; };
 		B7B8942FACF2F0B8BF94B2D7 /* Pods_snuev_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99332AA8B204CFF7F37E68D1 /* Pods_snuev_ios.framework */; };
+		E1E3C70F223BD6700016294D /* SearchDepartmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E3C70E223BD6700016294D /* SearchDepartmentViewController.swift */; };
+		E1E3C711223BD67F0016294D /* SearchDepartmentReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E3C710223BD67F0016294D /* SearchDepartmentReactor.swift */; };
 		F9040071222933830000A906 /* img-signup.png in Resources */ = {isa = PBXBuildFile; fileRef = F904006E222933830000A906 /* img-signup.png */; };
 		F9040072222933830000A906 /* img-signup@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F904006F222933830000A906 /* img-signup@3x.png */; };
 		F9040073222933830000A906 /* img-signup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9040070222933830000A906 /* img-signup@2x.png */; };
@@ -135,6 +137,8 @@
 		64F6820221E4D1880017E63A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64F6820421E4D1880017E63A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99332AA8B204CFF7F37E68D1 /* Pods_snuev_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snuev_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1E3C70E223BD6700016294D /* SearchDepartmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDepartmentViewController.swift; sourceTree = "<group>"; };
+		E1E3C710223BD67F0016294D /* SearchDepartmentReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDepartmentReactor.swift; sourceTree = "<group>"; };
 		F904006E222933830000A906 /* img-signup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-signup.png"; sourceTree = "<group>"; };
 		F904006F222933830000A906 /* img-signup@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-signup@3x.png"; sourceTree = "<group>"; };
 		F9040070222933830000A906 /* img-signup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-signup@2x.png"; sourceTree = "<group>"; };
@@ -256,6 +260,7 @@
 		64CE465C21ECD001007EE055 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				E1E3C70D223BD65C0016294D /* SearchDepartment */,
 				F9040074222934F20000A906 /* Signup */,
 				64CE466F21F0AF43007EE055 /* Login */,
 				64CE465D21ECD064007EE055 /* Login.storyboard */,
@@ -339,6 +344,15 @@
 				29F386CDDCBC44430A2F839C /* Pods-snuev-ios.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E1E3C70D223BD65C0016294D /* SearchDepartment */ = {
+			isa = PBXGroup;
+			children = (
+				E1E3C70E223BD6700016294D /* SearchDepartmentViewController.swift */,
+				E1E3C710223BD67F0016294D /* SearchDepartmentReactor.swift */,
+			);
+			path = SearchDepartment;
 			sourceTree = "<group>";
 		};
 		F9040074222934F20000A906 /* Signup */ = {
@@ -568,7 +582,9 @@
 				64F681FB21E4D1870017E63A /* ExampleViewController.swift in Sources */,
 				645322AC2229132600A842C0 /* LoginNetwork.swift in Sources */,
 				64F681F921E4D1870017E63A /* AppDelegate.swift in Sources */,
+				E1E3C70F223BD6700016294D /* SearchDepartmentViewController.swift in Sources */,
 				64D61404223AAEE9001011F4 /* PrimitiveSequence.swift in Sources */,
+				E1E3C711223BD67F0016294D /* SearchDepartmentReactor.swift in Sources */,
 				64CE466E21F0A8FC007EE055 /* LoginViewReactor.swift in Sources */,
 				645322A72229112D00A842C0 /* NetworkProvider.swift in Sources */,
 				641ADB5621F470B4002DD367 /* AuthManager.swift in Sources */,
