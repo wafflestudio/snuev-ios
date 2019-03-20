@@ -14,6 +14,8 @@ import Japx
 extension PrimitiveSequence where PrimitiveSequence.TraitType == RxSwift.SingleTrait {
     func mapResponseToArray<T: Mappable>(_ type: T.Type) -> RxSwift.PrimitiveSequence<RxSwift.SingleTrait, [T]?> {
         return self
+            .subscribeOn(MainScheduler.instance)
+            .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .map { response in
                 guard let response = response as? Response else {
                     return nil
