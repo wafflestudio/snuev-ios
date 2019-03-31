@@ -15,12 +15,12 @@ protocol MainNavigator {
 class DefaultMainNavigator: MainNavigator {
     private let storyboard: UIStoryboard
     private let navigationController: UINavigationController
-    private let network: NetworkProvider
+    private let useCaseProvider: UseCaseProvider
     
-    init(navigationController: UINavigationController, storyboard: UIStoryboard, network: NetworkProvider) {
+    init(navigationController: UINavigationController, storyboard: UIStoryboard, useCaseProvider: UseCaseProvider) {
         self.navigationController = navigationController
         self.storyboard = storyboard
-        self.network = network
+        self.useCaseProvider = useCaseProvider
     }
     
     func toMain() { // test, 다시짜야함

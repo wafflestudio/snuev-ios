@@ -18,25 +18,25 @@ protocol LoginNavigator {
 class DefaultLoginNavigator: LoginNavigator {
     private let storyboard: UIStoryboard
     private let navigationController: UINavigationController
-    private let networkProvider: NetworkProvider
+    private let useCaseProvider: UseCaseProvider
     
     var mainNavigator: MainNavigator?
     
-    init(navigationController: UINavigationController, storyboard: UIStoryboard, network: NetworkProvider) {
+    init(navigationController: UINavigationController, storyboard: UIStoryboard, useCaseProvider: UseCaseProvider) {
         self.navigationController = navigationController
         self.storyboard = storyboard
-        self.networkProvider = network
+        self.useCaseProvider = useCaseProvider
     }
     
     func toLogin() {
         let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        vc.reactor = LoginViewReactor(network: networkProvider.makeLoginNetwork(), authManager: AuthManager(), navigator: self)
+        vc.reactor = LoginViewReactor(useCase: useCaseProvider.makeLoginUseCase(), authManager: AuthManager(), navigator: self)
         navigationController.pushViewController(vc, animated: true)
     }
     
     func toSignup() {
         let vc = storyboard.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
-        vc.reactor = SignupViewReactor(network: networkProvider.makeLoginNetwork(), authManager: AuthManager(), navigator: self)
+        vc.reactor = SignupViewReactor(useCase: useCaseProvider.makeLoginUseCase(), authManager: AuthManager(), navigator: self)
         navigationController.pushViewController(vc, animated: true)
     }
     
@@ -46,7 +46,7 @@ class DefaultLoginNavigator: LoginNavigator {
     
     func toSearchDepartment(_ departments: [Department]?) {
         let vc = storyboard.instantiateViewController(withIdentifier: "SearchDepartmentViewController") as! SearchDepartmentViewController
-        vc.reactor = SearchDepartmentViewReactor(network: networkProvider.makeLoginNetwork(), authManager: AuthManager(), navigator: self)
+        vc.reactor = SearchDepartmentViewReactor(useCase: useCaseProvider.makeLoginUseCase(), authManager: AuthManager(), navigator: self)
         vc.departments = departments
         navigationController.pushViewController(vc, animated: true)
     }
