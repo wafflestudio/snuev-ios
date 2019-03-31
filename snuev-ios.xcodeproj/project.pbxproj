@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		64087B27222A6B7F00D374B9 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64087B26222A6B7F00D374B9 /* Department.swift */; };
 		641ADB5621F470B4002DD367 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641ADB5521F470B4002DD367 /* AuthManager.swift */; };
-		645322A52229110D00A842C0 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645322A42229110D00A842C0 /* Navigator.swift */; };
+		645322A52229110D00A842C0 /* LoginNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645322A42229110D00A842C0 /* LoginNavigator.swift */; };
 		645322A72229112D00A842C0 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645322A62229112D00A842C0 /* NetworkProvider.swift */; };
 		645322A92229113B00A842C0 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645322A82229113B00A842C0 /* Application.swift */; };
 		645322AC2229132600A842C0 /* LoginNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645322AB2229132600A842C0 /* LoginNetwork.swift */; };
@@ -83,7 +83,7 @@
 		3B2C0C6DA3622C8A68E09688 /* Pods-snuev-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snuev-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-snuev-ios/Pods-snuev-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		64087B26222A6B7F00D374B9 /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
 		641ADB5521F470B4002DD367 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
-		645322A42229110D00A842C0 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		645322A42229110D00A842C0 /* LoginNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigator.swift; sourceTree = "<group>"; };
 		645322A62229112D00A842C0 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		645322A82229113B00A842C0 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		645322AB2229132600A842C0 /* LoginNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNetwork.swift; sourceTree = "<group>"; };
@@ -110,6 +110,7 @@
 		648E262821E984AC00DE0A0F /* ExampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleModel.swift; sourceTree = "<group>"; };
 		648E262A21E98C7800DE0A0F /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		648E263021EB4CBE00DE0A0F /* ExampleViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewReactor.swift; sourceTree = "<group>"; };
+		64BEB1D52250A320007B9091 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		64CE464D21ECB76C007EE055 /* Example.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Example.storyboard; sourceTree = "<group>"; };
 		64CE465121ECBA7E007EE055 /* SNUEVButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNUEVButton.swift; sourceTree = "<group>"; };
 		64CE465421ECBAC1007EE055 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -186,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				645322D22229317900A842C0 /* MainNavigator.swift */,
+				645322A42229110D00A842C0 /* LoginNavigator.swift */,
 			);
 			path = Navigator;
 			sourceTree = "<group>";
@@ -283,6 +285,7 @@
 		64F681EC21E4D1860017E63A = {
 			isa = PBXGroup;
 			children = (
+				64BEB1D52250A320007B9091 /* README.md */,
 				64F681F721E4D1870017E63A /* snuev-ios */,
 				64CE467521F0D393007EE055 /* snuev-ios-tests */,
 				64F681F621E4D1870017E63A /* Products */,
@@ -316,7 +319,6 @@
 				64F681FF21E4D1880017E63A /* Assets.xcassets */,
 				64F6820121E4D1880017E63A /* LaunchScreen.storyboard */,
 				64F6820421E4D1880017E63A /* Info.plist */,
-				645322A42229110D00A842C0 /* Navigator.swift */,
 				645322A82229113B00A842C0 /* Application.swift */,
 			);
 			path = "snuev-ios";
@@ -561,7 +563,7 @@
 				645322D32229317900A842C0 /* MainNavigator.swift in Sources */,
 				64CE466821ECE4ED007EE055 /* LoginEndpoint.swift in Sources */,
 				64CE465B21ECC386007EE055 /* UIView.swift in Sources */,
-				645322A52229110D00A842C0 /* Navigator.swift in Sources */,
+				645322A52229110D00A842C0 /* LoginNavigator.swift in Sources */,
 				64CE467F21F31A19007EE055 /* SNUEVBaseViewController.swift in Sources */,
 				64F681FB21E4D1870017E63A /* ExampleViewController.swift in Sources */,
 				645322AC2229132600A842C0 /* LoginNetwork.swift in Sources */,

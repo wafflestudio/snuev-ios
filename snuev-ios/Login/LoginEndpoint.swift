@@ -72,7 +72,7 @@ extension Login: TargetType {
     }
 }
 
-final class MoyaLoginNetwork: LoginNetworkProvider {
+final class MoyaLoginNetwork: LoginNetwork {
     private let provider = MoyaProvider<Login>()
     
     func login(_ parameters: [String: Any]) -> Observable<Response> {

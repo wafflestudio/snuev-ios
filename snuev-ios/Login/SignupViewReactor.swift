@@ -14,12 +14,12 @@ import ObjectMapper
 import Japx
 
 final class SignupViewReactor: Reactor {
-    var provider: LoginNetworkProvider
+    var network: LoginNetwork
     var authManager: AuthManager
     var navigator: LoginNavigator
     
-    init(provider: LoginNetworkProvider, authManager: AuthManager, navigator: LoginNavigator) {
-        self.provider = provider
+    init(network: LoginNetwork, authManager: AuthManager, navigator: LoginNavigator) {
+        self.network = network
         self.authManager = authManager
         self.navigator = navigator
     }
@@ -84,7 +84,7 @@ final class SignupViewReactor: Reactor {
         
             return Observable.concat([
                 Observable.just(Mutation.setIsLoading(true)),
-                provider.signup(["username": username, "password": password, "nickname": nickname, "department": department])
+                network.signup(["username": username, "password": password, "nickname": nickname, "department": department])
                     .map { response in
                         do {
                             let filteredResponse = try response.filterSuccessfulStatusCodes()
@@ -158,7 +158,7 @@ final class SignupViewReactor: Reactor {
     }
     
     func fetchDepartments() -> Driver<[Department]?> {
-        return provider.fetchDepartments()
+        return network.fetchDepartments()
     }
     // to view
     

@@ -13,12 +13,12 @@ import Moya
 import ObjectMapper
 
 final class LoginViewReactor: Reactor {
-    var provider: LoginNetworkProvider
+    var network: LoginNetwork
     var authManager: AuthManager
     var navigator: LoginNavigator
     
-    init(provider: LoginNetworkProvider, authManager: AuthManager, navigator: LoginNavigator) {
-        self.provider = provider
+    init(network: LoginNetwork, authManager: AuthManager, navigator: LoginNavigator) {
+        self.network = network
         self.authManager = authManager
         self.navigator = navigator
     }
@@ -54,7 +54,7 @@ final class LoginViewReactor: Reactor {
             
             return Observable.concat([
                 Observable.just(Mutation.setIsLoading(true)),
-                provider.login(["username": username, "password": password])
+                network.login(["username": username, "password": password])
                     .map { response in
                         do {
                             let filteredResponse = try response.filterSuccessfulStatusCodes()

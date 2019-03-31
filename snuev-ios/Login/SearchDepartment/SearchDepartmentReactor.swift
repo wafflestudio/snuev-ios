@@ -13,12 +13,12 @@ import Moya
 import ObjectMapper
 
 final class SearchDepartmentViewReactor: Reactor {
-    var provider: LoginNetworkProvider
+    var network: LoginNetwork
     var authManager: AuthManager
     var navigator: LoginNavigator
     
-    init(provider: LoginNetworkProvider, authManager: AuthManager, navigator: LoginNavigator) {
-        self.provider = provider
+    init(network: LoginNetwork, authManager: AuthManager, navigator: LoginNavigator) {
+        self.network = network
         self.authManager = authManager
         self.navigator = navigator
     }

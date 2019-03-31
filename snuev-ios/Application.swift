@@ -11,10 +11,10 @@ import UIKit
 final class Application {
     static let shared = Application()
     
-    private let network: Network
+    private let networkProvider: NetworkProvider
     
     private init() {
-        self.network = Network()
+        self.networkProvider = DefaultNetworkProvider()
     }
     
     func configureMainInterface(in window: UIWindow) {
@@ -23,8 +23,8 @@ final class Application {
         let navigationController = UINavigationController()
         navigationController.isNavigationBarHidden = true
         
-        let mainNavigator = DefaultMainNavigator(navigationController: navigationController, storyboard: mainStoryboard, network: network)
-        let loginNavigator = DefaultLoginNavigator(navigationController: navigationController, storyboard: loginStoryboard, network: network)
+        let mainNavigator = DefaultMainNavigator(navigationController: navigationController, storyboard: mainStoryboard, network: networkProvider)
+        let loginNavigator = DefaultLoginNavigator(navigationController: navigationController, storyboard: loginStoryboard, network: networkProvider)
         
         loginNavigator.mainNavigator = mainNavigator
 

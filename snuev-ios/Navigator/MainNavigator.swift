@@ -15,9 +15,9 @@ protocol MainNavigator {
 class DefaultMainNavigator: MainNavigator {
     private let storyboard: UIStoryboard
     private let navigationController: UINavigationController
-    private let network: Network
+    private let network: NetworkProvider
     
-    init(navigationController: UINavigationController, storyboard: UIStoryboard, network: Network) {
+    init(navigationController: UINavigationController, storyboard: UIStoryboard, network: NetworkProvider) {
         self.navigationController = navigationController
         self.storyboard = storyboard
         self.network = network
