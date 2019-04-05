@@ -12,7 +12,7 @@ import RxSwift
 import RxCocoa
 
 protocol LoginNetwork {
-    func login(_ parameters: [String: Any]) -> Observable<Response>
+    func login(_ parameters: [String: Any]) -> Observable<AuthResponse?>
     func signup(_ parameters: [String: Any]) -> Observable<Response>
     func fetchDepartments() -> Driver<[Department]?>
 }

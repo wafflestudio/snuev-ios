@@ -20,7 +20,7 @@ final class DefaultUseCaseProvider: UseCaseProvider {
     }
     
     func makeLoginUseCase() -> LoginUseCase {
-        return DefaultLoginUseCase(netWork: networkProvider.makeLoginNetwork())
+        return DefaultLoginUseCase(netWork: networkProvider.makeLoginNetwork(), authManager: AuthManager())
     }
 }
 

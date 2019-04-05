@@ -30,7 +30,7 @@ class DefaultLoginNavigator: LoginNavigator {
     
     func toLogin() {
         let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        vc.reactor = LoginViewReactor(useCase: useCaseProvider.makeLoginUseCase(), authManager: AuthManager(), navigator: self)
+        vc.reactor = LoginViewReactor(useCase: useCaseProvider.makeLoginUseCase(), navigator: self)
         navigationController.pushViewController(vc, animated: true)
     }
     

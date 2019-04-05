@@ -14,6 +14,22 @@ import Japx
 extension PrimitiveSequence where PrimitiveSequence.TraitType == RxSwift.SingleTrait {
     func mapResponseToArray<T: Mappable>(_ type: T.Type) -> RxSwift.PrimitiveSequence<RxSwift.SingleTrait, [T]?> {
         return self
+            .mapResponse()
+            .map { response in
+                return response?.getArrayResponse(T.self)
+        }
+    }
+    
+    func mapResponseToObject<T: Mappable>(_ type: T.Type) -> RxSwift.PrimitiveSequence<RxSwift.SingleTrait, T?> {
+        return self
+            .mapResponse()
+            .map { response in
+                return response?.getObjectResponse(T.self)
+            }
+    }
+    
+    func mapResponse() -> RxSwift.PrimitiveSequence<RxSwift.SingleTrait, JSONApiResponse?> {
+        return self
             .subscribeOn(MainScheduler.instance)
             .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .map { response in
@@ -23,10 +39,7 @@ extension PrimitiveSequence where PrimitiveSequence.TraitType == RxSwift.SingleT
                 do {
                     let filteredResponse = try response.filterSuccessfulStatusCodes()
                     let decodedResponse = try Japx.Decoder.jsonObject(withJSONAPIObject: filteredResponse.mapJSON() as! Parameters)
-                    if let data = decodedResponse["data"] as? [[String: Any]] {
-                        return Mapper<T>().mapArray(JSONArray: data)
-                    }
-                    return []
+                    return Mapper<JSONApiResponse>().map(JSON: decodedResponse)
                 } catch _ {
                     return nil
                 }
