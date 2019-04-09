@@ -260,20 +260,13 @@
 		64CE465C21ECD001007EE055 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				F9040076222934F20000A906 /* SignupViewReactor.swift */,
+				F9040075222934F20000A906 /* SignupViewController.swift */,
+				64CE466D21F0A8FC007EE055 /* LoginViewReactor.swift */,
+				64CE466B21F0A5D3007EE055 /* LoginViewController.swift */,
 				E1E3C70D223BD65C0016294D /* SearchDepartment */,
-				F9040074222934F20000A906 /* Signup */,
-				64CE466F21F0AF43007EE055 /* Login */,
 				64CE465D21ECD064007EE055 /* Login.storyboard */,
 				64CE466721ECE4ED007EE055 /* LoginEndpoint.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		64CE466F21F0AF43007EE055 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				64CE466B21F0A5D3007EE055 /* LoginViewController.swift */,
-				64CE466D21F0A8FC007EE055 /* LoginViewReactor.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -353,15 +346,6 @@
 				E1E3C710223BD67F0016294D /* SearchDepartmentReactor.swift */,
 			);
 			path = SearchDepartment;
-			sourceTree = "<group>";
-		};
-		F9040074222934F20000A906 /* Signup */ = {
-			isa = PBXGroup;
-			children = (
-				F9040075222934F20000A906 /* SignupViewController.swift */,
-				F9040076222934F20000A906 /* SignupViewReactor.swift */,
-			);
-			path = Signup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -519,7 +503,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-snuev-ios/Pods-snuev-ios-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-snuev-ios/Pods-snuev-ios-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Japx/Japx.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
@@ -552,7 +536,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-snuev-ios/Pods-snuev-ios-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-snuev-ios/Pods-snuev-ios-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

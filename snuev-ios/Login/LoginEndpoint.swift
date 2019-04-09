@@ -73,7 +73,6 @@ extension Login: TargetType {
 }
 
 final class MoyaLoginNetwork: LoginNetworkProvider {
-    
     private let provider = MoyaProvider<Login>()
     
     func login(_ parameters: [String: Any]) -> Observable<Response> {
@@ -96,5 +95,6 @@ final class MoyaLoginNetwork: LoginNetworkProvider {
             .asDriver(onErrorJustReturn: nil)
     }
 }
+
 
 

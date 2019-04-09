@@ -1,7 +1,7 @@
 PODS:
   - Alamofire (4.8.0)
-  - Japx/Codable (2.0.1):
-    - Japx/Core
+  - Japx (2.0.1):
+    - Japx/Core (= 2.0.1)
   - Japx/Core (2.0.1)
   - KeychainSwift (13.0.0)
   - Moya/Core (12.0.1):
@@ -25,7 +25,7 @@ PODS:
   - SnapKit (4.2.0)
 
 DEPENDENCIES:
-  - Japx/Codable
+  - Japx
   - KeychainSwift
   - Moya/RxSwift (~> 12.0)
   - ObjectMapper
@@ -63,6 +63,6 @@ SPEC CHECKSUMS:
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: 15bc8d26672fec2365ba186307e028aacacffea1
+PODFILE CHECKSUM: 09c1b559d1275ffb0b00fa99d9c71d183f11bf86
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.5.3

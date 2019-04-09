@@ -14,5 +14,5 @@ target 'snuev-ios' do
   pod 'RxOptional'
   pod 'SnapKit'
   pod 'KeychainSwift'
-  pod 'Japx/Codable'
+  pod 'Japx'
 end
