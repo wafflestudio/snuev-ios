@@ -13,13 +13,13 @@ import Moya
 import ObjectMapper
 
 final class SearchDepartmentViewReactor: Reactor {
-    var provider: LoginNetworkProvider
+    var useCase: LoginUseCase
     var authManager: AuthManager
     var navigator: LoginNavigator
     var departments: [Department] = []
     
-    init(provider: LoginNetworkProvider, authManager: AuthManager, navigator: LoginNavigator, departments: [Department]?) {
-        self.provider = provider
+    init(useCase: LoginUseCase, authManager: AuthManager, navigator: LoginNavigator, departments: [Department]?) {
+        self.useCase = useCase
         self.authManager = authManager
         self.navigator = navigator
         self.initialState = State(departments: departments)

@@ -13,13 +13,11 @@ import Moya
 import ObjectMapper
 
 final class LoginViewReactor: Reactor {
-    var provider: LoginNetworkProvider
-    var authManager: AuthManager
+    var useCase: LoginUseCase
     var navigator: LoginNavigator
     
-    init(provider: LoginNetworkProvider, authManager: AuthManager, navigator: LoginNavigator) {
-        self.provider = provider
-        self.authManager = authManager
+    init(useCase: LoginUseCase, navigator: LoginNavigator) {
+        self.useCase = useCase
         self.navigator = navigator
     }
     
@@ -54,18 +52,12 @@ final class LoginViewReactor: Reactor {
             
             return Observable.concat([
                 Observable.just(Mutation.setIsLoading(true)),
-                provider.login(["username": username, "password": password])
+                useCase.login(["username": username, "password": password])
                     .map { response in
-                        do {
-                            let filteredResponse = try response.filterSuccessfulStatusCodes()
-                            if let jsonRespose = try filteredResponse.mapJSON() as? [String: Any], let meta = jsonRespose["meta"] as? [String: Any], let token = meta["auth_token"] as? String {
-                                self.authManager.setToken(token: token)
-                            }
+                        if response {
                             return Mutation.setLoginSuccess(true)
                         }
-                        catch let error {
-                            return Mutation.setErrorMessage(error.localizedDescription)
-                        }
+                        return Mutation.setErrorMessage("로그인에 실패했습니다.")
                     }
             ])
         }

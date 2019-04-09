@@ -72,13 +72,32 @@ extension Login: TargetType {
     }
 }
 
-final class MoyaLoginNetwork: LoginNetworkProvider {
+final class MoyaLoginNetwork: LoginNetwork {
     private let provider = MoyaProvider<Login>()
     
-    func login(_ parameters: [String: Any]) -> Observable<Response> {
+    func login(_ parameters: [String: Any]) -> Observable<AuthResponse?> {
         return provider.rx.request(Login.login(parameters))
             .subscribeOn(MainScheduler.instance)
             .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+//            .map { response in
+//                do {
+//                    let filteredResponse = try response.filterSuccessfulStatusCodes()
+//                    if let jsonRespose = try filteredResponse.mapJSON() as? [String: Any], let meta = jsonRespose["meta"] as? [String: Any], let token = meta["auth_token"] as? String {
+//                        print(jsonRespose)
+//                    }
+//                    return "asd"
+//                }
+//                catch _ {
+//                    return ":asd"
+//                }
+//            }
+            .mapResponse()
+            .map {response in
+                if let meta = response?.meta {
+                    return Mapper<AuthResponse>().map(JSON: meta)
+                }
+                return nil
+            }
             .asObservable()
     }
     

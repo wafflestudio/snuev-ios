@@ -11,8 +11,8 @@ import Moya
 import RxSwift
 import RxCocoa
 
-protocol LoginNetworkProvider {
-    func login(_ parameters: [String: Any]) -> Observable<Response>
+protocol LoginNetwork {
+    func login(_ parameters: [String: Any]) -> Observable<AuthResponse?>
     func signup(_ parameters: [String: Any]) -> Observable<Response>
     func fetchDepartments() -> Driver<[Department]?>
 }

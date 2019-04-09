@@ -22,25 +22,25 @@ class DefaultLoginNavigator: LoginNavigator {
     private let storyboard: UIStoryboard
     private let navigationController: UINavigationController
     private let network: Network
-//    private var selectedDepartment: Observable<Department>?
     
     private let selectedDepartmentSubject = PublishSubject<Department>()
     var selectedDepartment: Observable<Department> {
         return selectedDepartmentSubject.asObservable()
     }
+    private let useCaseProvider: UseCaseProvider
     
     var mainNavigator: MainNavigator?
     var disposeBag = DisposeBag()
     
-    init(navigationController: UINavigationController, storyboard: UIStoryboard, network: Network) {
+    init(navigationController: UINavigationController, storyboard: UIStoryboard, useCaseProvider: UseCaseProvider) {
         self.navigationController = navigationController
         self.storyboard = storyboard
-        self.network = network
+        self.useCaseProvider = useCaseProvider
     }
     
     func toLogin() {
         let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        vc.reactor = LoginViewReactor(provider: network.makeLoginNetwork(), authManager: AuthManager(), navigator: self)
+        vc.reactor = LoginViewReactor(useCase: useCaseProvider.makeLoginUseCase(), navigator: self)
         navigationController.pushViewController(vc, animated: true)
     }
     
@@ -53,7 +53,7 @@ class DefaultLoginNavigator: LoginNavigator {
                 print("complete select department")
         })
             .disposed(by: disposeBag)
-        vc.reactor = SignupViewReactor(provider: network.makeLoginNetwork(), authManager: AuthManager(), navigator: self)
+        vc.reactor = SignupViewReactor(useCase: useCaseProvider.makeLoginUseCase(), authManager: AuthManager(), navigator: self)
         navigationController.pushViewController(vc, animated: true)
     }
     
@@ -63,7 +63,7 @@ class DefaultLoginNavigator: LoginNavigator {
     
     func toSearchDepartment(_ departments: [Department]?) {
         let vc = storyboard.instantiateViewController(withIdentifier: "SearchDepartmentViewController") as! SearchDepartmentViewController
-        vc.reactor = SearchDepartmentViewReactor(provider: network.makeLoginNetwork(), authManager: AuthManager(), navigator: self, departments: departments)
+        vc.reactor = SearchDepartmentViewReactor(useCase: useCaseProvider.makeLoginUseCase(), authManager: AuthManager(), navigator: self, departments: departments)
         navigationController.pushViewController(vc, animated: true)
     }
     

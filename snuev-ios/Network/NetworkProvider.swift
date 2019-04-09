@@ -8,8 +8,12 @@
 
 import Foundation
 
-final class Network {
-    public func makeLoginNetwork() -> LoginNetworkProvider {
+protocol NetworkProvider {
+    func makeLoginNetwork() -> LoginNetwork
+}
+
+final class DefaultNetworkProvider: NetworkProvider {
+    public func makeLoginNetwork() -> LoginNetwork {
         return MoyaLoginNetwork()
     }
 }
