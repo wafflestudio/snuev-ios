@@ -25,14 +25,14 @@ class SignupViewController: SNUEVBaseViewController, StoryboardView {
     @IBOutlet weak var btnLogin: SNUEVButton!
     @IBOutlet weak var searchDepartmentButton: UIButton!
     var deparmtments: [Department]?
-    
+    private let selectedDepartmentSubject = PublishSubject<Department>()
+    var selectedDepartment: Department?
     override func viewDidLoad() {
         super.viewDidLoad()
         btnSignup.setButtonType(.Square)
         btnLogin.setButtonType(.withRoundImage)
         reactor?.fetchDepartments().drive(onNext: { department in
             self.deparmtments = department
-            print(department)
         })
         .disposed(by: disposeBag)
     }
@@ -40,9 +40,10 @@ class SignupViewController: SNUEVBaseViewController, StoryboardView {
     func bind(reactor: SignupViewReactor) {
         // Action
         btnSignup.rx.tap
-            .map { Reactor.Action.signupRequest(username: self.inputUsername.text, department: self.inputDepartment.text, nickname: self.inputNickname.text, password: self.inputPassword.text) }
+            .map { Reactor.Action.signupRequest(username: self.inputUsername.text, department: self.selectedDepartment?.id ?? "", nickname: self.inputNickname.text, password: self.inputPassword.text) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
+        
 
         // State
         reactor.state.map { $0.signupSuccess }

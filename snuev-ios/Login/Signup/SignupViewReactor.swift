@@ -84,7 +84,7 @@ final class SignupViewReactor: Reactor {
         
             return Observable.concat([
                 Observable.just(Mutation.setIsLoading(true)),
-                provider.signup(["username": username, "password": password, "nickname": nickname, "department": department])
+                provider.signup(["username": username, "password": password, "nickname": nickname, "department_id": department])
                     .map { response in
                         do {
                             let filteredResponse = try response.filterSuccessfulStatusCodes()
@@ -94,11 +94,11 @@ final class SignupViewReactor: Reactor {
                             return Mutation.setSignupSuccess(true)
                         }
                         catch let error {
-                            let decodedResponse = try Japx.Decoder.jsonObject(withJSONAPIObject: response.mapJSON() as! Parameters)
-                            let errors = decodedResponse["errors"] as! [[String: Any]]
-                            let errors2 = errors[0] as! [String: String]
-                            let errorTitle = errors2["title"]
-                            return Mutation.setErrorMessage(errorTitle!)
+//                            let decodedResponse = try Japx.Decoder.jsonObject(withJSONAPIObject: response.mapJSON() as! Parameters)
+//                            let errors = decodedResponse["errors"] as? [[String: Any]]
+//                            let errors2 = errors![0] as? [String: String]
+//                            let errorTitle = errors2["title"]
+                            return Mutation.setErrorMessage("error")
                         }
                 }
             ])

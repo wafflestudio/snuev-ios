@@ -9,7 +9,7 @@
 import ObjectMapper
 
 class Department: Mappable, Codable {
-    var id: Int!
+    var id: String!
     var name: String!
     
     required init?(map: Map) {
