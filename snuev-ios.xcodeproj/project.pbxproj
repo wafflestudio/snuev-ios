@@ -277,7 +277,8 @@
 				F9040075222934F20000A906 /* SignupViewController.swift */,
 				64CE466D21F0A8FC007EE055 /* LoginViewReactor.swift */,
 				64CE466B21F0A5D3007EE055 /* LoginViewController.swift */,
-				E1E3C70D223BD65C0016294D /* SearchDepartment */,
+				E1E3C710223BD67F0016294D /* SearchDepartmentReactor.swift */,
+				E1E3C70E223BD6700016294D /* SearchDepartmentViewController.swift */,
 				64CE465D21ECD064007EE055 /* Login.storyboard */,
 				64CE466721ECE4ED007EE055 /* LoginEndpoint.swift */,
 			);
@@ -350,15 +351,6 @@
 				29F386CDDCBC44430A2F839C /* Pods-snuev-ios.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		E1E3C70D223BD65C0016294D /* SearchDepartment */ = {
-			isa = PBXGroup;
-			children = (
-				E1E3C70E223BD6700016294D /* SearchDepartmentViewController.swift */,
-				E1E3C710223BD67F0016294D /* SearchDepartmentReactor.swift */,
-			);
-			path = SearchDepartment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -518,7 +510,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-snuev-ios/Pods-snuev-ios-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-snuev-ios/Pods-snuev-ios-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Japx/Japx.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
@@ -551,7 +543,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-snuev-ios/Pods-snuev-ios-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-snuev-ios/Pods-snuev-ios-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

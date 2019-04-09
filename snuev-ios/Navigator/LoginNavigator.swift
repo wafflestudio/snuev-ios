@@ -21,13 +21,12 @@ protocol LoginNavigator {
 class DefaultLoginNavigator: LoginNavigator {
     private let storyboard: UIStoryboard
     private let navigationController: UINavigationController
-    private let network: Network
+    private let useCaseProvider: UseCaseProvider
     
     private let selectedDepartmentSubject = PublishSubject<Department>()
     var selectedDepartment: Observable<Department> {
         return selectedDepartmentSubject.asObservable()
     }
-    private let useCaseProvider: UseCaseProvider
     
     var mainNavigator: MainNavigator?
     var disposeBag = DisposeBag()
