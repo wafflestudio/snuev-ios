@@ -22,6 +22,7 @@ class SearchDepartmentViewController: SNUEVBaseViewController, StoryboardView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchQuery.becomeFirstResponder()
     }
     
     func bind(reactor: SearchDepartmentViewReactor) {
