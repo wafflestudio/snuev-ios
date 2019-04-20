@@ -10,10 +10,15 @@ import Foundation
 
 protocol NetworkProvider {
     func makeLoginNetwork() -> LoginNetwork
+    func makeLectureNetwork() -> LectureNetwork
 }
 
 final class DefaultNetworkProvider: NetworkProvider {
     public func makeLoginNetwork() -> LoginNetwork {
         return MoyaLoginNetwork()
+    }
+
+    public func makeLectureNetwork() -> LectureNetwork {
+        return MoyaLectureNetwork()
     }
 }

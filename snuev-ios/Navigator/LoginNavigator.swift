@@ -16,6 +16,7 @@ protocol LoginNavigator {
     func toMain()
     func toSearchDepartment(_: [Department]?)
     func popToSignup(department: Department)
+    func toVerifyEmail(username: String)
 }
 
 class DefaultLoginNavigator: LoginNavigator {
@@ -69,5 +70,12 @@ class DefaultLoginNavigator: LoginNavigator {
     func popToSignup(department: Department) {
         selectedDepartmentSubject.onNext(department)
         navigationController.popViewController(animated: true)
+    }
+    
+    func toVerifyEmail(username: String) {
+        let vc = storyboard.instantiateViewController(withIdentifier: "VerifyEmailViewController") as! VerifyEmailViewController
+        vc.reactor = VerifyEmailViewReactor(useCase: useCaseProvider.makeLoginUseCase(), navigator: self)
+        vc.username = username
+        navigationController.pushViewController(vc, animated: true)
     }
 }

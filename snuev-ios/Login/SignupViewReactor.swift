@@ -140,5 +140,9 @@ final class SignupViewReactor: Reactor {
     func toSearchDepartment(_ departments: [Department]?) {
         navigator.toSearchDepartment(departments)
     }
+    
+    func toVerifyEmail(username: String) {
+        navigator.toVerifyEmail(username: username)
+    }
 }
 

@@ -51,6 +51,8 @@ class SignupViewController: SNUEVBaseViewController, StoryboardView {
             .filter { $0 }
             .subscribe(onNext: { [weak self] success in
                 self?.showToast(message: "Signup success!!!")
+                self?.navigationController?.popViewController(animated: false)
+                reactor.toVerifyEmail(username: (self?.inputUsername.text!)!)
             }).disposed(by: disposeBag)
         
         reactor.state.map { $0.errorMessage }
@@ -68,7 +70,7 @@ class SignupViewController: SNUEVBaseViewController, StoryboardView {
         
         searchDepartmentButton.rx.tap.bind {
             reactor.toSearchDepartment(self.deparmtments)
-        }
+        }.disposed(by: disposeBag)
     }
 }
 

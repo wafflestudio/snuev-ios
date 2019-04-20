@@ -60,6 +60,25 @@
 		64F6820021E4D1880017E63A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64F681FF21E4D1880017E63A /* Assets.xcassets */; };
 		64F6820321E4D1880017E63A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64F6820121E4D1880017E63A /* LaunchScreen.storyboard */; };
 		B7B8942FACF2F0B8BF94B2D7 /* Pods_snuev_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99332AA8B204CFF7F37E68D1 /* Pods_snuev_ios.framework */; };
+		E11C4D9A225D865D00C7975D /* VerifyEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11C4D99225D865D00C7975D /* VerifyEmailViewController.swift */; };
+		E11C4DA0225D89F300C7975D /* img-email.png in Resources */ = {isa = PBXBuildFile; fileRef = E11C4D9D225D89F200C7975D /* img-email.png */; };
+		E11C4DA1225D89F300C7975D /* img-email@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11C4D9E225D89F300C7975D /* img-email@3x.png */; };
+		E11C4DA2225D89F300C7975D /* img-email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11C4D9F225D89F300C7975D /* img-email@2x.png */; };
+		E11C4DA6225D99D200C7975D /* ic-arrow-left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11C4DA3225D99D200C7975D /* ic-arrow-left@2x.png */; };
+		E11C4DA7225D99D200C7975D /* ic-arrow-left@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11C4DA4225D99D200C7975D /* ic-arrow-left@3x.png */; };
+		E11C4DA8225D99D200C7975D /* ic-arrow-left.png in Resources */ = {isa = PBXBuildFile; fileRef = E11C4DA5225D99D200C7975D /* ic-arrow-left.png */; };
+		E11C4DAC225D9B5A00C7975D /* ic-arrow-right@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11C4DA9225D9B5900C7975D /* ic-arrow-right@3x.png */; };
+		E11C4DAD225D9B5A00C7975D /* ic-arrow-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11C4DAA225D9B5900C7975D /* ic-arrow-right@2x.png */; };
+		E11C4DAE225D9B5A00C7975D /* ic-arrow-right.png in Resources */ = {isa = PBXBuildFile; fileRef = E11C4DAB225D9B5A00C7975D /* ic-arrow-right.png */; };
+		E11C4DB0225DB44E00C7975D /* VerifyEmailViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11C4DAF225DB44E00C7975D /* VerifyEmailViewReactor.swift */; };
+		E11C4DB4225DC15700C7975D /* img-search@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11C4DB1225DC15600C7975D /* img-search@3x.png */; };
+		E11C4DB5225DC15700C7975D /* img-search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11C4DB2225DC15700C7975D /* img-search@2x.png */; };
+		E11C4DB6225DC15700C7975D /* img-search.png in Resources */ = {isa = PBXBuildFile; fileRef = E11C4DB3225DC15700C7975D /* img-search.png */; };
+		E11C4DB8225DC6DB00C7975D /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11C4DB7225DC6DB00C7975D /* Lecture.swift */; };
+		E11C4DBA225DCC4400C7975D /* LectureEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11C4DB9225DCC4400C7975D /* LectureEndpoint.swift */; };
+		E11C4DBC225DCFA600C7975D /* LectureNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11C4DBB225DCFA600C7975D /* LectureNetwork.swift */; };
+		E11C4DBE225ED7FA00C7975D /* SearchLectureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11C4DBD225ED7FA00C7975D /* SearchLectureViewController.swift */; };
+		E11C4DC0225ED80C00C7975D /* SearchLectureViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11C4DBF225ED80C00C7975D /* SearchLectureViewReactor.swift */; };
 		E1E3C70F223BD6700016294D /* SearchDepartmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E3C70E223BD6700016294D /* SearchDepartmentViewController.swift */; };
 		E1E3C711223BD67F0016294D /* SearchDepartmentReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E3C710223BD67F0016294D /* SearchDepartmentReactor.swift */; };
 		F9040071222933830000A906 /* img-signup.png in Resources */ = {isa = PBXBuildFile; fileRef = F904006E222933830000A906 /* img-signup.png */; };
@@ -140,6 +159,25 @@
 		64F6820221E4D1880017E63A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64F6820421E4D1880017E63A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99332AA8B204CFF7F37E68D1 /* Pods_snuev_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snuev_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E11C4D99225D865D00C7975D /* VerifyEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyEmailViewController.swift; sourceTree = "<group>"; };
+		E11C4D9D225D89F200C7975D /* img-email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-email.png"; sourceTree = "<group>"; };
+		E11C4D9E225D89F300C7975D /* img-email@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-email@3x.png"; sourceTree = "<group>"; };
+		E11C4D9F225D89F300C7975D /* img-email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-email@2x.png"; sourceTree = "<group>"; };
+		E11C4DA3225D99D200C7975D /* ic-arrow-left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-arrow-left@2x.png"; sourceTree = "<group>"; };
+		E11C4DA4225D99D200C7975D /* ic-arrow-left@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-arrow-left@3x.png"; sourceTree = "<group>"; };
+		E11C4DA5225D99D200C7975D /* ic-arrow-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-arrow-left.png"; sourceTree = "<group>"; };
+		E11C4DA9225D9B5900C7975D /* ic-arrow-right@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-arrow-right@3x.png"; sourceTree = "<group>"; };
+		E11C4DAA225D9B5900C7975D /* ic-arrow-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-arrow-right@2x.png"; sourceTree = "<group>"; };
+		E11C4DAB225D9B5A00C7975D /* ic-arrow-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-arrow-right.png"; sourceTree = "<group>"; };
+		E11C4DAF225DB44E00C7975D /* VerifyEmailViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyEmailViewReactor.swift; sourceTree = "<group>"; };
+		E11C4DB1225DC15600C7975D /* img-search@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-search@3x.png"; sourceTree = "<group>"; };
+		E11C4DB2225DC15700C7975D /* img-search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-search@2x.png"; sourceTree = "<group>"; };
+		E11C4DB3225DC15700C7975D /* img-search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-search.png"; sourceTree = "<group>"; };
+		E11C4DB7225DC6DB00C7975D /* Lecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lecture.swift; sourceTree = "<group>"; };
+		E11C4DB9225DCC4400C7975D /* LectureEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureEndpoint.swift; sourceTree = "<group>"; };
+		E11C4DBB225DCFA600C7975D /* LectureNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureNetwork.swift; sourceTree = "<group>"; };
+		E11C4DBD225ED7FA00C7975D /* SearchLectureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLectureViewController.swift; sourceTree = "<group>"; };
+		E11C4DBF225ED80C00C7975D /* SearchLectureViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLectureViewReactor.swift; sourceTree = "<group>"; };
 		E1E3C70E223BD6700016294D /* SearchDepartmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDepartmentViewController.swift; sourceTree = "<group>"; };
 		E1E3C710223BD67F0016294D /* SearchDepartmentReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDepartmentReactor.swift; sourceTree = "<group>"; };
 		F904006E222933830000A906 /* img-signup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-signup.png"; sourceTree = "<group>"; };
@@ -172,6 +210,8 @@
 			isa = PBXGroup;
 			children = (
 				64F681FC21E4D1870017E63A /* Main.storyboard */,
+				E11C4DBD225ED7FA00C7975D /* SearchLectureViewController.swift */,
+				E11C4DBF225ED80C00C7975D /* SearchLectureViewReactor.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -180,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				64087B26222A6B7F00D374B9 /* Department.swift */,
+				E11C4DB7225DC6DB00C7975D /* Lecture.swift */,
 				3174DBD522535C9F00278C39 /* AuthResponse.swift */,
 				3174DBD722535F9800278C39 /* JSONApiResponse.swift */,
 			);
@@ -191,6 +232,8 @@
 			children = (
 				645322A62229112D00A842C0 /* NetworkProvider.swift */,
 				645322AB2229132600A842C0 /* LoginNetwork.swift */,
+				E11C4DB9225DCC4400C7975D /* LectureEndpoint.swift */,
+				E11C4DBB225DCFA600C7975D /* LectureNetwork.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -216,6 +259,18 @@
 		64CE464F21ECB9BB007EE055 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				E11C4DB3225DC15700C7975D /* img-search.png */,
+				E11C4DB2225DC15700C7975D /* img-search@2x.png */,
+				E11C4DB1225DC15600C7975D /* img-search@3x.png */,
+				E11C4DAB225D9B5A00C7975D /* ic-arrow-right.png */,
+				E11C4DAA225D9B5900C7975D /* ic-arrow-right@2x.png */,
+				E11C4DA9225D9B5900C7975D /* ic-arrow-right@3x.png */,
+				E11C4DA5225D99D200C7975D /* ic-arrow-left.png */,
+				E11C4DA3225D99D200C7975D /* ic-arrow-left@2x.png */,
+				E11C4DA4225D99D200C7975D /* ic-arrow-left@3x.png */,
+				E11C4D9D225D89F200C7975D /* img-email.png */,
+				E11C4D9F225D89F300C7975D /* img-email@2x.png */,
+				E11C4D9E225D89F300C7975D /* img-email@3x.png */,
 				3174DBCF224B09E000278C39 /* img-main-mobile-320-767-px.png */,
 				3174DBCE224B09E000278C39 /* img-main-mobile-320-767-px@2x.png */,
 				3174DBD0224B09E100278C39 /* img-main-mobile-320-767-px@3x.png */,
@@ -281,6 +336,8 @@
 				E1E3C70E223BD6700016294D /* SearchDepartmentViewController.swift */,
 				64CE465D21ECD064007EE055 /* Login.storyboard */,
 				64CE466721ECE4ED007EE055 /* LoginEndpoint.swift */,
+				E11C4D99225D865D00C7975D /* VerifyEmailViewController.swift */,
+				E11C4DAF225DB44E00C7975D /* VerifyEmailViewReactor.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -443,33 +500,45 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E11C4DAC225D9B5A00C7975D /* ic-arrow-right@3x.png in Resources */,
 				645322CB22292C2100A842C0 /* ic-search-30-px.png in Resources */,
 				645322CF22292C2100A842C0 /* ic-bookmark-normal@3x.png in Resources */,
+				E11C4DA8225D99D200C7975D /* ic-arrow-left.png in Resources */,
+				E11C4DAE225D9B5A00C7975D /* ic-arrow-right.png in Resources */,
+				E11C4DA7225D99D200C7975D /* ic-arrow-left@3x.png in Resources */,
 				3174DBD1224B09E100278C39 /* img-main-mobile-320-767-px@2x.png in Resources */,
 				64F6820321E4D1880017E63A /* LaunchScreen.storyboard in Resources */,
 				645322B222292B9A00A842C0 /* img-logo-110-px@2x.png in Resources */,
 				645322B122292B9A00A842C0 /* img-logo-110-px.png in Resources */,
+				E11C4DB5225DC15700C7975D /* img-search@2x.png in Resources */,
 				645322C522292C2100A842C0 /* ic-logout-normal.png in Resources */,
 				645322B022292B9A00A842C0 /* img-logo-110-px@3x.png in Resources */,
+				E11C4DB4225DC15700C7975D /* img-search@3x.png in Resources */,
 				64F6820021E4D1880017E63A /* Assets.xcassets in Resources */,
 				3174DBD2224B09E100278C39 /* img-main-mobile-320-767-px.png in Resources */,
 				64CE465E21ECD064007EE055 /* Login.storyboard in Resources */,
 				645322C822292C2100A842C0 /* ic-bookmark-normal.png in Resources */,
 				F9040072222933830000A906 /* img-signup@3x.png in Resources */,
 				645322CA22292C2100A842C0 /* ic-logout-normal@2x.png in Resources */,
+				E11C4DAD225D9B5A00C7975D /* ic-arrow-right@2x.png in Resources */,
 				645322CC22292C2100A842C0 /* ic-detailsearch-normal@3x.png in Resources */,
 				645322C922292C2100A842C0 /* ic-detailsearch-normal.png in Resources */,
+				E11C4DB6225DC15700C7975D /* img-search.png in Resources */,
 				3174DBD3224B09E100278C39 /* img-main-mobile-320-767-px@3x.png in Resources */,
 				645322C722292C2100A842C0 /* ic-profile-normal@2x.png in Resources */,
+				E11C4DA0225D89F300C7975D /* img-email.png in Resources */,
 				645322CD22292C2100A842C0 /* ic-search-30-px@2x.png in Resources */,
 				F9040073222933830000A906 /* img-signup@2x.png in Resources */,
 				645322C622292C2100A842C0 /* ic-profile-normal.png in Resources */,
 				F9040071222933830000A906 /* img-signup.png in Resources */,
 				645322CE22292C2100A842C0 /* ic-search-30-px@3x.png in Resources */,
 				645322C222292C2100A842C0 /* ic-bookmark-normal@2x.png in Resources */,
+				E11C4DA2225D89F300C7975D /* img-email@2x.png in Resources */,
+				E11C4DA1225D89F300C7975D /* img-email@3x.png in Resources */,
 				645322C322292C2100A842C0 /* ic-detailsearch-normal@2x.png in Resources */,
 				64CE466221ECD462007EE055 /* img-logo-220-px@2x.png in Resources */,
 				645322C422292C2100A842C0 /* ic-profile-normal@3x.png in Resources */,
+				E11C4DA6225D99D200C7975D /* ic-arrow-left@2x.png in Resources */,
 				645322D022292C2100A842C0 /* ic-logout-normal@3x.png in Resources */,
 				64F681FE21E4D1870017E63A /* Main.storyboard in Resources */,
 				64CE466321ECD462007EE055 /* img-logo-220-px@3x.png in Resources */,
@@ -563,7 +632,9 @@
 			files = (
 				645322A92229113B00A842C0 /* Application.swift in Sources */,
 				3174DBD822535F9800278C39 /* JSONApiResponse.swift in Sources */,
+				E11C4D9A225D865D00C7975D /* VerifyEmailViewController.swift in Sources */,
 				64CE466C21F0A5D4007EE055 /* LoginViewController.swift in Sources */,
+				E11C4DC0225ED80C00C7975D /* SearchLectureViewReactor.swift in Sources */,
 				64087B27222A6B7F00D374B9 /* Department.swift in Sources */,
 				F9040077222934F20000A906 /* SignupViewController.swift in Sources */,
 				645322D32229317900A842C0 /* MainNavigator.swift in Sources */,
@@ -573,21 +644,26 @@
 				64CE467F21F31A19007EE055 /* SNUEVBaseViewController.swift in Sources */,
 				64BEB1D82250B919007B9091 /* UseCaseProvider.swift in Sources */,
 				645322AC2229132600A842C0 /* LoginNetwork.swift in Sources */,
+				E11C4DBC225DCFA600C7975D /* LectureNetwork.swift in Sources */,
 				64F681F921E4D1870017E63A /* AppDelegate.swift in Sources */,
+				E11C4DB8225DC6DB00C7975D /* Lecture.swift in Sources */,
 				E1E3C70F223BD6700016294D /* SearchDepartmentViewController.swift in Sources */,
 				3174DBD622535C9F00278C39 /* AuthResponse.swift in Sources */,
 				64D61404223AAEE9001011F4 /* PrimitiveSequence.swift in Sources */,
 				E1E3C711223BD67F0016294D /* SearchDepartmentReactor.swift in Sources */,
 				64CE466E21F0A8FC007EE055 /* LoginViewReactor.swift in Sources */,
 				645322A72229112D00A842C0 /* NetworkProvider.swift in Sources */,
+				E11C4DBE225ED7FA00C7975D /* SearchLectureViewController.swift in Sources */,
 				641ADB5621F470B4002DD367 /* AuthManager.swift in Sources */,
 				F9040078222934F20000A906 /* SignupViewReactor.swift in Sources */,
 				64CE466621ECDFB1007EE055 /* UIImage.swift in Sources */,
+				E11C4DB0225DB44E00C7975D /* VerifyEmailViewReactor.swift in Sources */,
 				64CE465221ECBA7E007EE055 /* SNUEVButton.swift in Sources */,
 				64CE465921ECBFD5007EE055 /* UIColor.swift in Sources */,
 				64CE466A21ECE5D3007EE055 /* String.swift in Sources */,
 				64CE465521ECBAC1007EE055 /* Constants.swift in Sources */,
 				64BEB1DA2250B972007B9091 /* LoginUseCase.swift in Sources */,
+				E11C4DBA225DCC4400C7975D /* LectureEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -780,7 +856,9 @@
 			baseConfigurationReference = 3B2C0C6DA3622C8A68E09688 /* Pods-snuev-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "snuev-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -788,6 +866,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "waffle.snuev-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -798,7 +877,9 @@
 			baseConfigurationReference = 29F386CDDCBC44430A2F839C /* Pods-snuev-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "snuev-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -806,6 +887,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "waffle.snuev-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
