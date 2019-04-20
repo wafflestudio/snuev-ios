@@ -13,14 +13,8 @@ import Moya
 import ObjectMapper
 
 final class SearchDepartmentViewReactor: Reactor {
-    var useCase: LoginUseCase
-    var authManager: AuthManager
-    var navigator: LoginNavigator
-    
-    init(useCase: LoginUseCase, authManager: AuthManager, navigator: LoginNavigator) {
-        self.useCase = useCase
-        self.authManager = authManager
-        self.navigator = navigator
+    init(departments: [Department]) {
+        self.initialState = State(query: "", departments: departments)
     }
     
     enum Action {
@@ -36,7 +30,7 @@ final class SearchDepartmentViewReactor: Reactor {
         var departments: [Department] = []
     }
     
-    let initialState = State()
+    let initialState: State
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {

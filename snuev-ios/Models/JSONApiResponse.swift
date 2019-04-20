@@ -8,8 +8,8 @@
 
 import ObjectMapper
 
-class JSONApiResponse: Mappable {
-    var data: Any?
+class JSONApiResponse<T>: Mappable {
+    var data: T?
     var meta: [String: Any]?
     
     required init?(map: Map) {

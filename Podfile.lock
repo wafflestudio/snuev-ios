@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (4.8.0)
+  - AlamofireObjectMapper (5.2.0):
+    - Alamofire (~> 4.7)
+    - ObjectMapper (~> 3.4)
   - Japx (2.0.1):
     - Japx/Core (= 2.0.1)
   - Japx/Core (2.0.1)
@@ -23,8 +26,11 @@ PODS:
   - RxSwift (4.4.0):
     - RxAtomic (~> 4.4)
   - SnapKit (4.2.0)
+  - Swinject (2.6.0)
 
 DEPENDENCIES:
+  - Alamofire
+  - AlamofireObjectMapper
   - Japx
   - KeychainSwift
   - Moya/RxSwift (~> 12.0)
@@ -33,10 +39,12 @@ DEPENDENCIES:
   - RxCocoa
   - RxOptional
   - SnapKit
+  - Swinject
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - AlamofireObjectMapper
     - Japx
     - KeychainSwift
     - Moya
@@ -48,9 +56,11 @@ SPEC REPOS:
     - RxOptional
     - RxSwift
     - SnapKit
+    - Swinject
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
   Japx: 153a8a39a71121827bcf89c6f89ef28091f2b3e7
   KeychainSwift: 23d6c16cbc33f20fafa30c3d783241b4b87d998c
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
@@ -62,7 +72,8 @@ SPEC CHECKSUMS:
   RxOptional: 80426a0ddbd092573e4c482d8cc13302078c4d5e
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
 
-PODFILE CHECKSUM: 09c1b559d1275ffb0b00fa99d9c71d183f11bf86
+PODFILE CHECKSUM: f200277a9770b7861945029f408afc941d253252
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1

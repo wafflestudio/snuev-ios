@@ -44,8 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         let window = UIWindow(frame: UIScreen.main.bounds)
-        
-        Application.shared.configureMainInterface(in: window)
+        window.rootViewController = SNUEVContainer.shared.resolve(LoginViewController.self)
         
         self.window = window
         return true

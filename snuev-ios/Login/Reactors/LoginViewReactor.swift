@@ -13,12 +13,10 @@ import Moya
 import ObjectMapper
 
 final class LoginViewReactor: Reactor {
-    var useCase: LoginUseCase
-    var navigator: LoginNavigator
+    var loginUseCase: LoginUseCase
     
-    init(useCase: LoginUseCase, navigator: LoginNavigator) {
-        self.useCase = useCase
-        self.navigator = navigator
+    init(loginUseCase: LoginUseCase) {
+        self.loginUseCase = loginUseCase
     }
     
     enum Action {
@@ -26,9 +24,9 @@ final class LoginViewReactor: Reactor {
     }
     
     enum Mutation {
-        case setLoginSuccess(Bool)
+        case setLoginSuccess
         case setErrorMessage(String?)
-        case setIsLoading(Bool)
+        case setIsLoading
     }
     
     struct State {
@@ -43,50 +41,44 @@ final class LoginViewReactor: Reactor {
         switch action {
         case let .loginRequest(username, password):
             guard let username = username, !username.isEmpty else {
-                return Observable.just(Mutation.setErrorMessage("Enter username"))
+                return Observable.just(Mutation.setErrorMessage("마이스누 계정을 입력하세요."))
             }
             
             guard let password = password, !password.isEmpty else {
-                return Observable.just(Mutation.setErrorMessage("Enter password"))
+                return Observable.just(Mutation.setErrorMessage("비밀번호를 입력하세요."))
             }
             
-            return Observable.concat([
-                Observable.just(Mutation.setIsLoading(true)),
-                useCase.login(["username": username, "password": password])
-                    .map { response in
-                        if response {
-                            return Mutation.setLoginSuccess(true)
+            return loginUseCase.login(username: username, password: password)
+                    .map { resource in
+                        switch resource.status {
+                        case .Loading:
+                            return .setIsLoading
+                        case .Success:
+                            return .setLoginSuccess
+                        default:
+                            return .setErrorMessage("로그인에 실패했습니다.")
                         }
-                        return Mutation.setErrorMessage("로그인에 실패했습니다.")
                     }
-            ])
         }
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
         var newState = state
         switch mutation {
-        case let .setIsLoading(isLoading):
-            newState.isLoading = isLoading
+        case .setIsLoading:
+            newState.isLoading = true
             newState.errorMessage = nil
-            
-        case let .setLoginSuccess(success):
-            newState.loginSuccess = success
+        case .setLoginSuccess:
+            newState.loginSuccess = true
             newState.errorMessage = nil
+            newState.isLoading = false
             
         case let .setErrorMessage(message):
             newState.errorMessage = message
+            newState.isLoading = false
         }
         return newState
     }
     
     // to view
-    
-    func toMain() {
-        navigator.toMain()
-    }
-    
-    func toSignup() {
-        navigator.toSignup()
-    }
 }

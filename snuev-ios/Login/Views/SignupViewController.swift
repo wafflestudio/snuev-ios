@@ -30,15 +30,12 @@ class SignupViewController: SNUEVBaseViewController, StoryboardView {
         super.viewDidLoad()
         btnSignup.setButtonType(.Square)
         btnLogin.setButtonType(.withRoundImage)
-        reactor?.fetchDepartments().drive(onNext: { department in
-            self.deparmtments = department
-            print(department)
-        })
-        .disposed(by: disposeBag)
     }
     
     func bind(reactor: SignupViewReactor) {
         // Action
+        reactor.action.onNext(Reactor.Action.fetchDepartment)
+        
         btnSignup.rx.tap
             .map { Reactor.Action.signupRequest(username: self.inputUsername.text, department: self.inputDepartment.text, nickname: self.inputNickname.text, password: self.inputPassword.text) }
             .bind(to: reactor.action)
@@ -49,7 +46,7 @@ class SignupViewController: SNUEVBaseViewController, StoryboardView {
             .distinctUntilChanged()
             .filter { $0 }
             .subscribe(onNext: { [weak self] success in
-                self?.showToast(message: "Signup success!!!")
+                self?.showToast(message: "회원가입에 성공했습니다!!")
             }).disposed(by: disposeBag)
         
         reactor.state.map { $0.errorMessage }
@@ -66,7 +63,7 @@ class SignupViewController: SNUEVBaseViewController, StoryboardView {
         }.disposed(by: disposeBag)
         
         searchDepartmentButton.rx.tap.bind {
-            reactor.toSearchDepartment(self.deparmtments)
+//            reactor.toSearchDepartment(self.deparmtments)
         }
     }
 }

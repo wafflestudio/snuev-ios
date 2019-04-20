@@ -20,4 +20,7 @@ struct Constants {
     
     // Networking
     static let BASE_URL = "https://api.snuev.kr"
+    
+    // Error
+    static let GENERAL_ERROR = "오류가 발생했습니다."
 }

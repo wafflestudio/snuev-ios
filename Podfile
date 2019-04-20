@@ -15,4 +15,7 @@ target 'snuev-ios' do
   pod 'SnapKit'
   pod 'KeychainSwift'
   pod 'Japx'
+  pod 'Alamofire'
+  pod 'AlamofireObjectMapper'
+  pod 'Swinject'
 end

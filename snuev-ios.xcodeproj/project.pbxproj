@@ -12,12 +12,11 @@
 		3174DBD3224B09E100278C39 /* img-main-mobile-320-767-px@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3174DBD0224B09E100278C39 /* img-main-mobile-320-767-px@3x.png */; };
 		3174DBD622535C9F00278C39 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3174DBD522535C9F00278C39 /* AuthResponse.swift */; };
 		3174DBD822535F9800278C39 /* JSONApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3174DBD722535F9800278C39 /* JSONApiResponse.swift */; };
+		31A6F307225F23D300CBDB4C /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A6F306225F23D300CBDB4C /* Service.swift */; };
+		31C6D0B9226B0CE800C1BA95 /* SNUEVContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C6D0B8226B0CE800C1BA95 /* SNUEVContainer.swift */; };
+		31C6D0BB226B0F0D00C1BA95 /* DepartmentUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C6D0BA226B0F0D00C1BA95 /* DepartmentUseCase.swift */; };
 		64087B27222A6B7F00D374B9 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64087B26222A6B7F00D374B9 /* Department.swift */; };
 		641ADB5621F470B4002DD367 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641ADB5521F470B4002DD367 /* AuthManager.swift */; };
-		645322A52229110D00A842C0 /* LoginNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645322A42229110D00A842C0 /* LoginNavigator.swift */; };
-		645322A72229112D00A842C0 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645322A62229112D00A842C0 /* NetworkProvider.swift */; };
-		645322A92229113B00A842C0 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645322A82229113B00A842C0 /* Application.swift */; };
-		645322AC2229132600A842C0 /* LoginNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645322AB2229132600A842C0 /* LoginNetwork.swift */; };
 		645322B022292B9A00A842C0 /* img-logo-110-px@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 645322AD22292B9A00A842C0 /* img-logo-110-px@3x.png */; };
 		645322B122292B9A00A842C0 /* img-logo-110-px.png in Resources */ = {isa = PBXBuildFile; fileRef = 645322AE22292B9A00A842C0 /* img-logo-110-px.png */; };
 		645322B222292B9A00A842C0 /* img-logo-110-px@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 645322AF22292B9A00A842C0 /* img-logo-110-px@2x.png */; };
@@ -36,8 +35,6 @@
 		645322CE22292C2100A842C0 /* ic-search-30-px@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 645322BF22292C2100A842C0 /* ic-search-30-px@3x.png */; };
 		645322CF22292C2100A842C0 /* ic-bookmark-normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 645322C022292C2100A842C0 /* ic-bookmark-normal@3x.png */; };
 		645322D022292C2100A842C0 /* ic-logout-normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 645322C122292C2100A842C0 /* ic-logout-normal@3x.png */; };
-		645322D32229317900A842C0 /* MainNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645322D22229317900A842C0 /* MainNavigator.swift */; };
-		64BEB1D82250B919007B9091 /* UseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BEB1D72250B919007B9091 /* UseCaseProvider.swift */; };
 		64BEB1DA2250B972007B9091 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BEB1D92250B972007B9091 /* LoginUseCase.swift */; };
 		64CE465221ECBA7E007EE055 /* SNUEVButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE465121ECBA7E007EE055 /* SNUEVButton.swift */; };
 		64CE465521ECBAC1007EE055 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE465421ECBAC1007EE055 /* Constants.swift */; };
@@ -48,13 +45,11 @@
 		64CE466321ECD462007EE055 /* img-logo-220-px@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64CE466021ECD462007EE055 /* img-logo-220-px@3x.png */; };
 		64CE466421ECD462007EE055 /* img-logo-220-px.png in Resources */ = {isa = PBXBuildFile; fileRef = 64CE466121ECD462007EE055 /* img-logo-220-px.png */; };
 		64CE466621ECDFB1007EE055 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE466521ECDFB1007EE055 /* UIImage.swift */; };
-		64CE466821ECE4ED007EE055 /* LoginEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE466721ECE4ED007EE055 /* LoginEndpoint.swift */; };
 		64CE466A21ECE5D3007EE055 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE466921ECE5D3007EE055 /* String.swift */; };
 		64CE466C21F0A5D4007EE055 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE466B21F0A5D3007EE055 /* LoginViewController.swift */; };
 		64CE466E21F0A8FC007EE055 /* LoginViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE466D21F0A8FC007EE055 /* LoginViewReactor.swift */; };
 		64CE467721F0D393007EE055 /* snuev_ios_tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE467621F0D393007EE055 /* snuev_ios_tests.swift */; };
 		64CE467F21F31A19007EE055 /* SNUEVBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE467E21F31A19007EE055 /* SNUEVBaseViewController.swift */; };
-		64D61404223AAEE9001011F4 /* PrimitiveSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D61403223AAEE9001011F4 /* PrimitiveSequence.swift */; };
 		64F681F921E4D1870017E63A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F681F821E4D1870017E63A /* AppDelegate.swift */; };
 		64F681FE21E4D1870017E63A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64F681FC21E4D1870017E63A /* Main.storyboard */; };
 		64F6820021E4D1880017E63A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64F681FF21E4D1880017E63A /* Assets.xcassets */; };
@@ -86,13 +81,12 @@
 		3174DBD0224B09E100278C39 /* img-main-mobile-320-767-px@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-main-mobile-320-767-px@3x.png"; sourceTree = "<group>"; };
 		3174DBD522535C9F00278C39 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		3174DBD722535F9800278C39 /* JSONApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONApiResponse.swift; sourceTree = "<group>"; };
+		31A6F306225F23D300CBDB4C /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		31C6D0B8226B0CE800C1BA95 /* SNUEVContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNUEVContainer.swift; sourceTree = "<group>"; };
+		31C6D0BA226B0F0D00C1BA95 /* DepartmentUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentUseCase.swift; sourceTree = "<group>"; };
 		3B2C0C6DA3622C8A68E09688 /* Pods-snuev-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snuev-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-snuev-ios/Pods-snuev-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		64087B26222A6B7F00D374B9 /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
 		641ADB5521F470B4002DD367 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
-		645322A42229110D00A842C0 /* LoginNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigator.swift; sourceTree = "<group>"; };
-		645322A62229112D00A842C0 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
-		645322A82229113B00A842C0 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
-		645322AB2229132600A842C0 /* LoginNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNetwork.swift; sourceTree = "<group>"; };
 		645322AD22292B9A00A842C0 /* img-logo-110-px@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-logo-110-px@3x.png"; sourceTree = "<group>"; };
 		645322AE22292B9A00A842C0 /* img-logo-110-px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-logo-110-px.png"; sourceTree = "<group>"; };
 		645322AF22292B9A00A842C0 /* img-logo-110-px@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-logo-110-px@2x.png"; sourceTree = "<group>"; };
@@ -111,9 +105,7 @@
 		645322BF22292C2100A842C0 /* ic-search-30-px@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-search-30-px@3x.png"; sourceTree = "<group>"; };
 		645322C022292C2100A842C0 /* ic-bookmark-normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-bookmark-normal@3x.png"; sourceTree = "<group>"; };
 		645322C122292C2100A842C0 /* ic-logout-normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-logout-normal@3x.png"; sourceTree = "<group>"; };
-		645322D22229317900A842C0 /* MainNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigator.swift; sourceTree = "<group>"; };
 		64BEB1D52250A320007B9091 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		64BEB1D72250B919007B9091 /* UseCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseProvider.swift; sourceTree = "<group>"; };
 		64BEB1D92250B972007B9091 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 		64CE465121ECBA7E007EE055 /* SNUEVButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNUEVButton.swift; sourceTree = "<group>"; };
 		64CE465421ECBAC1007EE055 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -124,7 +116,6 @@
 		64CE466021ECD462007EE055 /* img-logo-220-px@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-logo-220-px@3x.png"; sourceTree = "<group>"; };
 		64CE466121ECD462007EE055 /* img-logo-220-px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-logo-220-px.png"; sourceTree = "<group>"; };
 		64CE466521ECDFB1007EE055 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
-		64CE466721ECE4ED007EE055 /* LoginEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEndpoint.swift; sourceTree = "<group>"; };
 		64CE466921ECE5D3007EE055 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		64CE466B21F0A5D3007EE055 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		64CE466D21F0A8FC007EE055 /* LoginViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewReactor.swift; sourceTree = "<group>"; };
@@ -132,7 +123,6 @@
 		64CE467621F0D393007EE055 /* snuev_ios_tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = snuev_ios_tests.swift; sourceTree = "<group>"; };
 		64CE467821F0D393007EE055 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64CE467E21F31A19007EE055 /* SNUEVBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNUEVBaseViewController.swift; sourceTree = "<group>"; };
-		64D61403223AAEE9001011F4 /* PrimitiveSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimitiveSequence.swift; sourceTree = "<group>"; };
 		64F681F521E4D1870017E63A /* snuev-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "snuev-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F681F821E4D1870017E63A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64F681FD21E4D1870017E63A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -176,6 +166,26 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		31C6D0BC226B13E800C1BA95 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				64CE466B21F0A5D3007EE055 /* LoginViewController.swift */,
+				F9040075222934F20000A906 /* SignupViewController.swift */,
+				E1E3C70E223BD6700016294D /* SearchDepartmentViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		31C6D0BD226B13EF00C1BA95 /* Reactors */ = {
+			isa = PBXGroup;
+			children = (
+				E1E3C710223BD67F0016294D /* SearchDepartmentReactor.swift */,
+				F9040076222934F20000A906 /* SignupViewReactor.swift */,
+				64CE466D21F0A8FC007EE055 /* LoginViewReactor.swift */,
+			);
+			path = Reactors;
+			sourceTree = "<group>";
+		};
 		64087B25222A6B6400D374B9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,29 +196,11 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		645322AA222911D200A842C0 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				645322A62229112D00A842C0 /* NetworkProvider.swift */,
-				645322AB2229132600A842C0 /* LoginNetwork.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		645322D12229316100A842C0 /* Navigator */ = {
-			isa = PBXGroup;
-			children = (
-				645322D22229317900A842C0 /* MainNavigator.swift */,
-				645322A42229110D00A842C0 /* LoginNavigator.swift */,
-			);
-			path = Navigator;
-			sourceTree = "<group>";
-		};
 		64BEB1D62250B905007B9091 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				64BEB1D72250B919007B9091 /* UseCaseProvider.swift */,
 				64BEB1D92250B972007B9091 /* LoginUseCase.swift */,
+				31C6D0BA226B0F0D00C1BA95 /* DepartmentUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -265,7 +257,7 @@
 				64CE466521ECDFB1007EE055 /* UIImage.swift */,
 				64CE466921ECE5D3007EE055 /* String.swift */,
 				641ADB5521F470B4002DD367 /* AuthManager.swift */,
-				64D61403223AAEE9001011F4 /* PrimitiveSequence.swift */,
+				31A6F306225F23D300CBDB4C /* Service.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -273,13 +265,9 @@
 		64CE465C21ECD001007EE055 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				F9040076222934F20000A906 /* SignupViewReactor.swift */,
-				F9040075222934F20000A906 /* SignupViewController.swift */,
-				64CE466D21F0A8FC007EE055 /* LoginViewReactor.swift */,
-				64CE466B21F0A5D3007EE055 /* LoginViewController.swift */,
-				E1E3C70D223BD65C0016294D /* SearchDepartment */,
+				31C6D0BD226B13EF00C1BA95 /* Reactors */,
+				31C6D0BC226B13E800C1BA95 /* Views */,
 				64CE465D21ECD064007EE055 /* Login.storyboard */,
-				64CE466721ECE4ED007EE055 /* LoginEndpoint.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -320,8 +308,6 @@
 				3174DBD42251BB6B00278C39 /* Main */,
 				64BEB1D62250B905007B9091 /* UseCase */,
 				64087B25222A6B6400D374B9 /* Models */,
-				645322D12229316100A842C0 /* Navigator */,
-				645322AA222911D200A842C0 /* Network */,
 				64CE465C21ECD001007EE055 /* Login */,
 				64CE465321ECBAB4007EE055 /* Utils */,
 				64CE465021ECBA62007EE055 /* UIComponents */,
@@ -330,7 +316,7 @@
 				64F681FF21E4D1880017E63A /* Assets.xcassets */,
 				64F6820121E4D1880017E63A /* LaunchScreen.storyboard */,
 				64F6820421E4D1880017E63A /* Info.plist */,
-				645322A82229113B00A842C0 /* Application.swift */,
+				31C6D0B8226B0CE800C1BA95 /* SNUEVContainer.swift */,
 			);
 			path = "snuev-ios";
 			sourceTree = "<group>";
@@ -350,15 +336,6 @@
 				29F386CDDCBC44430A2F839C /* Pods-snuev-ios.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		E1E3C70D223BD65C0016294D /* SearchDepartment */ = {
-			isa = PBXGroup;
-			children = (
-				E1E3C70E223BD6700016294D /* SearchDepartmentViewController.swift */,
-				E1E3C710223BD67F0016294D /* SearchDepartmentReactor.swift */,
-			);
-			path = SearchDepartment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -518,8 +495,9 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-snuev-ios/Pods-snuev-ios-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-snuev-ios/Pods-snuev-ios-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Japx/Japx.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
@@ -531,12 +509,14 @@
 				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Japx.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
@@ -548,10 +528,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-snuev-ios/Pods-snuev-ios-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-snuev-ios/Pods-snuev-ios-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -569,31 +550,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				645322A92229113B00A842C0 /* Application.swift in Sources */,
+				31A6F307225F23D300CBDB4C /* Service.swift in Sources */,
+				31C6D0B9226B0CE800C1BA95 /* SNUEVContainer.swift in Sources */,
 				3174DBD822535F9800278C39 /* JSONApiResponse.swift in Sources */,
 				64CE466C21F0A5D4007EE055 /* LoginViewController.swift in Sources */,
 				64087B27222A6B7F00D374B9 /* Department.swift in Sources */,
 				F9040077222934F20000A906 /* SignupViewController.swift in Sources */,
-				645322D32229317900A842C0 /* MainNavigator.swift in Sources */,
-				64CE466821ECE4ED007EE055 /* LoginEndpoint.swift in Sources */,
 				64CE465B21ECC386007EE055 /* UIView.swift in Sources */,
-				645322A52229110D00A842C0 /* LoginNavigator.swift in Sources */,
 				64CE467F21F31A19007EE055 /* SNUEVBaseViewController.swift in Sources */,
-				64BEB1D82250B919007B9091 /* UseCaseProvider.swift in Sources */,
-				645322AC2229132600A842C0 /* LoginNetwork.swift in Sources */,
 				64F681F921E4D1870017E63A /* AppDelegate.swift in Sources */,
 				E1E3C70F223BD6700016294D /* SearchDepartmentViewController.swift in Sources */,
 				3174DBD622535C9F00278C39 /* AuthResponse.swift in Sources */,
-				64D61404223AAEE9001011F4 /* PrimitiveSequence.swift in Sources */,
 				E1E3C711223BD67F0016294D /* SearchDepartmentReactor.swift in Sources */,
 				64CE466E21F0A8FC007EE055 /* LoginViewReactor.swift in Sources */,
-				645322A72229112D00A842C0 /* NetworkProvider.swift in Sources */,
 				641ADB5621F470B4002DD367 /* AuthManager.swift in Sources */,
 				F9040078222934F20000A906 /* SignupViewReactor.swift in Sources */,
 				64CE466621ECDFB1007EE055 /* UIImage.swift in Sources */,
 				64CE465221ECBA7E007EE055 /* SNUEVButton.swift in Sources */,
 				64CE465921ECBFD5007EE055 /* UIColor.swift in Sources */,
 				64CE466A21ECE5D3007EE055 /* String.swift in Sources */,
+				31C6D0BB226B0F0D00C1BA95 /* DepartmentUseCase.swift in Sources */,
 				64CE465521ECBAC1007EE055 /* Constants.swift in Sources */,
 				64BEB1DA2250B972007B9091 /* LoginUseCase.swift in Sources */,
 			);
