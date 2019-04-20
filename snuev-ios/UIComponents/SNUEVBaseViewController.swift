@@ -63,7 +63,7 @@ class SNUEVBaseViewController: UIViewController {
         }
     }
     
-    func showConfirm(message: String) -> Observable<Void> {
+    func showConfirm(message: String) -> Driver<Void> {
         let toastView = UIView()
         let toastLabel = UILabel()
         let toastButton = UIButton()
@@ -108,7 +108,7 @@ class SNUEVBaseViewController: UIViewController {
             make.top.equalTo(toastView).offset(10)
         }
         return toastButton.rx.tap.do(onNext: { _ in toastView.removeFromSuperview()})
-            .asObservable()
+            .asDriver(onErrorJustReturn: ())
     }
 }
 

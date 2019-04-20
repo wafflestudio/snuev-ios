@@ -49,7 +49,7 @@ class SignupViewController: SNUEVBaseViewController, StoryboardView {
                 guard let self = self else {
                     return
                 }
-                self.showConfirm(message: "회원가입에 성공했습니다 :)").subscribe(onNext: {
+                self.showConfirm(message: "회원가입에 성공했습니다 :)").drive(onNext: {
                     self.navigationController?.popViewController(animated: true)
                 })
                 .disposed(by: self.disposeBag)

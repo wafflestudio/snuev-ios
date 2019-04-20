@@ -11,7 +11,7 @@ This codebase is SNUEV client, a course evaluation system for SNU students.
 
 ## Architecture
 - Uni-directional hierarchy
-- ViewController -> Reactor -> UseCases
+- `ViewController` -> `Reactor` -> `UseCase`
 
 ### SNUEVContainer
 - Container for DI
@@ -36,6 +36,22 @@ container.register(LoginViewController.self) { r in
 }
 ...
 
+```
+### Resource
+- Each services returns `Observable` of `Resource`
+- Must handle status: `.Loading`, `.Success` or `.Failure`
+```swift
+return loginUseCase.login(username: username, password: password)
+                    .map { resource in
+                        switch resource.status {
+                        case .Loading:
+                            return .setIsLoading
+                        case .Success:
+                            return .setLoginSuccess
+                        default:
+                            return .setErrorMessage("로그인에 실패했습니다.")
+                        }
+                    }
 ```
 
 ### UseCase
