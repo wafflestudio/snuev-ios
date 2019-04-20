@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 protocol LoginNavigator {
     func toLogin()
     func toSignup()
     func toMain()
     func toSearchDepartment(_: [Department]?)
+    func popToSignup(department: Department)
 }
 
 class DefaultLoginNavigator: LoginNavigator {
@@ -20,7 +23,13 @@ class DefaultLoginNavigator: LoginNavigator {
     private let navigationController: UINavigationController
     private let useCaseProvider: UseCaseProvider
     
+    private let selectedDepartmentSubject = PublishSubject<Department>()
+    var selectedDepartment: Observable<Department> {
+        return selectedDepartmentSubject.asObservable()
+    }
+    
     var mainNavigator: MainNavigator?
+    var disposeBag = DisposeBag()
     
     init(navigationController: UINavigationController, storyboard: UIStoryboard, useCaseProvider: UseCaseProvider) {
         self.navigationController = navigationController
@@ -36,6 +45,13 @@ class DefaultLoginNavigator: LoginNavigator {
     
     func toSignup() {
         let vc = storyboard.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
+        selectedDepartment.subscribe(onNext: {[weak self] dp in
+            vc.selectedDepartment = dp
+            vc.inputDepartment.text = dp.name
+            }, onDisposed: {
+                print("complete select department")
+        })
+            .disposed(by: disposeBag)
         vc.reactor = SignupViewReactor(useCase: useCaseProvider.makeLoginUseCase(), authManager: AuthManager(), navigator: self)
         navigationController.pushViewController(vc, animated: true)
     }
@@ -46,8 +62,12 @@ class DefaultLoginNavigator: LoginNavigator {
     
     func toSearchDepartment(_ departments: [Department]?) {
         let vc = storyboard.instantiateViewController(withIdentifier: "SearchDepartmentViewController") as! SearchDepartmentViewController
-        vc.reactor = SearchDepartmentViewReactor(useCase: useCaseProvider.makeLoginUseCase(), authManager: AuthManager(), navigator: self)
-        vc.departments = departments
+        vc.reactor = SearchDepartmentViewReactor(useCase: useCaseProvider.makeLoginUseCase(), authManager: AuthManager(), navigator: self, departments: departments)
         navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func popToSignup(department: Department) {
+        selectedDepartmentSubject.onNext(department)
+        navigationController.popViewController(animated: true)
     }
 }

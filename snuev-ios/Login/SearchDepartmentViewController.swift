@@ -17,12 +17,12 @@ import ReactorKit
 
 class SearchDepartmentViewController: SNUEVBaseViewController, StoryboardView {
     typealias Reactor = SearchDepartmentViewReactor
-    var departments: [Department]?
     @IBOutlet weak var searchQuery: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchQuery.becomeFirstResponder()
     }
     
     func bind(reactor: SearchDepartmentViewReactor) {
@@ -33,10 +33,20 @@ class SearchDepartmentViewController: SNUEVBaseViewController, StoryboardView {
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
-        
-//         when clicked department 
-//        self.navigationController?.popViewController(animated: true)
-        
+        reactor.state.map { $0.departments }
+            .bind(to: tableView.rx.items(cellIdentifier: "cell")) { indexPath, dept, cell in
+                cell.textLabel?.text = dept.name
+            }
+            .disposed(by: disposeBag)
+    
+        // View
+        tableView.rx.itemSelected
+            .subscribe(onNext: { [weak self, weak reactor] indexPath in
+                guard let `self` = self else { return }
+                guard let department = reactor?.currentState.departments[indexPath.row] else { return }
+                reactor!.popToSignup(department: department)
+            })
+            .disposed(by: disposeBag)
     }
 }
 
