@@ -49,9 +49,34 @@ protocol Service {
     func post<T: Mappable>(_ path: String, parameters: [String: Any]?, responseArrayType: T.Type) -> Observable<Resource<[T]>>
     func put<T: Mappable>(_ path: String, parameters: [String: Any]?, responseArrayType: T.Type) -> Observable<Resource<[T]>>
     func delete<T: Mappable>(_ path: String, parameters: [String: Any]?, responseArrayType: T.Type) -> Observable<Resource<[T]>>
+    
+    func get(_ path: String, parameters: [String: Any]?) -> Observable<Resource<NoData>>
+    func post(_ path: String, parameters: [String: Any]?) -> Observable<Resource<NoData>>
 }
 
 class DefaultService: Service {
+    private func request(_ path: String, method: HTTPMethod, parameters: [String: Any]?) -> Observable<Resource<NoData>> {
+        return Observable.create { observer in
+            observer.onNext(Resource.loading())
+            Alamofire.request("\(Constants.BASE_URL)\(path)", method: method, parameters: parameters).responseJSON { response in
+                guard let json = response.value as? [String: Any] else {
+                    observer.onNext(Resource.failure())
+                    observer.onCompleted()
+                    return
+                }
+                let jsonApiResponse = Mapper<JSONApiResponse>().map(JSON: json)
+                    guard response.filterSuccessCode() else {
+                        observer.onNext(Resource.failure())
+                        observer.onCompleted()
+                        return
+                    }
+                    observer.onNext(Resource.success(jsonApiResponse?.data as? NoData, meta: jsonApiResponse?.meta))
+                    observer.onCompleted()
+                    return
+            }
+            return Disposables.create()
+        }
+    }
     private func request<T: Mappable>(_ path: String, method: HTTPMethod, parameters: [String: Any]?, responseType: T.Type) -> Observable<Resource<T>> {
         return Observable.create { observer in
             observer.onNext(Resource.loading())
@@ -63,9 +88,9 @@ class DefaultService: Service {
                 }
                 do {
                     let decodedResponse = try Japx.Decoder.jsonObject(withJSONAPIObject: json)
-                    let jsonApiResponse = Mapper<JSONApiResponse<T>>().map(JSON: decodedResponse)
-                    guard response.response?.statusCode == 200, let value = jsonApiResponse?.data else {
-                        observer.onNext(Resource.failure(jsonApiResponse?.data))
+                    let jsonApiResponse = Mapper<JSONApiResponse>().map(JSON: decodedResponse)
+                    guard response.filterSuccessCode(), let value = jsonApiResponse?.getObjectResponse(T.self) else {
+                        observer.onNext(Resource.failure(jsonApiResponse?.data as? T))
                         observer.onCompleted()
                         return
                     }
@@ -95,9 +120,9 @@ class DefaultService: Service {
                 }
                 do {
                     let decodedResponse = try Japx.Decoder.jsonObject(withJSONAPIObject: json)
-                    let jsonApiResponse = Mapper<JSONApiResponse<[T]>>().map(JSON: decodedResponse)
-                    guard response.response?.statusCode == 200, let value = jsonApiResponse?.data else {
-                        observer.onNext(Resource.failure(jsonApiResponse?.data))
+                    let jsonApiResponse = Mapper<JSONApiResponse>().map(JSON: decodedResponse)
+                    guard response.filterSuccessCode(), let value = jsonApiResponse?.getArrayResponse(T.self) else {
+                        observer.onNext(Resource.failure(jsonApiResponse?.data as? [T]))
                         observer.onCompleted()
                         return
                     }
@@ -144,6 +169,23 @@ class DefaultService: Service {
     
     func delete<T: Mappable>(_ path: String, parameters: [String: Any]?, responseArrayType: T.Type) -> Observable<Resource<[T]>> {
         return requestArray(path, method: .delete, parameters: parameters, responseType: T.self)
+    }
+    
+    func get(_ path: String, parameters: [String: Any]?) -> Observable<Resource<NoData>> {
+        return request(path, method: .get, parameters: parameters)
+    }
+    
+    func post(_ path: String, parameters: [String: Any]?) -> Observable<Resource<NoData>> {
+        return request(path, method: .post, parameters: parameters)
+    }
+}
+
+extension DataResponse {
+    func filterSuccessCode() -> Bool {
+        guard let response = self.response else {
+            return false
+        }
+        return response.statusCode >= 200 && response.statusCode < 300
     }
 }
 

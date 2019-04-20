@@ -13,8 +13,8 @@ import Moya
 import KeychainSwift
 
 protocol LoginUseCase {
-    func login(username: String, password: String) -> Observable<Resource<AuthResponse>>
-    func signup(username: String, password: String, nickname: String, department: String) -> Observable<Resource<AuthResponse>>
+    func login(username: String, password: String) -> Observable<Resource<NoData>>
+    func signup(username: String, password: String, nickname: String, department: String) -> Observable<Resource<NoData>>
 
     func setToken(token: String)
     func logout()
@@ -28,14 +28,14 @@ class DefaultLoginUseCase: LoginUseCase {
         self.service = service
     }
     
-    func login(username: String, password: String) -> Observable<Resource<AuthResponse>> {
+    func login(username: String, password: String) -> Observable<Resource<NoData>> {
         let parameters = ["username": username, "password": password]
-        return service.post("/v1/user/sign_in", parameters: parameters, responseType: AuthResponse.self)
+        return service.post("/v1/user/sign_in", parameters: parameters)
     }
     
-    func signup(username: String, password: String, nickname: String, department: String) -> Observable<Resource<AuthResponse>> {
+    func signup(username: String, password: String, nickname: String, department: String) -> Observable<Resource<NoData>> {
         let parameters = ["username": username, "password": password, "nickname": nickname, "department": department]
-        return service.post("/v1/user", parameters: parameters, responseType: AuthResponse.self)
+        return service.post("/v1/user", parameters: parameters)
     }
 
     func setToken(token: String) {

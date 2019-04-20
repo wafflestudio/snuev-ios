@@ -39,6 +39,9 @@ class LoginViewController: SNUEVBaseViewController, StoryboardView {
             .disposed(by: disposeBag)
         
         btnSignin.rx.tap.bind {
+            if let vc = SNUEVContainer.shared.resolve(SignupViewController.self) {
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         }
         .disposed(by: disposeBag)
         // State

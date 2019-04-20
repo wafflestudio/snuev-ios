@@ -24,8 +24,7 @@ class SignupViewController: SNUEVBaseViewController, StoryboardView {
     @IBOutlet weak var btnSignup: SNUEVButton!
     @IBOutlet weak var btnLogin: SNUEVButton!
     @IBOutlet weak var searchDepartmentButton: UIButton!
-    var deparmtments: [Department]?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         btnSignup.setButtonType(.Square)
@@ -37,16 +36,23 @@ class SignupViewController: SNUEVBaseViewController, StoryboardView {
         reactor.action.onNext(Reactor.Action.fetchDepartment)
         
         btnSignup.rx.tap
-            .map { Reactor.Action.signupRequest(username: self.inputUsername.text, department: self.inputDepartment.text, nickname: self.inputNickname.text, password: self.inputPassword.text) }
+            .map { _ in Reactor.Action.signupRequest(username: self.inputUsername.text, nickname: self.inputNickname.text, password: self.inputPassword.text) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
+        
 
         // State
         reactor.state.map { $0.signupSuccess }
             .distinctUntilChanged()
             .filter { $0 }
             .subscribe(onNext: { [weak self] success in
-                self?.showToast(message: "회원가입에 성공했습니다!!")
+                guard let self = self else {
+                    return
+                }
+                self.showConfirm(message: "회원가입에 성공했습니다 :)").subscribe(onNext: {
+                    self.navigationController?.popViewController(animated: true)
+                })
+                .disposed(by: self.disposeBag)
             }).disposed(by: disposeBag)
         
         reactor.state.map { $0.errorMessage }
@@ -57,14 +63,33 @@ class SignupViewController: SNUEVBaseViewController, StoryboardView {
                 }
             }).disposed(by: disposeBag)
         
+        reactor.state.map { $0.selectedDepartment?.name }
+            .distinctUntilChanged()
+            .asDriver(onErrorJustReturn: nil)
+            .drive(onNext: { [weak self] department in
+                self?.inputDepartment.text = department
+            })
+            .disposed(by: disposeBag)
+        
         // View
         btnLogin.rx.tap.bind {
             self.navigationController?.popViewController(animated: true)
         }.disposed(by: disposeBag)
         
-        searchDepartmentButton.rx.tap.bind {
-//            reactor.toSearchDepartment(self.deparmtments)
+        searchDepartmentButton.rx.tap.bind { [weak self] in
+            guard let `self` = self else {
+                return
+            }
+            let departments = reactor.currentState.departments
+            if let searchDepartmentVC = SNUEVContainer.shared.resolve(SearchDepartmentViewController.self, argument: departments) {
+                searchDepartmentVC.selectedDepartment
+                    .map{ Reactor.Action.setSelectedDepartment($0)}
+                    .bind(to: reactor.action)
+                    .disposed(by: self.disposeBag)
+                self.navigationController?.pushViewController(searchDepartmentVC, animated: true)
+            }
         }
+        .disposed(by: disposeBag)
     }
 }
 

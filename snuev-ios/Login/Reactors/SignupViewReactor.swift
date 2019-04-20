@@ -26,8 +26,9 @@ final class SignupViewReactor: Reactor {
     }
     
     enum Action {
-        case signupRequest(username: String?, department: String?, nickname: String?, password: String?)
+        case signupRequest(username: String?, nickname: String?, password: String?)
         case fetchDepartment
+        case setSelectedDepartment(Department?)
     }
     
     enum Mutation {
@@ -35,6 +36,8 @@ final class SignupViewReactor: Reactor {
         case setIsLoading
         case setDepartments([Department])
         case setSignupSuccess
+        
+        case setSelectedDepartment(Department?)
     }
     
     struct State {
@@ -44,6 +47,7 @@ final class SignupViewReactor: Reactor {
         var signupSuccess = false
         
         var departments: [Department] = []
+        var selectedDepartment: Department?
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
@@ -60,12 +64,12 @@ final class SignupViewReactor: Reactor {
                     return .empty()
                 }
             }
-        case let .signupRequest(username, department, nickname, password):
+        case let .signupRequest(username, nickname, password):
             guard let username = username, !username.isEmpty else {
                 return Observable.just(Mutation.setErrorMessage("마이스누 계정을 입력하세요."))
             }
             
-            guard let department = department, !department.isEmpty else {
+            guard let department = currentState.selectedDepartment else {
                 return Observable.just(Mutation.setErrorMessage("학과명을 선택하세요."))
             }
             
@@ -80,7 +84,7 @@ final class SignupViewReactor: Reactor {
             if password.count < 8 {
                 return Observable.just(Mutation.setErrorMessage("비밀번호가 너무 짧습니다."))
             }
-            return loginUseCase.signup(username: username, password: password, nickname: nickname, department: department)
+            return loginUseCase.signup(username: username, password: password, nickname: nickname, department: department.id)
                     .map { resource in
                         switch resource.status {
                         case .Success:
@@ -91,6 +95,8 @@ final class SignupViewReactor: Reactor {
                             return .setErrorMessage(Constants.GENERAL_ERROR)
                         }
                 }
+        case let .setSelectedDepartment(department):
+            return .just(.setSelectedDepartment(department))
         }
     }
     
@@ -111,6 +117,9 @@ final class SignupViewReactor: Reactor {
             newState.signupSuccess = true
             newState.errorMessage = nil
             newState.isLoading = false
+            
+        case let .setSelectedDepartment(department):
+            newState.selectedDepartment = department
         }
         return newState
     }

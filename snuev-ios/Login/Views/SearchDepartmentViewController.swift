@@ -17,26 +17,38 @@ import ReactorKit
 
 class SearchDepartmentViewController: SNUEVBaseViewController, StoryboardView {
     typealias Reactor = SearchDepartmentViewReactor
-    var departments: [Department]?
     @IBOutlet weak var searchQuery: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
+    public var selectedDepartment = PublishSubject<Department>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchQuery.becomeFirstResponder()
     }
     
     func bind(reactor: SearchDepartmentViewReactor) {
         searchQuery.rx.text
             .orEmpty
-            .debounce(0.5, scheduler: MainScheduler.instance)
+            .throttle(0.5, scheduler: MainScheduler.instance)
             .map { Reactor.Action.updateQuery($0) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
+        reactor.state.map { $0.departments }
+            .bind(to: tableView.rx.items(cellIdentifier: "cell")) { indexPath, dept, cell in
+                cell.textLabel?.text = dept.name
+            }
+            .disposed(by: disposeBag)
         
-//         when clicked department 
-//        self.navigationController?.popViewController(animated: true)
-        
+        // View
+        tableView.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                let department = reactor.currentState.departments[indexPath.row]
+                self?.selectedDepartment.onNext(department)
+                self?.navigationController?.popViewController(animated: true)
+            })
+            .disposed(by: disposeBag)
     }
 }
 

@@ -15,6 +15,9 @@
 		31A6F307225F23D300CBDB4C /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A6F306225F23D300CBDB4C /* Service.swift */; };
 		31C6D0B9226B0CE800C1BA95 /* SNUEVContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C6D0B8226B0CE800C1BA95 /* SNUEVContainer.swift */; };
 		31C6D0BB226B0F0D00C1BA95 /* DepartmentUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C6D0BA226B0F0D00C1BA95 /* DepartmentUseCase.swift */; };
+		31C6D0C1226B5AEF00C1BA95 /* ic-delete-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 31C6D0BE226B5AEE00C1BA95 /* ic-delete-normal.png */; };
+		31C6D0C2226B5AEF00C1BA95 /* ic-delete-normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31C6D0BF226B5AEE00C1BA95 /* ic-delete-normal@2x.png */; };
+		31C6D0C3226B5AEF00C1BA95 /* ic-delete-normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31C6D0C0226B5AEF00C1BA95 /* ic-delete-normal@3x.png */; };
 		64087B27222A6B7F00D374B9 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64087B26222A6B7F00D374B9 /* Department.swift */; };
 		641ADB5621F470B4002DD367 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641ADB5521F470B4002DD367 /* AuthManager.swift */; };
 		645322B022292B9A00A842C0 /* img-logo-110-px@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 645322AD22292B9A00A842C0 /* img-logo-110-px@3x.png */; };
@@ -84,6 +87,9 @@
 		31A6F306225F23D300CBDB4C /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		31C6D0B8226B0CE800C1BA95 /* SNUEVContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNUEVContainer.swift; sourceTree = "<group>"; };
 		31C6D0BA226B0F0D00C1BA95 /* DepartmentUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentUseCase.swift; sourceTree = "<group>"; };
+		31C6D0BE226B5AEE00C1BA95 /* ic-delete-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-delete-normal.png"; sourceTree = "<group>"; };
+		31C6D0BF226B5AEE00C1BA95 /* ic-delete-normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-delete-normal@2x.png"; sourceTree = "<group>"; };
+		31C6D0C0226B5AEF00C1BA95 /* ic-delete-normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-delete-normal@3x.png"; sourceTree = "<group>"; };
 		3B2C0C6DA3622C8A68E09688 /* Pods-snuev-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snuev-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-snuev-ios/Pods-snuev-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		64087B26222A6B7F00D374B9 /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
 		641ADB5521F470B4002DD367 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
@@ -208,6 +214,9 @@
 		64CE464F21ECB9BB007EE055 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				31C6D0BE226B5AEE00C1BA95 /* ic-delete-normal.png */,
+				31C6D0BF226B5AEE00C1BA95 /* ic-delete-normal@2x.png */,
+				31C6D0C0226B5AEF00C1BA95 /* ic-delete-normal@3x.png */,
 				3174DBCF224B09E000278C39 /* img-main-mobile-320-767-px.png */,
 				3174DBCE224B09E000278C39 /* img-main-mobile-320-767-px@2x.png */,
 				3174DBD0224B09E100278C39 /* img-main-mobile-320-767-px@3x.png */,
@@ -432,17 +441,20 @@
 				645322CF22292C2100A842C0 /* ic-bookmark-normal@3x.png in Resources */,
 				3174DBD1224B09E100278C39 /* img-main-mobile-320-767-px@2x.png in Resources */,
 				64F6820321E4D1880017E63A /* LaunchScreen.storyboard in Resources */,
+				31C6D0C2226B5AEF00C1BA95 /* ic-delete-normal@2x.png in Resources */,
 				645322B222292B9A00A842C0 /* img-logo-110-px@2x.png in Resources */,
 				645322B122292B9A00A842C0 /* img-logo-110-px.png in Resources */,
 				645322C522292C2100A842C0 /* ic-logout-normal.png in Resources */,
 				645322B022292B9A00A842C0 /* img-logo-110-px@3x.png in Resources */,
 				64F6820021E4D1880017E63A /* Assets.xcassets in Resources */,
+				31C6D0C1226B5AEF00C1BA95 /* ic-delete-normal.png in Resources */,
 				3174DBD2224B09E100278C39 /* img-main-mobile-320-767-px.png in Resources */,
 				64CE465E21ECD064007EE055 /* Login.storyboard in Resources */,
 				645322C822292C2100A842C0 /* ic-bookmark-normal.png in Resources */,
 				F9040072222933830000A906 /* img-signup@3x.png in Resources */,
 				645322CA22292C2100A842C0 /* ic-logout-normal@2x.png in Resources */,
 				645322CC22292C2100A842C0 /* ic-detailsearch-normal@3x.png in Resources */,
+				31C6D0C3226B5AEF00C1BA95 /* ic-delete-normal@3x.png in Resources */,
 				645322C922292C2100A842C0 /* ic-detailsearch-normal.png in Resources */,
 				3174DBD3224B09E100278C39 /* img-main-mobile-320-767-px@3x.png in Resources */,
 				645322C722292C2100A842C0 /* ic-profile-normal@2x.png in Resources */,

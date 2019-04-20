@@ -10,7 +10,6 @@ import Swinject
 class SNUEVContainer {
     static var shared: Container = {
         let container = Container()
-        let sideMenuStoryboard = UIStoryboard(name: "SideMenu", bundle: nil)
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let loginStoryboard = UIStoryboard(name: "Login", bundle: nil)
         // Service

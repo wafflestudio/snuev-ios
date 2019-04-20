@@ -44,7 +44,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = SNUEVContainer.shared.resolve(LoginViewController.self)
+        let navigationController = UINavigationController()
+        navigationController.isNavigationBarHidden = true
+        window.rootViewController = navigationController
+        if let loginVC = SNUEVContainer.shared.resolve(LoginViewController.self) {
+            navigationController.pushViewController(loginVC, animated: false)
+        }
         
         self.window = window
         return true

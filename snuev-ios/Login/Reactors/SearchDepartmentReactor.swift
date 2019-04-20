@@ -14,7 +14,7 @@ import ObjectMapper
 
 final class SearchDepartmentViewReactor: Reactor {
     init(departments: [Department]) {
-        self.initialState = State(query: "", departments: departments)
+        self.initialState = State(departments: departments)
     }
     
     enum Action {
@@ -22,11 +22,10 @@ final class SearchDepartmentViewReactor: Reactor {
     }
     
     enum Mutation {
-        case setQuery(String)
+        case setDepartments([Department])
     }
     
     struct State {
-        var query: String = ""
         var departments: [Department] = []
     }
     
@@ -35,17 +34,20 @@ final class SearchDepartmentViewReactor: Reactor {
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case let .updateQuery(query):
-            return Observable.just(Mutation.setQuery(query))
+            let filteredDepartments = initialState.departments.filter {
+                $0.name.hasPrefix(query)
+            }
+            return Observable.just(Mutation.setDepartments(filteredDepartments))
         }
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
+        var newState = state
         switch mutation {
-        case let .setQuery(query):
-            var newState = state
-            newState.query = query
-            return newState
+        case let .setDepartments(departments):
+            newState.departments = departments
         }
+        return newState
     }
 }
 
