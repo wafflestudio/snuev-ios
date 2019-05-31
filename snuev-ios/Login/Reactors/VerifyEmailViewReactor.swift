@@ -14,11 +14,9 @@ import Moya
 
 final class VerifyEmailViewReactor: Reactor {
     var useCase: LoginUseCase
-    var navigator: LoginNavigator
     
-    init(useCase: LoginUseCase, navigator: LoginNavigator) {
+    init(useCase: LoginUseCase) {
         self.useCase = useCase
-        self.navigator = navigator
     }
     
     
