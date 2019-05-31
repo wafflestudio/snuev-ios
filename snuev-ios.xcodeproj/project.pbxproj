@@ -59,6 +59,7 @@
 		64F6820321E4D1880017E63A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64F6820121E4D1880017E63A /* LaunchScreen.storyboard */; };
 		B7B8942FACF2F0B8BF94B2D7 /* Pods_snuev_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99332AA8B204CFF7F37E68D1 /* Pods_snuev_ios.framework */; };
 		E164734722A115DC00BE9EEB /* VerifyEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E164734622A115DC00BE9EEB /* VerifyEmailViewController.swift */; };
+		E164734922A1161800BE9EEB /* VerifyEmailViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E164734822A1161700BE9EEB /* VerifyEmailViewReactor.swift */; };
 		E1E3C70F223BD6700016294D /* SearchDepartmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E3C70E223BD6700016294D /* SearchDepartmentViewController.swift */; };
 		E1E3C711223BD67F0016294D /* SearchDepartmentReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E3C710223BD67F0016294D /* SearchDepartmentReactor.swift */; };
 		F9040071222933830000A906 /* img-signup.png in Resources */ = {isa = PBXBuildFile; fileRef = F904006E222933830000A906 /* img-signup.png */; };
@@ -138,6 +139,7 @@
 		64F6820421E4D1880017E63A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99332AA8B204CFF7F37E68D1 /* Pods_snuev_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snuev_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E164734622A115DC00BE9EEB /* VerifyEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyEmailViewController.swift; sourceTree = "<group>"; };
+		E164734822A1161700BE9EEB /* VerifyEmailViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyEmailViewReactor.swift; sourceTree = "<group>"; };
 		E1E3C70E223BD6700016294D /* SearchDepartmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDepartmentViewController.swift; sourceTree = "<group>"; };
 		E1E3C710223BD67F0016294D /* SearchDepartmentReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDepartmentReactor.swift; sourceTree = "<group>"; };
 		F904006E222933830000A906 /* img-signup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-signup.png"; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				E1E3C710223BD67F0016294D /* SearchDepartmentReactor.swift */,
 				F9040076222934F20000A906 /* SignupViewReactor.swift */,
 				64CE466D21F0A8FC007EE055 /* LoginViewReactor.swift */,
+				E164734822A1161700BE9EEB /* VerifyEmailViewReactor.swift */,
 			);
 			path = Reactors;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				64CE466E21F0A8FC007EE055 /* LoginViewReactor.swift in Sources */,
 				641ADB5621F470B4002DD367 /* AuthManager.swift in Sources */,
 				F9040078222934F20000A906 /* SignupViewReactor.swift in Sources */,
+				E164734922A1161800BE9EEB /* VerifyEmailViewReactor.swift in Sources */,
 				E164734722A115DC00BE9EEB /* VerifyEmailViewController.swift in Sources */,
 				64CE466621ECDFB1007EE055 /* UIImage.swift in Sources */,
 				64CE465221ECBA7E007EE055 /* SNUEVButton.swift in Sources */,
