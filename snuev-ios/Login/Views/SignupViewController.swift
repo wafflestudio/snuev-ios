@@ -24,23 +24,19 @@ class SignupViewController: SNUEVBaseViewController, StoryboardView {
     @IBOutlet weak var btnSignup: SNUEVButton!
     @IBOutlet weak var btnLogin: SNUEVButton!
     @IBOutlet weak var searchDepartmentButton: UIButton!
-    var deparmtments: [Department]?
-    private let selectedDepartmentSubject = PublishSubject<Department>()
-    var selectedDepartment: Department?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         btnSignup.setButtonType(.Square)
         btnLogin.setButtonType(.withRoundImage)
-        reactor?.fetchDepartments().drive(onNext: { department in
-            self.deparmtments = department
-        })
-        .disposed(by: disposeBag)
     }
     
     func bind(reactor: SignupViewReactor) {
         // Action
+        reactor.action.onNext(Reactor.Action.fetchDepartment)
+        
         btnSignup.rx.tap
-            .map { Reactor.Action.signupRequest(username: self.inputUsername.text, department: self.selectedDepartment?.id ?? "", nickname: self.inputNickname.text, password: self.inputPassword.text) }
+            .map { _ in Reactor.Action.signupRequest(username: self.inputUsername.text, nickname: self.inputNickname.text, password: self.inputPassword.text) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
@@ -63,14 +59,33 @@ class SignupViewController: SNUEVBaseViewController, StoryboardView {
                 }
             }).disposed(by: disposeBag)
         
+        reactor.state.map { $0.selectedDepartment?.name }
+            .distinctUntilChanged()
+            .asDriver(onErrorJustReturn: nil)
+            .drive(onNext: { [weak self] department in
+                self?.inputDepartment.text = department
+            })
+            .disposed(by: disposeBag)
+        
         // View
         btnLogin.rx.tap.bind {
             self.navigationController?.popViewController(animated: true)
         }.disposed(by: disposeBag)
         
-        searchDepartmentButton.rx.tap.bind {
-            reactor.toSearchDepartment(self.deparmtments)
-        }.disposed(by: disposeBag)
+        searchDepartmentButton.rx.tap.bind { [weak self] in
+            guard let `self` = self else {
+                return
+            }
+            let departments = reactor.currentState.departments
+            if let searchDepartmentVC = SNUEVContainer.shared.resolve(SearchDepartmentViewController.self, argument: departments) {
+                searchDepartmentVC.selectedDepartment
+                    .map{ Reactor.Action.setSelectedDepartment($0)}
+                    .bind(to: reactor.action)
+                    .disposed(by: self.disposeBag)
+                self.navigationController?.pushViewController(searchDepartmentVC, animated: true)
+            }
+        }
+        .disposed(by: disposeBag)
     }
 }
 

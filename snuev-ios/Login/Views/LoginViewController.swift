@@ -39,7 +39,9 @@ class LoginViewController: SNUEVBaseViewController, StoryboardView {
             .disposed(by: disposeBag)
         
         btnSignin.rx.tap.bind {
-            reactor.toSignup()
+            if let vc = SNUEVContainer.shared.resolve(SignupViewController.self) {
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         }
         .disposed(by: disposeBag)
         // State
@@ -49,7 +51,6 @@ class LoginViewController: SNUEVBaseViewController, StoryboardView {
             .filter { $0 }
             .subscribe(onNext: { [weak self] success in
                 self?.showToast(message: "Login success!!!")
-                reactor.toMain()
             }).disposed(by: disposeBag)
         
         reactor.state.map { $0.errorMessage }

@@ -6,60 +6,68 @@ This codebase is SNUEV client, a course evaluation system for SNU students.
 
 ## Features
 - Using ReactorKit
-- Clean Architecture and DI with Provider Pattern
+- Using Swinject
+- Clean Architecture and DI
 
 ## Architecture
 - Uni-directional hierarchy
-- ViewController -> Reactor -> UseCases
+- `ViewController` -> `Reactor` -> `UseCase`
 
-### Application.swift
-- Configures main interface
-- Make navigators and set `rootViewController`
+### SNUEVContainer
+- Container for DI
+- Resolves actual implementation of protocols
+- Resolves viewController from its type
+```swift
+// Service
+container.register(Service.self) { _ in DefaultService() }
+...
+        
+// UseCase
+container.register(LoginUseCase.self) { r in
+    return DefaultLoginUseCase(service: r.resolve(Service.self)!)
+}
+...
+        
+// View
+container.register(LoginViewController.self) { r in
+    let vc = loginStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+    vc.reactor = LoginViewReactor(loginUseCase: r.resolve(LoginUseCase.self)!)
+    return vc
+}
+...
 
-### Navigators
-- Contains viewController navigating functions
-```swift
-protocol LoginNavigator {
-    func toLogin()
-    func toSignup()
-    ...
-}
 ```
-### UseCaseProvider
-- Make UseCase classes that contains usecase functions
+### Resource
+- Each services returns `Observable` of `Resource`
+- Must handle status: `.Loading`, `.Success` or `.Failure`
 ```swift
-protocol UseCaseProvider {
-    func makeLoginUseCase() -> LoginUseCase
-    ...
-}
+return loginUseCase.login(username: username, password: password)
+                    .map { resource in
+                        switch resource.status {
+                        case .Loading:
+                            return .setIsLoading
+                        case .Success:
+                            return .setLoginSuccess
+                        default:
+                            return .setErrorMessage("로그인에 실패했습니다.")
+                        }
+                    }
 ```
-- UseCase classes has network and cache providers
-- UseCase functions deal with usecases by network or cached resources
 
-### NetworkProviders
-- Provide network classes that contain networking functions
+### UseCase
+- Provides useCases for entities
+- Handles networking and caching 
 ```swift
-protocol NetworkProvider {
-    func makeLoginNetwork() -> LoginNetwork
+protocol DepartmentUseCase {
+    func fetchDepartments() -> Observable<Resource<[Department]>>
     ...
 }
 ```
-- Network classes have networking functions that returns Observable (or Driver) of response
-```swift
-protocol LoginNetwork {
-    ...
-    func fetchDepartments() -> Driver<[Department]?>
-    ...
-}
-```
-### Cache Provider
-- To be updated
 
 ### View and Reactor
 - Each viewControllers implements StoryboardView from reactorKit and has reactor
-- View gets resources from reactor and handles logics about controlling view
-- Reactor (kind of ViewModel) handles useCases by useCase object
-- Reactor shouldn't know about views (view knows reactor) so do not reference view on reactor
+- View gets resources from reactor and handles logic about controlling view
+- Reactor handles useCases by useCase object
 
 ### Others
 - To be updated

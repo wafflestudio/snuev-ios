@@ -10,37 +10,39 @@ import Foundation
 import RxSwift
 import RxCocoa
 import Moya
+import KeychainSwift
 
 protocol LoginUseCase {
-    func login(_ parameters: [String: Any]) -> Observable<Bool>
-    func signup(_ parameters: [String: Any]) -> Observable<Response>
-    func fetchDepartments() -> Driver<[Department]?>
+    func login(username: String, password: String) -> Observable<Resource<NoData>>
+    func signup(username: String, password: String, nickname: String, department: String) -> Observable<Resource<NoData>>
+
+    func setToken(token: String)
+    func logout()
 }
 
 class DefaultLoginUseCase: LoginUseCase {
-    let netWork: LoginNetwork
-    let authManager: AuthManager
+    let service: Service
+    let keychain = KeychainSwift()
     
-    init(netWork: LoginNetwork, authManager: AuthManager) {
-        self.netWork = netWork
-        self.authManager = authManager
+    init(service: Service) {
+        self.service = service
     }
     
-    func login(_ parameters: [String : Any]) -> Observable<Bool> {
-        return netWork.login(parameters).map { response in
-            if let token = response?.token {
-                self.authManager.setToken(token: token)
-                return true
-            }
-            return false
-        }
+    func login(username: String, password: String) -> Observable<Resource<NoData>> {
+        let parameters = ["username": username, "password": password]
+        return service.post("/v1/user/sign_in", parameters: parameters)
     }
     
-    func signup(_ parameters: [String : Any]) -> Observable<Response> {
-        return netWork.signup(parameters)
+    func signup(username: String, password: String, nickname: String, department: String) -> Observable<Resource<NoData>> {
+        let parameters = ["username": username, "password": password, "nickname": nickname, "department": department]
+        return service.post("/v1/user", parameters: parameters)
+    }
+
+    func setToken(token: String) {
+        keychain.set(token, forKey: "access_token")
     }
     
-    func fetchDepartments() -> Driver<[Department]?> {
-        return netWork.fetchDepartments()
+    func logout() {
+        keychain.clear()
     }
 }

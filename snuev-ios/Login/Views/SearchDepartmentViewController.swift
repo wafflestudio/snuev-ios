@@ -20,6 +20,8 @@ class SearchDepartmentViewController: SNUEVBaseViewController, StoryboardView {
     @IBOutlet weak var searchQuery: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
+    public var selectedDepartment = PublishSubject<Department>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchQuery.becomeFirstResponder()
@@ -28,7 +30,7 @@ class SearchDepartmentViewController: SNUEVBaseViewController, StoryboardView {
     func bind(reactor: SearchDepartmentViewReactor) {
         searchQuery.rx.text
             .orEmpty
-            .debounce(0.5, scheduler: MainScheduler.instance)
+            .throttle(0.5, scheduler: MainScheduler.instance)
             .map { Reactor.Action.updateQuery($0) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
@@ -38,13 +40,13 @@ class SearchDepartmentViewController: SNUEVBaseViewController, StoryboardView {
                 cell.textLabel?.text = dept.name
             }
             .disposed(by: disposeBag)
-    
+        
         // View
         tableView.rx.itemSelected
-            .subscribe(onNext: { [weak self, weak reactor] indexPath in
-                guard let `self` = self else { return }
-                guard let department = reactor?.currentState.departments[indexPath.row] else { return }
-                reactor!.popToSignup(department: department)
+            .subscribe(onNext: { [weak self] indexPath in
+                let department = reactor.currentState.departments[indexPath.row]
+                self?.selectedDepartment.onNext(department)
+                self?.navigationController?.popViewController(animated: true)
             })
             .disposed(by: disposeBag)
     }
