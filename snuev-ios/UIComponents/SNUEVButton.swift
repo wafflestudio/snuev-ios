@@ -14,7 +14,6 @@ enum SNUEVButtonType: Int {
     case RoundSmall
     case Square
     case SquareWhite
-    // d
     case withRoundImage
 }
 
