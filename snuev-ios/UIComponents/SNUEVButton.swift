@@ -15,6 +15,7 @@ enum SNUEVButtonType: Int {
     case Square
     case SquareWhite
     case withRoundImage
+    // e
 }
 
 class SNUEVButton: UIButton {
