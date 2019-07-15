@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+//a
 extension UIImage {
     class func circle(diameter: CGFloat, color: UIColor) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(CGSize(width: diameter, height: diameter), false, 0)
