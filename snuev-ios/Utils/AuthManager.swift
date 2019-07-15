@@ -13,6 +13,7 @@ protocol Auth {
     func setToken(token: String)
 
     func logout()
+    // c
 }
 
 final class AuthManager: Auth {

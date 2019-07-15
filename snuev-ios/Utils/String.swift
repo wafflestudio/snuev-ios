@@ -11,6 +11,7 @@ import Foundation
 extension String {
     var URLEscapedString: String {
         return self.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
+        //a
     }
     
     var utf8Encoded: Data {
