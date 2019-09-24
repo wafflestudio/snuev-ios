@@ -27,6 +27,7 @@ class SignupViewController: SNUEVBaseViewController, StoryboardView {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        reactor = SNUEVContainer.shared.resolve(Reactor.self)
         btnSignup.setButtonType(.Square)
         btnLogin.setButtonType(.withRoundImage)
     }

@@ -16,24 +16,15 @@ This codebase is SNUEV client, a course evaluation system for SNU students.
 ### SNUEVContainer
 - Container for DI
 - Resolves actual implementation of protocols
-- Resolves viewController from its type
 ```swift
 // Service
-container.register(Service.self) { _ in DefaultService() }
+container.autoregister(Service.self, initializer: DefaultService.init)
 ...
-        
 // UseCase
-container.register(LoginUseCase.self) { r in
-    return DefaultLoginUseCase(service: r.resolve(Service.self)!)
-}
+container.autoregister(LoginUseCase.self, initializer: DefaultLoginUseCase.init)
 ...
-        
-// View
-container.register(LoginViewController.self) { r in
-    let vc = loginStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-    vc.reactor = LoginViewReactor(loginUseCase: r.resolve(LoginUseCase.self)!)
-    return vc
-}
+// Reactor
+container.autoregister(LoginViewReactor.self, initializer: LoginViewReactor.init)
 ...
 
 ```

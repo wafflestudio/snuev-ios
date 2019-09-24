@@ -26,6 +26,7 @@ class LoginViewController: SNUEVBaseViewController, StoryboardView {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        reactor = SNUEVContainer.shared.resolve(Reactor.self)
         buttonLogin.setButtonType(.Square)
         btnSignin.setButtonType(.withRoundImage)
         btnFindPassword.setButtonType(.withRoundImage)

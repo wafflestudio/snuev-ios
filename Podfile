@@ -18,4 +18,5 @@ target 'snuev-ios' do
   pod 'Alamofire'
   pod 'AlamofireObjectMapper'
   pod 'Swinject'
+  pod 'SwinjectAutoregistration'
 end
